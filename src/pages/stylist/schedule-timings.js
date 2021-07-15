@@ -143,7 +143,7 @@ class ScheduleTimings extends React.Component {
 																			<Tab className="nav-item" eventKey={3} title="Thứ 4"> 
 																				<h4 className="card-title d-flex justify-content-between">
 																					<span>Khoảng thời gian</span> 
-																					<a className="edit-link" data-toggle="modal" href="#add_time_slot" onClick={()=>this.openModal('add')}><FontAwesomeIcon icon={faPlusCircle} className="mr-1" /> Add Slot</a>
+																					<a className="edit-link" data-toggle="modal" href="#add_time_slot" onClick={()=>this.openModal('add')}><FontAwesomeIcon icon={faPlusCircle} className="mr-1" /> Thêm khoảng thời gian</a>
 																				</h4>
 																				<p className="text-muted mb-0">Không có sẵn</p>
 																			</Tab>
@@ -151,7 +151,7 @@ class ScheduleTimings extends React.Component {
 																			<Tab className="nav-item" eventKey={4} title="Thứ 5"> 
 																				<h4 className="card-title d-flex justify-content-between">
 																					<span>Khoảng thời gian</span> 
-																					<a className="edit-link" data-toggle="modal" href="#add_time_slot" onClick={()=>this.openModal('add')}><FontAwesomeIcon icon={faPlusCircle} className="mr-1" /> Add Slot</a>
+																					<a className="edit-link" data-toggle="modal" href="#add_time_slot" onClick={()=>this.openModal('add')}><FontAwesomeIcon icon={faPlusCircle} className="mr-1" /> Thêm khoảng thời gian</a>
 																				</h4>
 																				<p className="text-muted mb-0">Không có sẵn</p>
 																			</Tab>
@@ -159,7 +159,7 @@ class ScheduleTimings extends React.Component {
 																			<Tab className="nav-item" eventKey={5} title="Thứ 6"> 
 																				<h4 className="card-title d-flex justify-content-between">
 																					<span>Khoảng thời gian</span> 
-																					<a className="edit-link" data-toggle="modal" href="#add_time_slot" onClick={()=>this.openModal('add')}><FontAwesomeIcon icon={faPlusCircle} className="mr-1" /> Add Slot</a>
+																					<a className="edit-link" data-toggle="modal" href="#add_time_slot" onClick={()=>this.openModal('add')}><FontAwesomeIcon icon={faPlusCircle} className="mr-1" /> Thêm khoảng thời gian</a>
 																				</h4>
 																				<p className="text-muted mb-0">Không có sẵn</p>
 																			</Tab>
@@ -167,7 +167,7 @@ class ScheduleTimings extends React.Component {
 																			<Tab className="nav-item" eventKey={6} title="Thứ 7">
 																				<h4 className="card-title d-flex justify-content-between">
 																					<span>Khoảng thời gian</span> 
-																					<a className="edit-link" data-toggle="modal" href="#add_time_slot" onClick={()=>this.openModal('add')}><FontAwesomeIcon icon={faPlusCircle} className="mr-1" /> Add Slot</a>
+																					<a className="edit-link" data-toggle="modal" href="#add_time_slot" onClick={()=>this.openModal('add')}><FontAwesomeIcon icon={faPlusCircle} className="mr-1" /> Thêm khoảng thời gian</a>
 																				</h4>
 																				<p className="text-muted mb-0">Không có sẵn</p>
 																			</Tab>
@@ -175,7 +175,7 @@ class ScheduleTimings extends React.Component {
 																			<Tab className="nav-item" eventKey={7} title="Chủ nhật">
 																				<h4 className="card-title d-flex justify-content-between">
 																					<span>Khoảng thời gian</span> 
-																					<a className="edit-link" data-toggle="modal" href="#add_time_slot" onClick={()=>this.openModal('add')}><FontAwesomeIcon icon={faPlusCircle} className="mr-1" /> Add Slot</a>
+																					<a className="edit-link" data-toggle="modal" href="#add_time_slot" onClick={()=>this.openModal('add')}><FontAwesomeIcon icon={faPlusCircle} className="mr-1" /> Thêm khoảng thời gian</a>
 																				</h4>
 																				<p className="text-muted mb-0">Không có sẵn</p>
 																			</Tab>

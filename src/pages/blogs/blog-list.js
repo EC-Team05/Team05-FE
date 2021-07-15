@@ -27,11 +27,11 @@ class BlogList extends React.Component {
                             <div className="col-md-12 col-12">
                                 <nav aria-label="breadcrumb" className="page-breadcrumb">
                                     <ol className="breadcrumb">
-                                        <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+                                        <li className="breadcrumb-item"><Link to="/">Trang chủ</Link></li>
                                         <li className="breadcrumb-item active" aria-current="page">Blog</li>
                                     </ol>
                                 </nav>
-                                <h2 className="breadcrumb-title">Blog List</h2>
+                                <h2 className="breadcrumb-title">Danh sách blog</h2>
                             </div>
                         </div>
                     </div>
@@ -53,20 +53,14 @@ class BlogList extends React.Component {
                                     <div className="blog-info clearfix">
                                         <div className="post-left">
                                             <ul>
-                                                <li>
-                                                    <div className="post-author">
-                                                        <Link to="/stylist-profile"><img src={StylistThumb1} alt="Post Author" /> <span>Sorell Sexton</span></Link>
-                                                    </div>
-                                                </li>
                                                 <li><FontAwesomeIcon icon={faClock} />4 Dec 2020</li>
-                                                <li><FontAwesomeIcon icon={faComments} />12 Comments</li>
                                                 <li><FontAwesomeIcon icon={faTags} />Nail Polish Tips</li>
                                             </ul>
                                         </div>
                                     </div>
                                     <div className="blog-content">
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit laboris ullamco laborisut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                        <Link to="/blog-details" className="read-more">Read More</Link>
+                                        <Link to="/blog-details" className="read-more">Đọc thêm</Link>
                                     </div>
                                 </div>
                                 {/* Blog Post */}
@@ -80,20 +74,14 @@ class BlogList extends React.Component {
                                     <div className="blog-info clearfix">
                                         <div className="post-left">
                                             <ul>
-                                                <li>
-                                                    <div className="post-author">
-                                                        <Link to="/stylist-profile"><img src={StylistThumb2} alt="Post Author" /> <span>Urban Mauldin</span></Link>
-                                                    </div>
-                                                </li>
                                                 <li><FontAwesomeIcon icon={faClock} />3 Dec 2020</li>
-                                                <li><FontAwesomeIcon icon={faComments} />7 Comments</li>
                                                 <li><FontAwesomeIcon icon={faTags} />Nail Art</li>
                                             </ul>
                                         </div>
                                     </div>
                                     <div className="blog-content">
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit laboris ullamco laborisut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                        <Link to="/blog-details" className="read-more">Read More</Link>
+                                        <Link to="/blog-details" className="read-more">Đọc thêm</Link>
                                     </div>
                                 </div>
                                 {/* Blog Post */}
@@ -109,20 +97,14 @@ class BlogList extends React.Component {
                                     <div className="blog-info clearfix">
                                         <div className="post-left">
                                             <ul>
-                                                <li>
-                                                    <div className="post-author">
-                                                        <Link to="/stylist-profile"><img src={StylistThumb3} alt="Post Author" /> <span>Cela Spence</span></Link>
-                                                    </div>
-                                                </li>
                                                 <li><FontAwesomeIcon icon={faClock} />3 Dec 2020</li>
-                                                <li><FontAwesomeIcon icon={faComments} />2 Comments</li>
                                                 <li><FontAwesomeIcon icon={faTags} />Foot Care</li>
                                             </ul>
                                         </div>
                                     </div>
                                     <div className="blog-content">
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit laboris ullamco laborisut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                        <Link to="/blog-details" className="read-more">Read More</Link>
+                                        <Link to="/blog-details" className="read-more">Đọc thêm</Link>
                                     </div>
                                 </div>
                                 {/* Blog Post */}
@@ -138,20 +120,14 @@ class BlogList extends React.Component {
                                     <div className="blog-info clearfix">
                                         <div className="post-left">
                                             <ul>
-                                                <li>
-                                                    <div className="post-author">
-                                                        <Link to="/stylist-profile"><img src={StylistThumb4} alt="Post Author" /> <span>Litia Green</span></Link>
-                                                    </div>
-                                                </li>
                                                 <li><FontAwesomeIcon icon={faClock} />2 Dec 2020</li>
-                                                <li><FontAwesomeIcon icon={faComments} />41 Comments</li>
                                                 <li><FontAwesomeIcon icon={faTags} />Nail Polish Tips</li>
                                             </ul>
                                         </div>
                                     </div>
                                     <div className="blog-content">
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco sit laboris ullamco laborisut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                        <Link to="/blog-details" className="read-more">Read More</Link>
+                                        <Link to="/blog-details" className="read-more">Đọc thêm</Link>
                                     </div>
                                 </div>
                                 {/* Blog Post */}

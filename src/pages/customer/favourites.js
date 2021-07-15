@@ -34,11 +34,11 @@ class Favourites extends React.Component {
 							<div className="col-md-12 col-12">
 								<nav aria-label="breadcrumb" className="page-breadcrumb">
 									<ol className="breadcrumb">
-										<li className="breadcrumb-item"><Link to="/">Home</Link></li>
-										<li className="breadcrumb-item active" aria-current="page">Favourites</li>
+										<li className="breadcrumb-item"><Link to="/">Trang chủ</Link></li>
+										<li className="breadcrumb-item active" aria-current="page">Yêu thích</li>
 									</ol>
 								</nav>
-								<h2 className="breadcrumb-title">Favourites</h2>
+								<h2 className="breadcrumb-title">Yêu thích</h2>
 							</div>
 						</div>
 					</div>
@@ -92,10 +92,10 @@ class Favourites extends React.Component {
 												</ul>
 												<div className="row row-sm">
 													<div className="col-6">
-														<Link to="/stylist-profile" className="btn view-btn">View Profile</Link>
+														<Link to="/stylist-profile" className="btn view-btn">Xem hồ sơ</Link>
 													</div>
 													<div className="col-6">
-														<Link to="/booking" className="btn book-btn">Book Now</Link>
+														<Link to="/booking" className="btn book-btn">Đặt ngay</Link>
 													</div>
 												</div>
 											</div>
@@ -139,10 +139,10 @@ class Favourites extends React.Component {
 												</ul>
 												<div className="row row-sm">
 													<div className="col-6">
-														<Link to="/stylist-profile" className="btn view-btn">View Profile</Link>
+														<Link to="/stylist-profile" className="btn view-btn">Xem hồ sơ</Link>
 													</div>
 													<div className="col-6">
-														<Link to="/booking" className="btn book-btn">Book Now</Link>
+														<Link to="/booking" className="btn book-btn">Đặt ngay</Link>
 													</div>
 												</div>
 											</div>
@@ -186,10 +186,10 @@ class Favourites extends React.Component {
 												</ul>
 												<div className="row row-sm">
 													<div className="col-6">
-														<Link to="/stylist-profile" className="btn view-btn">View Profile</Link>
+														<Link to="/stylist-profile" className="btn view-btn">Xem hồ sơ</Link>
 													</div>
 													<div className="col-6">
-														<Link to="/booking" className="btn book-btn">Book Now</Link>
+														<Link to="/booking" className="btn book-btn">Đặt ngay</Link>
 													</div>
 												</div>
 											</div>
@@ -233,10 +233,10 @@ class Favourites extends React.Component {
 												</ul>
 												<div className="row row-sm">
 													<div className="col-6">
-														<Link to="/stylist-profile" className="btn view-btn">View Profile</Link>
+														<Link to="/stylist-profile" className="btn view-btn">Xem hồ sơ</Link>
 													</div>
 													<div className="col-6">
-														<Link to="/booking" className="btn book-btn">Book Now</Link>
+														<Link to="/booking" className="btn book-btn">Đặt ngay</Link>
 													</div>
 												</div>
 											</div>
@@ -281,10 +281,10 @@ class Favourites extends React.Component {
 												</ul>
 												<div className="row row-sm">
 													<div className="col-6">
-														<Link to="/stylist-profile" className="btn view-btn">View Profile</Link>
+														<Link to="/stylist-profile" className="btn view-btn">Xem hồ sơ</Link>
 													</div>
 													<div className="col-6">
-														<Link to="/booking" className="btn book-btn">Book Now</Link>
+														<Link to="/booking" className="btn book-btn">Đặt ngay</Link>
 													</div>
 												</div>
 											</div>
@@ -329,10 +329,10 @@ class Favourites extends React.Component {
 												</ul>
 												<div className="row row-sm">
 													<div className="col-6">
-														<Link to="/stylist-profile" className="btn view-btn">View Profile</Link>
+														<Link to="/stylist-profile" className="btn view-btn">Xem hồ sơ</Link>
 													</div>
 													<div className="col-6">
-														<Link to="/booking" className="btn book-btn">Book Now</Link>
+														<Link to="/booking" className="btn book-btn">Đặt ngay</Link>
 													</div>
 												</div>
 											</div>
@@ -377,10 +377,10 @@ class Favourites extends React.Component {
 												</ul>
 												<div className="row row-sm">
 													<div className="col-6">
-														<Link to="/stylist-profile" className="btn view-btn">View Profile</Link>
+														<Link to="/stylist-profile" className="btn view-btn">Xem hồ sơ</Link>
 													</div>
 													<div className="col-6">
-														<Link to="/booking" className="btn book-btn">Book Now</Link>
+														<Link to="/booking" className="btn book-btn">Đặt ngayw</Link>
 													</div>
 												</div>
 											</div>
@@ -425,10 +425,10 @@ class Favourites extends React.Component {
 												</ul>
 												<div className="row row-sm">
 													<div className="col-6">
-														<Link to="/stylist-profile" className="btn view-btn">View Profile</Link>
+														<Link to="/stylist-profile" className="btn view-btn">Xem hồ sơ</Link>
 													</div>
 													<div className="col-6">
-														<Link to="/booking" className="btn book-btn">Book Now</Link>
+														<Link to="/booking" className="btn book-btn">Đặt ngay</Link>
 													</div>
 												</div>
 											</div>
@@ -473,10 +473,10 @@ class Favourites extends React.Component {
 												</ul>
 												<div className="row row-sm">
 													<div className="col-6">
-														<Link to="/stylist-profile" className="btn view-btn">View Profile</Link>
+														<Link to="/stylist-profile" className="btn view-btn">Xem hồ sơ</Link>
 													</div>
 													<div className="col-6">
-														<Link to="/booking" className="btn book-btn">Book Now</Link>
+														<Link to="/booking" className="btn book-btn">Đặt ngay</Link>
 													</div>
 												</div>
 											</div>
@@ -521,10 +521,10 @@ class Favourites extends React.Component {
 												</ul>
 												<div className="row row-sm">
 													<div className="col-6">
-														<Link to="/stylist-profile" className="btn view-btn">View Profile</Link>
+														<Link to="/stylist-profile" className="btn view-btn">Xem hồ sơ</Link>
 													</div>
 													<div className="col-6">
-														<Link to="/booking" className="btn book-btn">Book Now</Link>
+														<Link to="/booking" className="btn book-btn">Đặt ngay</Link>
 													</div>
 												</div>
 											</div>
@@ -569,10 +569,10 @@ class Favourites extends React.Component {
 												</ul>
 												<div className="row row-sm">
 													<div className="col-6">
-														<Link to="/stylist-profile" className="btn view-btn">View Profile</Link>
+														<Link to="/stylist-profile" className="btn view-btn">Xem hồ sơ</Link>
 													</div>
 													<div className="col-6">
-														<Link to="/booking" className="btn book-btn">Book Now</Link>
+														<Link to="/booking" className="btn book-btn">Đặt ngay</Link>
 													</div>
 												</div>
 											</div>
@@ -617,10 +617,10 @@ class Favourites extends React.Component {
 												</ul>
 												<div className="row row-sm">
 													<div className="col-6">
-														<Link to="/stylist-profile" className="btn view-btn">View Profile</Link>
+														<Link to="/stylist-profile" className="btn view-btn">Xem hồ sơ</Link>
 													</div>
 													<div className="col-6">
-														<Link to="/booking" className="btn book-btn">Book Now</Link>
+														<Link to="/booking" className="btn book-btn">Đặt ngay</Link>
 													</div>
 												</div>
 											</div>

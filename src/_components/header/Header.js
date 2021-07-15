@@ -97,7 +97,10 @@ class Header extends React.Component {
 								<ul className="submenu">
 									<li className={`${pathname === ('/stylist-dashboard') ? 'active' : ''}`}>
 										<Link to = "/stylist-dashboard">Dashboard</Link>
-									</li>								
+									</li>	
+									<li className={`${pathname === ('/stylist-register') ? 'active' : ''}`}>
+										<Link to = "/login">Đăng nhập</Link>
+									</li>							
 									<li className={`${pathname === ('/stylist-register') ? 'active' : ''}`}>
 										<Link to = "/stylist-register">Đăng kí nhà tạo mẫu</Link>
 									</li>
@@ -112,28 +115,14 @@ class Header extends React.Component {
 									<li className={`${pathname === ('/booking') ? 'active' : ''}`}>
 										<Link to = "/booking">Đặt lịch</Link>
 									</li>
-									<li className={`${pathname === ('/checkout') ? 'active' : ''}`}>
-										<Link to = "/checkout">Thanh toán</Link>
-									</li>
 									<li className={`${pathname === ('/customer-dashboard') ? 'active' : ''}`}>
 										<Link to = "/customer-dashboard">Dashboard</Link>
 									</li>
-								</ul>
-							</li>
-							<li className="has-submenu" className={`has-submenu ${pathname === ('/voice-call') ? 'active' : pathname === ('/video-call') ? 'active' : pathname === ('/calendar') ? 'active' : pathname === ('/components') ? 'active' : pathname === ('/invoices') ? 'active' : pathname === ('/invoice-view') ? 'active' : pathname === ('/blank-page') ? 'active' : pathname === ('/login') ? 'active' : pathname === ('/register') ? 'active' : pathname === ('/forgot-password') ? 'active' : '' }`}>
-								<Link to="">Pages <FontAwesomeIcon icon={faChevronDown} /></Link>
-								<ul className="submenu">
-									<li className={`${pathname === ('/calendar') ? 'active' : ''}`}>
-										<Link to = "/calendar">Calendar</Link>
+									<li className={`${pathname === ('/login') ? 'active' : ''}`}>
+										<Link to = "/login">Đăng nhập</Link>
 									</li>
 									<li className={`${pathname === ('/login') ? 'active' : ''}`}>
-										<Link to = "/login">Login</Link>
-									</li>
-									<li className={`${pathname === ('/register') ? 'active' : ''}`}>
-										<Link to = "/register">Register</Link>
-									</li>
-									<li className={`${pathname === ('/forgot-password') ? 'active' : ''}`}>
-										<Link to = "/forgot-password">Forgot Password</Link>
+										<Link to = "/register">Đăng ký</Link>
 									</li>
 								</ul>
 							</li>
@@ -149,13 +138,12 @@ class Header extends React.Component {
 								</ul>
 							</li>
 							
-							{(pathname === ('/') || pathname === ('login') || pathname === ('register') ? 
+							{(pathname === ('/') || pathname === ('login') ? 
 							(
 								<li className="dropdown log-menu">
-									<span className="dropdown-toggle log-select" id="log-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button"><FontAwesomeIcon icon={faUser} /> login/Signup </span>
+									<span className="dropdown-toggle log-select" id="log-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button"><FontAwesomeIcon icon={faUser} /> Đăng nhập </span>
 									<div className="dropdown-menu dropdown-menu-right" aria-labelledby="language-dropdown">
-										<Link to="/login" className="dropdown-item">Login</Link>
-										<Link to="/register" className="dropdown-item">Register</Link>
+										<Link to="/login" className="dropdown-item">Đăng nhập</Link>
 									</div>
 								</li>
 							) : 
@@ -176,7 +164,7 @@ class Header extends React.Component {
 													</div>
 													<div className="user-text">
 														<h6>Darren Elder</h6>
-														<p className="text-muted mb-0">Stylist</p>
+														<p className="text-muted mb-0">Nhà tạo mẫu</p>
 													</div>
 												</div>
 											</Dropdown.Item>
@@ -184,10 +172,10 @@ class Header extends React.Component {
 												Dashboard
 											</Dropdown.Item>
 											<Dropdown.Item href="/stylist-profile-settings">
-												Profile Settings
+												Cài đặt cấu hình
 											</Dropdown.Item>
 											<Dropdown.Item href="/">
-												Logout
+												Đăng xuất
 											</Dropdown.Item>
 										</Dropdown.Menu>
 									</Dropdown>
@@ -208,9 +196,6 @@ class Header extends React.Component {
 									<Dropdown.Item href="">Russian</Dropdown.Item>
 								</Dropdown.Menu>
 							</Dropdown>
-						</li>
-						<li>
-							<Link to="/checkout" className="add-cart"><FontAwesomeIcon icon={faShoppingCart} /></Link>
 						</li>
 					</ul>
 				</nav>

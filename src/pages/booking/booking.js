@@ -19,11 +19,11 @@ class Booking extends React.Component {
                             <div className="col-md-12 col-12">
                                 <nav aria-label="breadcrumb" className="page-breadcrumb">
                                     <ol className="breadcrumb">
-                                        <li className="breadcrumb-item"><Link to="/">Home</Link></li>
-                                        <li className="breadcrumb-item active" aria-current="page">Booking</li>
+                                        <li className="breadcrumb-item"><Link to="/">Trang chủ</Link></li>
+                                        <li className="breadcrumb-item active" aria-current="page">Đặt lịch</li>
                                     </ol>
                                 </nav>
-                                <h2 className="breadcrumb-title">Booking</h2>
+                                <h2 className="breadcrumb-title">Đặt lịch</h2>
                             </div>
                         </div>
                     </div>
@@ -51,7 +51,7 @@ class Booking extends React.Component {
                                                     <FontAwesomeIcon icon={faStar} />
                                                     <span className="d-inline-block average-rating">35</span>
                                                 </div>
-                                                <p className="text-muted mb-0"><FontAwesomeIcon icon={faMapMarkerAlt} /> Newyork, USA</p>
+                                                <p className="text-muted mb-0">Nail Art</p>
                                             </div>
                                         </div>
                                     </div>
@@ -62,7 +62,7 @@ class Booking extends React.Component {
                         <div className="row">
                             <div className="col-12 col-sm-4 col-md-6">
                                 <h4 className="mb-1">11 November 2020</h4>
-                                <p className="text-muted">Monday</p>
+                                <p className="text-muted">Thứ 2</p>
                             </div>
                             <div className="col-12 col-sm-8 col-md-6 text-sm-right">
                                 <div className="bookingrange btn btn-white btn-sm mb-3">
@@ -128,31 +128,31 @@ class Booking extends React.Component {
                                                     </Link>
                                                 </li>
                                                 <li>
-                                                    <span>Mon</span>
+                                                    <span>Thứ 2</span>
                                                     <span className="slot-date">11 Nov <small className="slot-year">2020</small></span>
                                                 </li>
                                                 <li>
-                                                    <span>Tue</span>
+                                                    <span>Thứ 3</span>
                                                     <span className="slot-date">12 Nov <small className="slot-year">2020</small></span>
                                                 </li>
                                                 <li>
-                                                    <span>Wed</span>
+                                                    <span>Thứ 4</span>
                                                     <span className="slot-date">13 Nov <small className="slot-year">2020</small></span>
                                                 </li>
                                                 <li>
-                                                    <span>Thu</span>
+                                                    <span>Thứ 5</span>
                                                     <span className="slot-date">14 Nov <small className="slot-year">2020</small></span>
                                                 </li>
                                                 <li>
-                                                    <span>Fri</span>
+                                                    <span>Thứ 6</span>
                                                     <span className="slot-date">15 Nov <small className="slot-year">2020</small></span>
                                                 </li>
                                                 <li>
-                                                    <span>Sat</span>
+                                                    <span>Thứ 7</span>
                                                     <span className="slot-date">16 Nov <small className="slot-year">2020</small></span>
                                                 </li>
                                                 <li>
-                                                    <span>Sun</span>
+                                                    <span>Chủ nhật</span>
                                                     <span className="slot-date">17 Nov <small className="slot-year">2020</small></span>
                                                 </li>
                                                 <li className="right-arrow">
@@ -268,7 +268,7 @@ class Booking extends React.Component {
                         
                         {/* Submit Section */}
                         <div className="submit-section proceed-btn text-right">
-                            <Link to="/checkout" className="btn btn-primary submit-btn">Proceed to Pay</Link>
+                            <Link to="/checkout" className="btn btn-primary submit-btn">Đặt lịch</Link>
                         </div>
                         {/* Submit Section */}
                     </div>

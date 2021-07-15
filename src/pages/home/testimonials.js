@@ -17,7 +17,7 @@ class Testimonials extends React.Component {
                         <div className="row justify-content-center">	
                             <div className="section-header text-center">						
                                 <h2>Đánh giá từ khách hàng</h2>
-                                <p className="sub-title">Khách hàng của chúng tối nói gì về dịch vụ của Nàng Beauty</p>
+                                <p className="sub-title">Khách hàng của Nàng Beauty nói gì về dịch vụ của chúng tôi</p>
                             </div>
                         </div>
                         <div className="row mt-4">

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from '@fortawesome/fontawesome-free-solid';
 
-class BookingSuccess extends React.Component {
+class CancelBooking extends React.Component {
     render() {
         return(
             <div>
@@ -17,10 +17,10 @@ class BookingSuccess extends React.Component {
                                 <nav aria-label="breadcrumb" className="page-breadcrumb">
                                     <ol className="breadcrumb">
                                         <li className="breadcrumb-item"><Link to="/">Trang chủ</Link></li>
-                                        <li className="breadcrumb-item active" aria-current="page">Đặt lịch</li>
+                                        <li className="breadcrumb-item active" aria-current="page">Hủy đặt lịch</li>
                                     </ol>
                                 </nav>
-                                <h2 className="breadcrumb-title">Đặt lịch</h2>
+                                <h2 className="breadcrumb-title">Hủy đặt lịch</h2>
                             </div>
                         </div>
                     </div>
@@ -39,9 +39,8 @@ class BookingSuccess extends React.Component {
                                     <div className="card-body">
                                         <div className="success-cont">
                                             <FontAwesomeIcon icon={faCheck} />
-                                            <h3>Đặt lịch hẹn thành công!</h3>
-                                            <p>Đặt lịch hẹn với <strong>Urban Mauldin</strong><br /> vào khoảng thời gian <strong>12 Nov 2020 5:00PM to 6:00PM</strong></p>
-                                            <Link to="/invoice-view" className="btn btn-primary view-inv-btn">Xem hóa đơn</Link>
+                                            <h3>Hủy đặt lịch hẹn thành công!</h3>
+                                            <Link to="/booking" className="btn btn-primary view-inv-btn">Đặt lịch khác</Link>
                                         </div>
                                     </div>
                                 </div>
@@ -49,7 +48,6 @@ class BookingSuccess extends React.Component {
                                 
                             </div>
                         </div>
-                        
                     </div>
                 </div>
                 {/* Page Content */}
@@ -57,4 +55,4 @@ class BookingSuccess extends React.Component {
         )
     }
 }
-export { BookingSuccess };
+export { CancelBooking };

@@ -3860,8 +3860,8 @@ html.menu-opened body {
 }
 .booking-doc-info .booking-doc-img img {
     border-radius: 4px;
-    height: 80px;
-    width: 80px;
+    height: 60px;
+    width: 60px;
     object-fit: cover;
 }
 .bookingrange {
@@ -5705,9 +5705,9 @@ html.menu-opened body {
 }
 .appointment-list .profile-info-widget .booking-doc-img img {
     border-radius: 4px;
-    height: 120px;
+    height: 100px;
     object-fit: cover;
-    width: 120px;
+    width: 100px;
 }
 .appointments .appointment-list {
 	background-color: #fff;

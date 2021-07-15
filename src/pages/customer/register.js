@@ -29,7 +29,7 @@ class Register extends React.Component {
 											</div>
 											<div className="col-md-12 col-lg-6 login-right">
 												<div className="login-header">
-													<h3>Khách Hàng Đăng Ký <Link to="/register">Bạn có phải nhà tạo mẫu?</Link></h3>
+													<h3>Khách Hàng Đăng Ký <Link to="/stylist-register">Là nhà tạo mẫu?</Link></h3>
 												</div>
 												
 												{/* Register Form */}

@@ -32,22 +32,21 @@ class Search extends React.Component {
 							<div className="col-md-8 col-12">
 								<nav aria-label="breadcrumb" className="page-breadcrumb">
 									<ol className="breadcrumb">
-										<li className="breadcrumb-item"><Link to="/">Home</Link></li>
-										<li className="breadcrumb-item active" aria-current="page">Search</li>
+										<li className="breadcrumb-item"><Link to="/">Trang chủ</Link></li>
+										<li className="breadcrumb-item active" aria-current="page">Tìm kiếm nhà tạo mẫu</li>
 									</ol>
 								</nav>
-								<h2 className="breadcrumb-title">2245 matches found for : Nail Artist In US</h2>
 							</div>
 							<div className="col-md-4 col-12 d-md-block d-none">
 								<div className="sort-by">
-									<span className="sort-title">Sort by</span>
+									<span className="sort-title">Sắp xếp theo</span>
 									<span className="sortby-fliter">
 										<select className="select">
-											<option>Select</option>
-											<option className="sorting">Rating</option>
-											<option className="sorting">Popular</option>
-											<option className="sorting">Latest</option>
-											<option className="sorting">Free</option>
+											<option>Chọn</option>
+											<option className="sorting">Đánh giá</option>
+											<option className="sorting">Phổ biến</option>
+											<option className="sorting">Tên</option>
+											<option className="sorting">Miền phí</option>
 										</select>
 									</span>
 								</div>
@@ -66,29 +65,29 @@ class Search extends React.Component {
 								{/* Search Filter */}
 								<div className="card search-filter">
 									<div className="card-header">
-										<h4 className="card-title mb-0">Search Filter</h4>
+										<h4 className="card-title mb-0">Bộ lọc</h4>
 									</div>
 									<div className="card-body">
 										<div className="filter-widget">
 											<input type="date" className="form-control datetimepicker" placeholder="Select Date" />		
 										</div>
 										<div className="filter-widget">
-											<h4>Gender</h4>
+											<h4>Giới tính</h4>
 											<div>
 												<label className="custom_check">
 													<input type="checkbox" name="gender_type" defaultChecked />
-													<span className="checkmark"></span> Male stylist
+													<span className="checkmark"></span> Nam
 												</label>
 											</div>
 											<div>
 												<label className="custom_check">
 													<input type="checkbox" name="gender_type" />
-													<span className="checkmark"></span> Female stylist
+													<span className="checkmark"></span> Nữ
 												</label>
 											</div>
 										</div>
 										<div className="filter-widget">
-											<h4>Select Departments</h4>
+											<h4>Chọn dịch vụ</h4>
 											<div>
 												<label className="custom_check">
 													<input type="checkbox" name="select_specialist" defaultChecked />
@@ -110,24 +109,12 @@ class Search extends React.Component {
 											<div>
 												<label className="custom_check">
 													<input type="checkbox" name="select_specialist" />
-													<span className="checkmark"></span> Nail Filling
-												</label>
-											</div>
-											<div>
-												<label className="custom_check">
-													<input type="checkbox" name="select_specialist" />
-													<span className="checkmark"></span> Drying Polish
-												</label>
-											</div>
-											<div>
-												<label className="custom_check">
-													<input type="checkbox" name="select_specialist" />
-													<span className="checkmark"></span> Foot Care
+													<span className="checkmark"></span> Tất cả dịch vụ
 												</label>
 											</div>
 										</div>
 										<div className="btn-search">
-											<button type="button" className="btn btn-block">Search</button>
+											<button type="button" className="btn btn-block">Tìm kiếm</button>
 										</div>	
 									</div>
 								</div>
@@ -200,8 +187,8 @@ class Search extends React.Component {
 													</ul>
 												</div>
 												<div className="clinic-booking">
-													<Link to="/stylist-profile" className="view-pro-btn">View Profile</Link>
-													<Link to="/booking" className="apt-btn">Book Appointment</Link>
+													<Link to="/stylist-profile" className="view-pro-btn">Xem hồ sơ</Link>
+													<Link to="/booking" className="apt-btn">Đặt lịch hẹn</Link>
 												</div>
 											</div>
 										</div>
@@ -272,8 +259,8 @@ class Search extends React.Component {
 													</ul>
 												</div>
 												<div className="clinic-booking">
-													<Link to="/stylist-profile" className="view-pro-btn">View Profile</Link>
-													<Link to="/booking" className="apt-btn">Book Appointment</Link>
+													<Link to="/stylist-profile" className="view-pro-btn">Xem hồ sơ</Link>
+													<Link to="/booking" className="apt-btn">Đặt lịch hẹn</Link>
 												</div>
 											</div>
 										</div>
@@ -344,8 +331,8 @@ class Search extends React.Component {
 													</ul>
 												</div>
 												<div className="clinic-booking">
-													<Link to="/stylist-profile" className="view-pro-btn">View Profile</Link>
-													<Link to="/booking" className="apt-btn">Book Appointment</Link>
+													<Link to="/stylist-profile" className="view-pro-btn">Xem hồ sơ</Link>
+													<Link to="/booking" className="apt-btn">Đặt lịch hẹn</Link>
 												</div>
 											</div>
 										</div>
@@ -416,8 +403,8 @@ class Search extends React.Component {
 													</ul>
 												</div>
 												<div className="clinic-booking">
-													<Link to="/stylist-profile" className="view-pro-btn">View Profile</Link>
-													<Link to="/booking" className="apt-btn">Book Appointment</Link>
+													<Link to="/stylist-profile" className="view-pro-btn">Xem hồ sơ</Link>
+													<Link to="/booking" className="apt-btn">Đặt lịch hẹn</Link>
 												</div>
 											</div>
 										</div>
@@ -488,8 +475,8 @@ class Search extends React.Component {
 													</ul>
 												</div>
 												<div className="clinic-booking">
-													<Link to="/stylist-profile" className="view-pro-btn">View Profile</Link>
-													<Link href="/booking" className="apt-btn">Book Appointment</Link>
+													<Link to="/stylist-profile" className="view-pro-btn">Xem hồ sơ</Link>
+													<Link href="/booking" className="apt-btn">Đặt lịch hẹn</Link>
 												</div>
 											</div>
 										</div>
@@ -498,7 +485,7 @@ class Search extends React.Component {
 								{/* Professor Widget */}
 
 								<div className="load-more text-center">
-									<Link to="" className="btn btn-primary btn-sm">Load More</Link>	
+									<Link to="" className="btn btn-primary btn-sm">Tải thêm</Link>	
 								</div>
 							</div>
 						</div>

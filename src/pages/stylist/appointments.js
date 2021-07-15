@@ -67,7 +67,6 @@ class Appointments extends React.Component {
 												<h3><Link to="/customer-profile">Gordan Whelan</Link></h3>
 												<div className="customer-details">
 													<h5><FontAwesomeIcon icon={faClock} /> 14 Nov 2020, 10.00 AM</h5>
-													<h5><FontAwesomeIcon icon={faMapMarkerAlt} /> Newyork, United States</h5>
 													<h5><FontAwesomeIcon icon={faEnvelope} /> gordan@example.com</h5>
 													<h5 className="mb-0"><FontAwesomeIcon icon={faPhone} /> +1 923 782 4575</h5>
 												</div>
@@ -97,7 +96,6 @@ class Appointments extends React.Component {
 												<h3><Link to="/customer-profile">Gordan Whelan</Link></h3>
 												<div className="customer-details">
 													<h5><FontAwesomeIcon icon={faClock} /> 14 Nov 2020, 10.00 AM</h5>
-													<h5><FontAwesomeIcon icon={faMapMarkerAlt} /> Newyork, United States</h5>
 													<h5><FontAwesomeIcon icon={faEnvelope} /> gordan@example.com</h5>
 													<h5 className="mb-0"><FontAwesomeIcon icon={faPhone} /> +1 923 782 4575</h5>
 												</div>
@@ -124,7 +122,6 @@ class Appointments extends React.Component {
 												<h3><Link to="/customer-profile">Gordan Whelan</Link></h3>
 												<div className="customer-details">
 													<h5><FontAwesomeIcon icon={faClock} /> 14 Nov 2020, 10.00 AM</h5>
-													<h5><FontAwesomeIcon icon={faMapMarkerAlt} /> Newyork, United States</h5>
 													<h5><FontAwesomeIcon icon={faEnvelope} /> gordan@example.com</h5>
 													<h5 className="mb-0"><FontAwesomeIcon icon={faPhone} /> +1 923 782 4575</h5>
 												</div>
@@ -151,169 +148,6 @@ class Appointments extends React.Component {
 												<h3><Link to="/customer-profile">Gordan Whelan</Link></h3>
 												<div className="customer-details">
 													<h5><FontAwesomeIcon icon={faClock} /> 14 Nov 2020, 10.00 AM</h5>
-													<h5><FontAwesomeIcon icon={faMapMarkerAlt} /> Newyork, United States</h5>
-													<h5><FontAwesomeIcon icon={faEnvelope} /> gordan@example.com</h5>
-													<h5 className="mb-0"><FontAwesomeIcon icon={faPhone} /> +1 923 782 4575</h5>
-												</div>
-											</div>
-										</div>
-										<div className="appointment-action">
-											<Link to="#" className="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
-												<FontAwesomeIcon icon={faEye} /> Xem
-											</Link>
-											<Link to="#" className="btn btn-sm bg-success-light">
-												<FontAwesomeIcon icon={faCheck} /> Chấp nhận
-											</Link>
-											<Link to="#" className="btn btn-sm bg-danger-light">
-												<FontAwesomeIcon icon={faTimes} /> Hủy
-											</Link>
-										</div>
-									</div>
-									<div className="appointment-list">
-										<div className="profile-info-widget">
-											<Link to="/customer-profile" className="booking-doc-img">
-												<img src={CustomerImg} alt="User Image" />
-											</Link>
-											<div className="profile-det-info">
-												<h3><Link to="/customer-profile">Gordan Whelan</Link></h3>
-												<div className="customer-details">
-													<h5><FontAwesomeIcon icon={faClock} /> 14 Nov 2020, 10.00 AM</h5>
-													<h5><FontAwesomeIcon icon={faMapMarkerAlt} /> Newyork, United States</h5>
-													<h5><FontAwesomeIcon icon={faEnvelope} /> gordan@example.com</h5>
-													<h5 className="mb-0"><FontAwesomeIcon icon={faPhone} /> +1 923 782 4575</h5>
-												</div>
-											</div>
-										</div>
-										<div className="appointment-action">
-											<Link to="#" className="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
-												<FontAwesomeIcon icon={faEye} /> Xem
-											</Link>
-											<Link to="#" className="btn btn-sm bg-success-light">
-												<FontAwesomeIcon icon={faCheck} /> Chấp nhận
-											</Link>
-											<Link to="#" className="btn btn-sm bg-danger-light">
-												<FontAwesomeIcon icon={faTimes} /> Hủy
-											</Link>
-										</div>
-									</div>
-									<div className="appointment-list">
-										<div className="profile-info-widget">
-											<Link to="/customer-profile" className="booking-doc-img">
-												<img src={CustomerImg} alt="User Image" />
-											</Link>
-											<div className="profile-det-info">
-												<h3><Link to="/customer-profile">Gordan Whelan</Link></h3>
-												<div className="customer-details">
-													<h5><FontAwesomeIcon icon={faClock} /> 14 Nov 2020, 10.00 AM</h5>
-													<h5><FontAwesomeIcon icon={faMapMarkerAlt} /> Newyork, United States</h5>
-													<h5><FontAwesomeIcon icon={faEnvelope} /> gordan@example.com</h5>
-													<h5 className="mb-0"><FontAwesomeIcon icon={faPhone} /> +1 923 782 4575</h5>
-												</div>
-											</div>
-										</div>
-										<div className="appointment-action">
-											<Link to="#" className="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
-												<FontAwesomeIcon icon={faEye} /> Xem
-											</Link>
-											<Link to="#" className="btn btn-sm bg-success-light">
-												<FontAwesomeIcon icon={faCheck} /> Chấp nhận
-											</Link>
-											<Link to="#" className="btn btn-sm bg-danger-light">
-												<FontAwesomeIcon icon={faTimes} /> Hủy
-											</Link>
-										</div>
-									</div>
-									<div className="appointment-list">
-										<div className="profile-info-widget">
-											<Link to="/customer-profile" className="booking-doc-img">
-												<img src={CustomerImg} alt="User Image" />
-											</Link>
-											<div className="profile-det-info">
-												<h3><Link to="/customer-profile">Gordan Whelan</Link></h3>
-												<div className="customer-details">
-													<h5><FontAwesomeIcon icon={faClock} /> 14 Nov 2020, 10.00 AM</h5>
-													<h5><FontAwesomeIcon icon={faMapMarkerAlt} /> Newyork, United States</h5>
-													<h5><FontAwesomeIcon icon={faEnvelope} /> gordan@example.com</h5>
-													<h5 className="mb-0"><FontAwesomeIcon icon={faPhone} /> +1 923 782 4575</h5>
-												</div>
-											</div>
-										</div>
-										<div className="appointment-action">
-											<Link to="#" className="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
-												<FontAwesomeIcon icon={faEye} /> Xem
-											</Link>
-											<Link to="#" className="btn btn-sm bg-success-light">
-												<FontAwesomeIcon icon={faCheck} /> Chấp nhận
-											</Link>
-											<Link to="#" className="btn btn-sm bg-danger-light">
-												<FontAwesomeIcon icon={faTimes} /> Hủy
-											</Link>
-										</div>
-									</div>
-									<div className="appointment-list">
-										<div className="profile-info-widget">
-											<Link to="/customer-profile" className="booking-doc-img">
-												<img src={CustomerImg} alt="User Image" />
-											</Link>
-											<div className="profile-det-info">
-												<h3><Link to="/customer-profile">Gordan Whelan</Link></h3>
-												<div className="customer-details">
-													<h5><FontAwesomeIcon icon={faClock} /> 14 Nov 2020, 10.00 AM</h5>
-													<h5><FontAwesomeIcon icon={faMapMarkerAlt} /> Newyork, United States</h5>
-													<h5><FontAwesomeIcon icon={faEnvelope} /> gordan@example.com</h5>
-													<h5 className="mb-0"><FontAwesomeIcon icon={faPhone} /> +1 923 782 4575</h5>
-												</div>
-											</div>
-										</div>
-										<div className="appointment-action">
-											<Link to="#" className="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
-												<FontAwesomeIcon icon={faEye} /> Xem
-											</Link>
-											<Link to="#" className="btn btn-sm bg-success-light">
-												<FontAwesomeIcon icon={faCheck} /> Chấp nhận
-											</Link>
-											<Link to="#" className="btn btn-sm bg-danger-light">
-												<FontAwesomeIcon icon={faTimes} /> Hủy
-											</Link>
-										</div>
-									</div>
-									<div className="appointment-list">
-										<div className="profile-info-widget">
-											<Link to="/customer-profile" className="booking-doc-img">
-												<img src={CustomerImg} alt="User Image" />
-											</Link>
-											<div className="profile-det-info">
-												<h3><Link to="/customer-profile">Gordan Whelan</Link></h3>
-												<div className="customer-details">
-													<h5><FontAwesomeIcon icon={faClock} /> 14 Nov 2020, 10.00 AM</h5>
-													<h5><FontAwesomeIcon icon={faMapMarkerAlt} /> Newyork, United States</h5>
-													<h5><FontAwesomeIcon icon={faEnvelope} /> gordan@example.com</h5>
-													<h5 className="mb-0"><FontAwesomeIcon icon={faPhone} /> +1 923 782 4575</h5>
-												</div>
-											</div>
-										</div>
-										<div className="appointment-action">
-											<Link to="#" className="btn btn-sm bg-info-light" data-toggle="modal" data-target="#appt_details">
-												<FontAwesomeIcon icon={faEye} /> Xem
-											</Link>
-											<Link to="#" className="btn btn-sm bg-success-light">
-												<FontAwesomeIcon icon={faCheck} /> Chấp nhận
-											</Link>
-											<Link to="#" className="btn btn-sm bg-danger-light">
-												<FontAwesomeIcon icon={faTimes} /> Hủy
-											</Link>
-										</div>
-									</div>
-									<div className="appointment-list">
-										<div className="profile-info-widget">
-											<Link to="/customer-profile" className="booking-doc-img">
-												<img src={CustomerImg} alt="User Image" />
-											</Link>
-											<div className="profile-det-info">
-												<h3><Link to="/customer-profile">Gordan Whelan</Link></h3>
-												<div className="customer-details">
-													<h5><FontAwesomeIcon icon={faClock} /> 14 Nov 2020, 10.00 AM</h5>
-													<h5><FontAwesomeIcon icon={faMapMarkerAlt} /> Newyork, United States</h5>
 													<h5><FontAwesomeIcon icon={faEnvelope} /> gordan@example.com</h5>
 													<h5 className="mb-0"><FontAwesomeIcon icon={faPhone} /> +1 923 782 4575</h5>
 												</div>

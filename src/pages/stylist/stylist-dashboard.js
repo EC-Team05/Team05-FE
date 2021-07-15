@@ -120,7 +120,6 @@ class StylistDashboard extends React.Component {
 																			<th>Tên khách hàng</th>
 																			<th>Ngày hẹn</th>
 																			<th>Mục đích</th>
-																			<th>Loại</th>
 																			<th className="text-center">Số tiền thanh toán</th>
 																			<th></th>
 																		</tr>
@@ -135,7 +134,31 @@ class StylistDashboard extends React.Component {
 																			</td>
 																			<td>11 Nov 2019 <span className="d-block text-info">10.00 AM</span></td>
 																			<td>Nail Art</td>
-																			<td>New Student</td>
+																			<td className="text-center">$150</td>
+																			<td className="text-right">
+																				<div className="table-action">
+																					<Link to="/view-" className="btn btn-sm bg-info-light mr-1">
+																						<FontAwesomeIcon icon={faEye} /> Xem
+																					</Link>
+																					
+																					<Link to="#" className="btn btn-sm bg-success-light mr-1">
+																						<FontAwesomeIcon icon={faCheck} /> Chấp nhận
+																					</Link>
+																					<Link to="#" className="btn btn-sm bg-danger-light">
+																						<FontAwesomeIcon icon={faTimes} /> Hủy
+																					</Link>
+																				</div>
+																			</td>
+																		</tr>
+																		<tr>
+																			<td>
+																				<h2 className="table-avatar">
+																					<Link to="/customer-profile" className="avatar avatar-sm mr-2"><img className="avatar-img rounded-circle" src={UserAvatar} alt="User Image" /></Link>
+																					<Link to="/customer-profile">Gordan Whelan <span>#PT0016</span></Link>
+																				</h2>
+																			</td>
+																			<td>11 Nov 2019 <span className="d-block text-info">10.00 AM</span></td>
+																			<td>Nail Art</td>
 																			<td className="text-center">$150</td>
 																			<td className="text-right">
 																				<div className="table-action">
@@ -161,7 +184,6 @@ class StylistDashboard extends React.Component {
 																			</td>
 																			<td>11 Nov 2019 <span className="d-block text-info">10.00 AM</span></td>
 																			<td>Nail Art</td>
-																			<td>New Student</td>
 																			<td className="text-center">$150</td>
 																			<td className="text-right">
 																				<div className="table-action">
@@ -187,7 +209,6 @@ class StylistDashboard extends React.Component {
 																			</td>
 																			<td>11 Nov 2019 <span className="d-block text-info">10.00 AM</span></td>
 																			<td>Nail Art</td>
-																			<td>New Student</td>
 																			<td className="text-center">$150</td>
 																			<td className="text-right">
 																				<div className="table-action">
@@ -213,7 +234,6 @@ class StylistDashboard extends React.Component {
 																			</td>
 																			<td>11 Nov 2019 <span className="d-block text-info">10.00 AM</span></td>
 																			<td>Nail Art</td>
-																			<td>New Student</td>
 																			<td className="text-center">$150</td>
 																			<td className="text-right">
 																				<div className="table-action">
@@ -239,33 +259,6 @@ class StylistDashboard extends React.Component {
 																			</td>
 																			<td>11 Nov 2019 <span className="d-block text-info">10.00 AM</span></td>
 																			<td>Nail Art</td>
-																			<td>New Student</td>
-																			<td className="text-center">$150</td>
-																			<td className="text-right">
-																				<div className="table-action">
-																					<Link to="#" className="btn btn-sm bg-info-light mr-1">
-																						<FontAwesomeIcon icon={faEye} /> Xem
-																					</Link>
-																					
-																					<Link to="#" className="btn btn-sm bg-success-light mr-1">
-																						<FontAwesomeIcon icon={faCheck} /> Chấp nhận
-																					</Link>
-																					<Link to="#" className="btn btn-sm bg-danger-light">
-																						<FontAwesomeIcon icon={faTimes} /> Hủy
-																					</Link>
-																				</div>
-																			</td>
-																		</tr>
-																		<tr>
-																			<td>
-																				<h2 className="table-avatar">
-																					<Link to="/customer-profile" className="avatar avatar-sm mr-2"><img className="avatar-img rounded-circle" src={UserAvatar} alt="User Image" /></Link>
-																					<Link to="/customer-profile">Gordan Whelan <span>#PT0016</span></Link>
-																				</h2>
-																			</td>
-																			<td>11 Nov 2019 <span className="d-block text-info">10.00 AM</span></td>
-																			<td>Nail Art</td>
-																			<td>New Student</td>
 																			<td className="text-center">$150</td>
 																			<td className="text-right">
 																				<div className="table-action">
@@ -313,7 +306,6 @@ class StylistDashboard extends React.Component {
 																			</td>
 																			<td>11 Nov 2019 <span className="d-block text-info">10.00 AM</span></td>
 																			<td>Nail Art</td>
-																			<td>New Student</td>
 																			<td className="text-center">$150</td>
 																			<td className="text-right">
 																				<div className="table-action">
@@ -339,7 +331,6 @@ class StylistDashboard extends React.Component {
 																			</td>
 																			<td>11 Nov 2019 <span className="d-block text-info">10.00 AM</span></td>
 																			<td>Nail Art</td>
-																			<td>New Student</td>
 																			<td className="text-center">$150</td>
 																			<td className="text-right">
 																				<div className="table-action">
@@ -365,7 +356,6 @@ class StylistDashboard extends React.Component {
 																			</td>
 																			<td>11 Nov 2019 <span className="d-block text-info">10.00 AM</span></td>
 																			<td>Nail Art</td>
-																			<td>New Student</td>
 																			<td className="text-center">$150</td>
 																			<td className="text-right">
 																				<div className="table-action">
@@ -391,7 +381,6 @@ class StylistDashboard extends React.Component {
 																			</td>
 																			<td>11 Nov 2019 <span className="d-block text-info">10.00 AM</span></td>
 																			<td>Nail Art</td>
-																			<td>New Student</td>
 																			<td className="text-center">$150</td>
 																			<td className="text-right">
 																				<div className="table-action">
@@ -417,7 +406,6 @@ class StylistDashboard extends React.Component {
 																			</td>
 																			<td>11 Nov 2019 <span className="d-block text-info">10.00 AM</span></td>
 																			<td>Nail Art</td>
-																			<td>New Student</td>
 																			<td className="text-center">$150</td>
 																			<td className="text-right">
 																				<div className="table-action">
@@ -443,7 +431,6 @@ class StylistDashboard extends React.Component {
 																			</td>
 																			<td>11 Nov 2019 <span className="d-block text-info">10.00 AM</span></td>
 																			<td>Nail Art</td>
-																			<td>New Student</td>
 																			<td className="text-center">$150</td>
 																			<td className="text-right">
 																				<div className="table-action">

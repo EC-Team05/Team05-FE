@@ -14,11 +14,11 @@ class ChangePassword extends React.Component {
                             <div className="col-md-12 col-12">
                                 <nav aria-label="breadcrumb" className="page-breadcrumb">
                                     <ol className="breadcrumb">
-                                        <li className="breadcrumb-item"><Link to="/">Home</Link></li>
-                                        <li className="breadcrumb-item active" aria-current="page">Change Password</li>
+                                        <li className="breadcrumb-item"><Link to="/">Trang chủ</Link></li>
+                                        <li className="breadcrumb-item active" aria-current="page">Thay đổi mật khẩu</li>
                                     </ol>
                                 </nav>
-                                <h2 className="breadcrumb-title">Change Password</h2>
+                                <h2 className="breadcrumb-title">Thay đổi mật khẩu</h2>
                             </div>
                         </div>
                     </div>
@@ -42,20 +42,23 @@ class ChangePassword extends React.Component {
                                                 {/* Change Password Form */}
                                                 <form>
                                                     <div className="form-group">
-                                                        <label>Old Password</label>
+                                                        <label>Mật khẩu cũ</label>
                                                         <input type="password" className="form-control" />
                                                     </div>
                                                     <div className="form-group">
-                                                        <label>New Password</label>
+                                                        <label>Mật khẩu mới</label>
                                                         <input type="password" className="form-control" />
                                                     </div>
                                                     <div className="form-group">
-                                                        <label>Confirm Password</label>
+                                                        <label>Xác nhận mật khẩu mới</label>
                                                         <input type="password" className="form-control" />
                                                     </div>
+                                                    {/* Submit Section */}
                                                     <div className="submit-section">
-                                                        <button type="submit" className="btn btn-primary submit-btn">Save Changes</button>
+                                                        <Link to="/change-password-success" className="btn btn-primary submit-btn">Lưu thay đổi</Link>
                                                     </div>
+                                                    {/* Submit Section */}
+
                                                 </form>
                                                 {/* Change Password Form */}
                                                 

@@ -9,3 +9,6 @@ export * from './search';
 export * from './service-details';
 export * from './stylist-grid';
 export * from './stylist-list';
+export * from './invoice-view';
+export * from './register';
+export * from './cancel-booking';

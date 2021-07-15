@@ -26,7 +26,7 @@ class StylistRegister extends React.Component {
 											</div>
 											<div className="col-md-12 col-lg-6 login-right">
 												<div className="login-header">
-													<h3>Đăng ký nhà tạo mẫu <Link to="/register">Là nhà tạo mẫu?</Link></h3>
+													<h3>Đăng ký nhà tạo mẫu <Link to="/register">Là khách hàng?</Link></h3>
 												</div>
 												{/* Register Form */}
 												<form action="/stylist-dashboard">

@@ -20,8 +20,8 @@ class NewsandEvents extends React.Component {
                     
                         {/* Section Header */}
                         <div className="section-header text-center">
-                            <h2>Tin tức & Sự kiện</h2>
-                            <p className="text-center">Xem những Tin tức và Sự kiện mới nhất</p>
+                            <h2>Blog</h2>
+                            <p className="text-center">Xem những bài blog mới nhất</p>
                         </div>
                         {/* Section Header */}
                         

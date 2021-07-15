@@ -22,7 +22,7 @@ class BlogSidebar extends React.Component {
                     <div className="card-body">
                         <form className="search-form">
                             <div className="input-group">
-                                <input type="text" placeholder="Search..." className="form-control" />
+                                <input type="text" placeholder="Tìm kiếm..." className="form-control" />
                                 <div className="input-group-append">
                                     <button type="submit" className="btn btn-primary"><FontAwesomeIcon icon={faSearch} /></button>
                                 </div>
@@ -35,7 +35,7 @@ class BlogSidebar extends React.Component {
                 {/* Latest Posts */}
                 <div className="card post-widget">
                     <div className="card-header">
-                        <h4 className="card-title">Latest Posts</h4>
+                        <h4 className="card-title">Bài viết mới nhất</h4>
                     </div>
                     <div className="card-body">
                         <ul className="latest-posts">
@@ -112,52 +112,18 @@ class BlogSidebar extends React.Component {
                 {/* Categories */}
                 <div className="card category-widget">
                     <div className="card-header">
-                        <h4 className="card-title">Blog Categories</h4>
+                        <h4 className="card-title">Danh mục blog</h4>
                     </div>
                     <div className="card-body">
                         <ul className="categories">
-                            <li><Link to="#">Nail Art <span>(62)</span></Link></li>
-                            <li><Link to="#">Foot Care <span>(27)</span></Link></li>
-                            <li><Link to="#">Waxing <span>(41)</span></Link></li>
-                            <li><Link to="#">Nail Polish Tips <span>(16)</span></Link></li>
-                            <li><Link to="#">Polish Stylistsying <span>(55)</span></Link></li>
-                            <li><Link to="#">Nail Filling <span>(07)</span></Link></li>
+                            <li><Link to="#">Tips <span>(62)</span></Link></li>
+                            <li><Link to="#">Sản phẩm, dụng cụ <span>(27)</span></Link></li>
+                            <li><Link to="#">Nghệ thuật nail <span>(41)</span></Link></li>
                         </ul>
                     </div>
                 </div>
                 {/* Categories */}
 
-                {/* Tags */}
-                <div className="card tags-widget">
-                    <div className="card-header">
-                        <h4 className="card-title">Tags</h4>
-                    </div>
-                    <div className="card-body">
-                        <ul className="tags">
-                            <li><Link to="#" className="tag">Nail</Link></li>
-                            <li><Link to="#" className="tag">Art</Link></li>
-                            <li><Link to="#" className="tag">Appointment</Link></li>
-                            <li><Link to="#" className="tag">Booking</Link></li>
-                            <li><Link to="#" className="tag">story Books</Link></li>
-                            <li><Link to="#" className="tag">Polish</Link></li>
-                            <li><Link to="#" className="tag">Nail Filling</Link></li>
-                            <li><Link to="#" className="tag">Tips</Link></li>
-                            <li><Link to="#" className="tag">Shedule</Link></li>
-                            <li><Link to="#" className="tag">manicure</Link></li>
-                            <li><Link to="#" className="tag">Stylists</Link></li>
-                            <li><Link to="#" className="tag">Parlour</Link></li>
-                            <li><Link to="#" className="tag">Online</Link></li>
-                            <li><Link to="#" className="tag">Foot Care</Link></li>
-                            <li><Link to="#" className="tag">Consulting</Link></li>
-                            <li><Link to="#" className="tag">Pedicure</Link></li>
-                            <li><Link to="#" className="tag">Paraffin Hands</Link></li>
-                            <li><Link to="#" className="tag">Glitter</Link></li>
-                            <li><Link to="#" className="tag">Specialist</Link></li>
-                            <li><Link to="#" className="tag">D'Nails</Link></li>
-                        </ul>
-                    </div>
-                </div>
-                {/* Tags */}
             </div>
         )
     }

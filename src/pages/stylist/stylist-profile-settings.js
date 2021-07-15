@@ -261,14 +261,14 @@ class StylistProfileSettings extends React.Component {
 											</div>
 											<div className="col-md-6">
 												<div className="form-group">
-													<label>Tên đăng nhập <span className="text-danger">*</span></label>
-													<input type="text" className="form-control" readOnly />
+													<label>Email <span className="text-danger">*</span></label>
+													<input type="email" className="form-control" readOnly />
 												</div>
 											</div>
 											<div className="col-md-6">
 												<div className="form-group">
-													<label>Email <span className="text-danger">*</span></label>
-													<input type="email" className="form-control" readOnly />
+													<label>Số điện thoại <span className="text-danger">*</span></label>
+													<input type="text" className="form-control" />
 												</div>
 											</div>
 											<div className="col-md-6">
@@ -284,8 +284,8 @@ class StylistProfileSettings extends React.Component {
 												</div>
 											</div>
 											<div className="col-md-6">
-												<div className="form-group">
-													<label>Số điện thoại</label>
+												<div className="form-group mb-0">
+													<label>Ngày sinh</label>
 													<input type="text" className="form-control" />
 												</div>
 											</div>
@@ -300,12 +300,6 @@ class StylistProfileSettings extends React.Component {
 													</select>
 												</div>
 											</div>
-											<div className="col-md-6">
-												<div className="form-group mb-0">
-													<label>Ngày sinh</label>
-													<input type="text" className="form-control" />
-												</div>
-											</div>
 										</div>
 									</div>
 								</div>
@@ -316,7 +310,7 @@ class StylistProfileSettings extends React.Component {
 									<div className="card-body">
 										<h4 className="card-title">Về tôi</h4>
 										<div className="form-group mb-0">
-											<label>Tiểu sử</label>
+											<label>Tiểu sử <span className="text-danger">*</span></label>
 											<textarea className="form-control" rows="5"></textarea>
 										</div>
 									</div>
@@ -330,38 +324,31 @@ class StylistProfileSettings extends React.Component {
 										<div className="row form-row">
 											<div className="col-md-6">
 												<div className="form-group">
-													<label>Số nhà và tên đường</label>
+													<label>Số nhà và tên đường <span className="text-danger">*</span></label>
 													<input type="text" className="form-control" />
 												</div>
 											</div>
 											<div className="col-md-6">
 												<div className="form-group">
-													<label className="control-label">Tên phường</label>
+													<label>Tên phường <span className="text-danger">*</span></label>
 													<input type="text" className="form-control" />
 												</div>
 											</div>
 											<div className="col-md-6">
 												<div className="form-group">
-													<label className="control-label">Tên quận</label>
-													<input type="text" className="form-control" />
-												</div>
-											</div>
-
-											<div className="col-md-6">
-												<div className="form-group">
-													<label className="control-label">Thành phố</label>
+													<label>Tên quận <span className="text-danger">*</span></label>
 													<input type="text" className="form-control" />
 												</div>
 											</div>
 											<div className="col-md-6">
 												<div className="form-group">
-													<label className="control-label">Quốc gia</label>
+													<label>Thành phố <span className="text-danger">*</span></label>
 													<input type="text" className="form-control" />
 												</div>
 											</div>
 											<div className="col-md-6">
 												<div className="form-group">
-													<label className="control-label">Mã bưu điện</label>
+													<label>Quốc gia <span className="text-danger">*</span></label>
 													<input type="text" className="form-control" />
 												</div>
 											</div>
@@ -400,128 +387,11 @@ class StylistProfileSettings extends React.Component {
 													<input type="text" className="form-control" />
 												</div>
 											</div>
-											<div className="col-md-6">
-												<div className="form-group">
-													<label className="control-label">Linkedin URL</label>
-													<input type="text" className="form-control" />
-												</div>
-											</div>
-											<div className="col-md-6">
-												<div className="form-group">
-													<label className="control-label">Youtube URL</label>
-													<input type="text" className="form-control" />
-												</div>
-											</div>
 										</div>
 									</div>
 								</div>
 								{/* Mạng xã hội */}
 
-								{/* Pricing */}
-								<div className="card">
-									<div className="card-body">
-										<h4 className="card-title">Định giá</h4>
-										
-										<div className="form-group mb-0">
-											<div id="pricing_select">
-												<div className="custom-control custom-radio custom-control-inline">
-													<input type="radio" id="price_free" name="rating_option" className="custom-control-input" defaultValue="price_free" defaultChecked />
-													<label className="custom-control-label">Miễn phí</label>
-												</div>
-												<div className="custom-control custom-radio custom-control-inline">
-													<input type="radio" id="price_custom" name="rating_option" value="custom_price" className="custom-control-input" />
-													<label className="custom-control-label">Giá tùy chỉnh (mỗi giờ)</label>
-												</div>
-											</div>
-
-										</div>
-										
-										<div className="row custom_price_cont" id="custom_price_cont" style={{display: 'none'}}>
-											<div className="col-md-4">
-												<input type="text" className="form-control" id="custom_rating_input" name="custom_rating_count" value="" placeholder="20" readOnly />
-												<small className="form-text text-muted">Bạn có thể thêm giá tùy chỉnh</small>
-											</div>
-										</div>
-										
-									</div>
-								</div>
-								{/* Pricing */}
-
-								{/* Awards */}
-								<div className="card">
-									<div className="card-body">
-										<h4 className="card-title">Giải thưởng</h4>
-										<div className="awards-info">
-											<div className="row form-row awards-cont">
-												<div className="col-12 col-md-5">
-													<div className="form-group">
-														<label>Giải thưởng</label>
-														<input type="text" className="form-control" />
-													</div> 
-												</div>
-												<div className="col-12 col-md-5">
-													<div className="form-group">
-														<label>Năm</label>
-														<input type="text" className="form-control" />
-													</div> 
-												</div>
-											</div>
-										</div>
-										<div className="add-more">
-											<Link to="#" className="add-award"><FontAwesomeIcon icon={faPlusCircle} /> Thêm</Link>
-										</div>
-									</div>
-								</div>
-								{/* Awards */}
-								
-								{/* Memberships */}
-								<div className="card">
-									<div className="card-body">
-										<h4 className="card-title">Thành viên</h4>
-										<div className="membership-info">
-											<div className="row form-row membership-cont">
-												<div className="col-12 col-md-10 col-lg-5">
-													<div className="form-group">
-														<label>Thành viên</label>
-														<input type="text" className="form-control" />
-													</div> 
-												</div>
-											</div>
-										</div>
-										<div className="add-more">
-											<Link to="#" className="add-membership"><FontAwesomeIcon icon={faPlusCircle} /> Thêm</Link>
-										</div>
-									</div>
-								</div>
-								{/* Memberships */}
-								
-								{/* Registrations */}
-								<div className="card">
-									<div className="card-body">
-										<h4 className="card-title">Đăng ký</h4>
-										<div className="registrations-info">
-											<div className="row form-row reg-cont">
-												<div className="col-12 col-md-5">
-													<div className="form-group">
-														<label>Đăng ký</label>
-														<input type="text" className="form-control" />
-													</div> 
-												</div>
-												<div className="col-12 col-md-5">
-													<div className="form-group">
-														<label>Năm</label>
-														<input type="text" className="form-control" />
-													</div> 
-												</div>
-											</div>
-										</div>
-										<div className="add-more">
-											<Link to="#" className="add-reg"><FontAwesomeIcon icon={faPlusCircle} /> Thêm</Link>
-										</div>
-									</div>
-								</div>
-								{/* Registrations */}
-								
 								<div className="submit-section submit-btn-bottom">
 									<button type="submit" className="btn btn-primary submit-btn">Lưu thay đổi</button>
 								</div>

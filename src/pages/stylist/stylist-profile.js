@@ -48,11 +48,11 @@ class StylistProfile extends React.Component {
 							<div className="col-md-12 col-12">
 								<nav aria-label="breadcrumb" className="page-breadcrumb">
 									<ol className="breadcrumb">
-										<li className="breadcrumb-item"><Link to="/">Home</Link></li>
-										<li className="breadcrumb-item active" aria-current="page">stylist Profile</li>
+										<li className="breadcrumb-item"><Link to="/">Trang chủ</Link></li>
+										<li className="breadcrumb-item active" aria-current="page">Hồ sơ nhà tạo mẫu</li>
 									</ol>
 								</nav>
-								<h2 className="breadcrumb-title">Stylist Profile</h2>
+								<h2 className="breadcrumb-title">Hồ sơ nhà tạo mẫu</h2>
 							</div>
 						</div>
 					</div>
@@ -73,7 +73,6 @@ class StylistProfile extends React.Component {
 										<div className="doc-info-cont">
 											<h4 className="doc-name">Urban Mauldin</h4>
 											<p className="doc-speciality">Glitter Nail Art</p>
-											<p className="doc-department"><img src={SplImg} className="img-fluid" alt="Speciality" />Nail Art</p>
 											<div className="rating">
 												<FontAwesomeIcon icon={faStar} className="filled" />
 												<FontAwesomeIcon icon={faStar} className="filled" />
@@ -83,7 +82,6 @@ class StylistProfile extends React.Component {
 												<span className="d-inline-block average-rating">(35)</span>
 											</div>
 											<div className="clinic-details">
-												<p className="doc-location"><FontAwesomeIcon icon={faMapMarkerAlt} /> Newyork, USA - <Link to="#">Get Directions</Link></p>
 												<ul className="clinic-gallery">
 													<li>
 														<a href={GalleryImg1} data-fancybox="gallery">
@@ -107,10 +105,6 @@ class StylistProfile extends React.Component {
 													</li>
 												</ul>
 											</div>
-											<div className="clinic-services">
-												<span>Nail Fillings</span>
-												<span> Waxing</span>
-											</div>
 										</div>
 									</div>
 									<div className="doc-info-right">
@@ -118,8 +112,6 @@ class StylistProfile extends React.Component {
 											<ul>
 												<li><FontAwesomeIcon icon={faThumbsUp} /> 99%</li>
 												<li><FontAwesomeIcon icon={faComment} /> 35 Feedback</li>
-												<li><FontAwesomeIcon icon={faMapMarkerAlt} /> Newyork, USA</li>
-												<li><FontAwesomeIcon icon={faMoneyBillAlt} /> $100 per hour </li>
 											</ul>
 										</div>
 										<div className="stylist-action">
@@ -195,7 +187,7 @@ class StylistProfile extends React.Component {
 											{/* Video Call Modal */}
 										</div>
 										<div className="clinic-booking">
-											<Link to="/booking" className="apt-btn">Book Appointment</Link>
+											<Link to="/booking" className="apt-btn">Đặt lịch hẹn</Link>
 										</div>
 									</div>
 								</div>
@@ -207,54 +199,20 @@ class StylistProfile extends React.Component {
 						<div className="card">
 							<div className="card-body pt-0">
 								<Tabs defaultActiveKey="overview" id="uncontrolled-tab-example">
-									<Tab eventKey="overview" title="Overview">
+									<Tab eventKey="overview" title="Tổng quan">
 										<div className="row">
 											<div className="col-md-12 col-lg-9">
 											
 												{/* About Details */}
 												<div className="widget about-widget">
-													<h4 className="widget-title">About Me</h4>
+													<h4 className="widget-title">Về tôi</h4>
 													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 												</div>
 												{/* About Details */}
-											
-												{/* Education Details */}
-												<div className="widget education-widget">
-													<h4 className="widget-title">Education</h4>
-													<div className="experience-box">
-														<ul className="experience-list">
-															<li>
-																<div className="experience-user">
-																	<div className="before-circle"></div>
-																</div>
-																<div className="experience-content">
-																	<div className="timeline-content">
-																		<Link to="#/" className="name">International College Of Cosmetology</Link>
-																		<div>Cosmetology</div>
-																		<span className="time">1998 - 2003</span>
-																	</div>
-																</div>
-															</li>
-															<li>
-																<div className="experience-user">
-																	<div className="before-circle"></div>
-																</div>
-																<div className="experience-content">
-																	<div className="timeline-content">
-																		<Link to="#/" className="name">Inspire London College</Link>
-																		<div>Beauty Therapy & Saloon Management</div>
-																		<span className="time">2003 - 2005</span>
-																	</div>
-																</div>
-															</li>
-														</ul>
-													</div>
-												</div>
-												{/* Education Details */}
-										
+												
 												{/* Experience Details */}
 												<div className="widget experience-widget">
-													<h4 className="widget-title">Work & Experience</h4>
+													<h4 className="widget-title">Kinh nghiệm làm việc</h4>
 													<div className="experience-box">
 														<ul className="experience-list">
 															<li>
@@ -297,7 +255,7 @@ class StylistProfile extends React.Component {
 									
 												{/* Awards Details */}
 												<div className="widget awards-widget">
-													<h4 className="widget-title">Awards</h4>
+													<h4 className="widget-title">Giải thưởng</h4>
 													<div className="experience-box">
 														<ul className="experience-list">
 															<li>
@@ -340,202 +298,11 @@ class StylistProfile extends React.Component {
 													</div>
 												</div>
 												{/* Awards Details */}
-												
-												
-												{/* Services List */}
-												<div className="service-list">
-													<h4>Services</h4>
-													<ul className="clearfix">
-														<li>Nail Art </li>
-														<li>Nail Filling</li>
-														<li>Manicure</li>
-														<li>Gel Nail Art</li>
-														<li>Food Care</li>
-														<li>Pedicure</li>
-													</ul>
-												</div>
-												{/* Services List */}
-
-												{/* Specializations List */}
-												<div className="service-list">
-													<h4>Specializations</h4>
-													<ul className="clearfix">
-														<li>Manicure</li>
-														<li>Nail Art</li>	
-														<li>Pedicure </li>	
-														<li>Dry Polishing</li>	
-														<li>Waxing</li>	
-														<li>Food Care</li>	
-													</ul>
-												</div>
-												{/* Specializations List */}
-
 											</div>
 										</div>
 									</Tab>
-									<Tab eventKey="locations" title="Locations">
-
-										{/* Location List */}
-										<div className="location-list">
-											<div className="row">
-											
-												{/* Clinic Content */}
-												<div className="col-md-6">
-													<div className="clinic-content">
-														<h4 className="clinic-name"><Link to="#">Purple Beauty Center</Link></h4>
-														<p className="doc-speciality">Nail Art</p>
-														<div className="rating">
-															<FontAwesomeIcon icon={faStar} className="filled" />
-															<FontAwesomeIcon icon={faStar} className="filled" />
-															<FontAwesomeIcon icon={faStar} className="filled" />
-															<FontAwesomeIcon icon={faStar} className="filled" />
-															<FontAwesomeIcon icon={faStar} />
-															<span className="d-inline-block average-rating">(4)</span>
-														</div>
-														<div className="clinic-details mb-0">
-															<h5 className="clinic-direction"> <FontAwesomeIcon icon={faMapMarkerAlt}  /> 2286  Sundown Lane, Austin, Texas 78749, USA <br /><Link to="#">Get Directions</Link></h5>
-															<ul>
-																<li>
-																	<a href={GalleryImg1} data-fancybox="gallery2">
-																		<img src={GalleryImg1} alt="Feature Image" />
-																	</a>
-																</li>
-																<li>
-																	<a href={GalleryImg2}data-fancybox="gallery2">
-																		<img src={GalleryImg2} alt="Feature Image" />
-																	</a>
-																</li>
-																<li>
-																	<a href={GalleryImg3} data-fancybox="gallery2">
-																		<img src={GalleryImg3} alt="Feature Image" />
-																	</a>
-																</li>
-																<li>
-																	<a href={GalleryImg4} data-fancybox="gallery2">
-																		<img src={GalleryImg4} alt="Feature Image" />
-																	</a>
-																</li>
-															</ul>
-														</div>
-													</div>
-												</div>
-												{/* Clinic Content */}
-												
-												{/* Clinic Timing */}
-												<div className="col-md-4">
-													<div className="clinic-timing">
-														<div>
-															<p className="timings-days">
-																<span> Mon - Sat </span>
-															</p>
-															<p className="timings-times">
-																<span>10:00 AM - 2:00 PM</span>
-																<span>4:00 PM - 9:00 PM</span>
-															</p>
-														</div>
-														<div>
-														<p className="timings-days">
-															<span>Sun</span>
-														</p>
-														<p className="timings-times">
-															<span>10:00 AM - 2:00 PM</span>
-														</p>
-														</div>
-													</div>
-												</div>
-												{/* Clinic Timing */}
-												
-												<div className="col-md-2">
-													<div className="consult-price">
-														$250
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* Location List */}
-
-										{/* Location List */}
-										<div className="location-list">
-											<div className="row">
-											
-												{/* Clinic Content */}
-												<div className="col-md-6">
-													<div className="clinic-content">
-														<h4 className="clinic-name"><Link to="#">Colors Beauty Clinic</Link></h4>
-														<p className="doc-speciality">Praraffin Wax</p>
-														<div className="rating">
-															<FontAwesomeIcon icon={faStar} className="filled" />
-															<FontAwesomeIcon icon={faStar} className="filled" />
-															<FontAwesomeIcon icon={faStar} className="filled" />
-															<FontAwesomeIcon icon={faStar} className="filled" />
-															<FontAwesomeIcon icon={faStar} />
-															<span className="d-inline-block average-rating">(4)</span>
-														</div>
-														<div className="clinic-details mb-0">
-															<h5 className="clinic-direction"> <FontAwesomeIcon icon={faMapMarkerAlt}  /> 2883 University Street, Seattle, Texas Washington, 98155 <br /><Link to="#">Get Directions</Link></h5>
-															<ul>
-																<li>
-																	<a href={GalleryImg1} data-fancybox="gallery2">
-																		<img src={GalleryImg1} alt="Feature Image" />
-																	</a>
-																</li>
-																<li>
-																	<a href={GalleryImg2}data-fancybox="gallery2">
-																		<img src={GalleryImg2} alt="Feature Image" />
-																	</a>
-																</li>
-																<li>
-																	<a href={GalleryImg3} data-fancybox="gallery2">
-																		<img src={GalleryImg3} alt="Feature Image" />
-																	</a>
-																</li>
-																<li>
-																	<a href={GalleryImg4} data-fancybox="gallery2">
-																		<img src={GalleryImg4} alt="Feature Image" />
-																	</a>
-																</li>
-															</ul>
-														</div>
-													</div>
-												</div>
-												{/* Clinic Content */}
-												
-												{/* Clinic Timing */}
-												<div className="col-md-4">
-													<div className="clinic-timing">
-														<div>
-															<p className="timings-days">
-																<span> Tue - Fri </span>
-															</p>
-															<p className="timings-times">
-																<span>11:00 AM - 1:00 PM</span>
-																<span>6:00 PM - 11:00 PM</span>
-															</p>
-														</div>
-														<div>
-														<p className="timings-days">
-															<span>Sat - Sun</span>
-														</p>
-														<p className="timings-times">
-															<span>8:00 AM - 10:00 AM</span>
-															<span>3:00 PM - 7:00 PM</span>
-														</p>
-														</div>
-													</div>
-												</div>
-												{/* Clinic Timing */}
-												
-												<div className="col-md-2">
-													<div className="consult-price">
-														$350
-													</div>
-												</div>
-											</div>
-										</div>
-										{/* Location List */}
-
-									</Tab>
-									<Tab eventKey="reviews" title="Reviews">
+									
+									<Tab eventKey="reviews" title="Đánh giá">
 										{/* Review Listing */}
 										<div className="widget review-listing">
 											<ul className="comments-list">
@@ -547,7 +314,7 @@ class StylistProfile extends React.Component {
 														<div className="comment-body">
 															<div className="meta-data">
 																<span className="comment-author">Gordan Whelan</span>
-																<span className="comment-date">Reviewed 2 Days ago</span>
+																<span className="comment-date">Đánh giá 2 ngày trước</span>
 																<div className="review-count rating">
 																	<FontAwesomeIcon icon={faStar} className="filled" />
 																	<FontAwesomeIcon icon={faStar} className="filled" />
@@ -556,7 +323,7 @@ class StylistProfile extends React.Component {
 																	<FontAwesomeIcon icon={faStar} />
 																</div>
 															</div>
-															<p className="recommended"><FontAwesomeIcon icon={faThumbsUp} /> I recommend the stylist</p>
+															<p className="recommended"><FontAwesomeIcon icon={faThumbsUp} /> Tôi đã giới thiệu nhà tạo mẫu này.</p>
 															<p className="comment-content">
 																Lorem ipsum dolor sit amet, consectetur adipisicing elit,
 																sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -565,10 +332,10 @@ class StylistProfile extends React.Component {
 															</p>
 															<div className="comment-reply">
 																<Link to="#" className="comment-btn">
-																	<FontAwesomeIcon icon={faReply} /> Reply
+																	<FontAwesomeIcon icon={faReply} /> Trả lời
 																</Link>
 															<p className="recommend-btn">
-																<span>Recommend?</span>
+																<span>Giới thiệu?</span>
 																<Link to="#" className="like-btn">
 																	<FontAwesomeIcon icon={faThumbsUp} /> Yes
 																</Link>
@@ -588,7 +355,7 @@ class StylistProfile extends React.Component {
 																<div className="comment-body">
 																	<div className="meta-data">
 																		<span className="comment-author">Terilynn Toler</span>
-																		<span className="comment-date">Reviewed 3 Days ago</span>
+																		<span className="comment-date">Đánh giá 3 ngày trước</span>
 																		<div className="review-count rating">
 																			<FontAwesomeIcon icon={faStar} className="filled" />
 																			<FontAwesomeIcon icon={faStar} className="filled" />
@@ -605,10 +372,10 @@ class StylistProfile extends React.Component {
 																	</p>
 																	<div className="comment-reply">
 																		<Link to="#" className="comment-btn">
-																			<FontAwesomeIcon icon={faReply} /> Reply
+																			<FontAwesomeIcon icon={faReply} /> Trả lời
 																		</Link>
 																		<p className="recommend-btn">
-																			<span>Recommend?</span>
+																			<span>Giới thiệu?</span>
 																			<Link to="#" className="like-btn">
 																				<FontAwesomeIcon icon={faThumbsUp} /> Yes
 																			</Link>
@@ -633,7 +400,7 @@ class StylistProfile extends React.Component {
 														<div className="comment-body">
 															<div className="meta-data">
 																<span className="comment-author">Achav Ryder</span>
-																<span className="comment-date">Reviewed 4 Days ago</span>
+																<span className="comment-date">Đánh giá 4 ngày trước</span>
 																<div className="review-count rating">
 																	<FontAwesomeIcon icon={faStar} className="filled" />
 																	<FontAwesomeIcon icon={faStar} className="filled" />
@@ -650,10 +417,10 @@ class StylistProfile extends React.Component {
 															</p>
 															<div className="comment-reply">
 																<Link to="#" className="comment-btn">
-																	<FontAwesomeIcon icon={faReply} /> Reply
+																	<FontAwesomeIcon icon={faReply} /> Trả lời
 																</Link>
 																<p className="recommend-btn">
-																	<span>Recommend?</span>
+																	<span>Giới thiệu?</span>
 																	<Link to="#" className="like-btn">
 																	<FontAwesomeIcon icon={faThumbsUp} /> Yes
 																	</Link>
@@ -672,7 +439,7 @@ class StylistProfile extends React.Component {
 											{/* Show All */}
 											<div className="all-feedback text-center">
 												<Link to="#" className="btn btn-primary btn-sm">
-													Show all feedback <strong>(167)</strong>
+													Xem tất cả phản hồi <strong>(167)</strong>
 												</Link>
 											</div>
 											{/* Show All */}
@@ -682,12 +449,12 @@ class StylistProfile extends React.Component {
 
 										{/* Write Review */}
 										<div className="write-review">
-											<h4>Write a review for <strong>Urban Mauldin</strong></h4>
+											<h4>Viết đánh giá về <strong>Urban Mauldin</strong></h4>
 											
 											{/* Write Review Form */}
 											<form>
 												<div className="form-group">
-													<label>Review</label>
+													<label>Đánh giá</label>
 													<div className="star-rating">
 														<input id="star-5" type="radio" name="rating" value="star-5" />
 														<label>
@@ -712,26 +479,15 @@ class StylistProfile extends React.Component {
 													</div>
 												</div>
 												<div className="form-group">
-													<label>Title of your review</label>
-													<input className="form-control" type="text" placeholder="If you could say it in one sentence, what would you say?" />
-												</div>
-												<div className="form-group">
-													<label>Your review</label>
-													<textarea id="review_desc" maxLength="100" className="form-control"></textarea>
-												
-												<div className="d-flex justify-content-between mt-3"><small className="text-muted"><span id="chars">100</span> characters remaining</small></div>
-												</div>
-												<hr />
-												<div className="form-group">
 													<div className="terms-accept">
 														<div className="custom-checkbox">
 														<input type="checkbox" id="terms_accept" />
-														<label>I have read and accept <Link to="#">Terms &amp; Conditions</Link></label>
+														<label>Tôi đã đọc và chấp nhận <Link to="#">Điều khoản &amp; Điều kiện</Link></label>
 														</div>
 													</div>
 												</div>
 												<div className="submit-section">
-													<button type="submit" className="btn btn-primary submit-btn">Add Review</button>
+													<button type="submit" className="btn btn-primary submit-btn">Đánh giá</button>
 												</div>
 											</form>
 											{/* Write Review Form */}
@@ -740,7 +496,7 @@ class StylistProfile extends React.Component {
 										{/* Write Review */}
 									
 									</Tab>
-									<Tab eventKey="business-hours" title="Business Hours">
+									<Tab eventKey="business-hours" title="Giờ làm việc">
 										<div className="row">
 											<div className="col-md-6 offset-md-3">
 											
@@ -749,52 +505,52 @@ class StylistProfile extends React.Component {
 													<div className="widget-content">
 														<div className="listing-hours">
 															<div className="listing-day current">
-																<div className="day">Today <span>5 Nov 2019</span></div>
+																<div className="day">Hôm nay <span>5 / 10 / 2019</span></div>
 																<div className="time-items">
 																	<span className="open-status"><span className="badge bg-success-light">Open Now</span></span>
 																	<span className="time">07:00 AM - 09:00 PM</span>
 																</div>
 															</div>
 															<div className="listing-day">
-																<div className="day">Monday</div>
+																<div className="day">Thứ 2</div>
 																<div className="time-items">
 																	<span className="time">07:00 AM - 09:00 PM</span>
 																</div>
 															</div>
 															<div className="listing-day">
-																<div className="day">Tuesday</div>
+																<div className="day">Thứ 3</div>
 																<div className="time-items">
 																	<span className="time">07:00 AM - 09:00 PM</span>
 																</div>
 															</div>
 															<div className="listing-day">
-																<div className="day">Wednesday</div>
+																<div className="day">Thứ 4</div>
 																<div className="time-items">
 																	<span className="time">07:00 AM - 09:00 PM</span>
 																</div>
 															</div>
 															<div className="listing-day">
-																<div className="day">Thursday</div>
+																<div className="day">Thứ 5</div>
 																<div className="time-items">
 																	<span className="time">07:00 AM - 09:00 PM</span>
 																</div>
 															</div>
 															<div className="listing-day">
-																<div className="day">Friday</div>
+																<div className="day">Thứ 6</div>
 																<div className="time-items">
 																	<span className="time">07:00 AM - 09:00 PM</span>
 																</div>
 															</div>
 															<div className="listing-day">
-																<div className="day">Saturday</div>
+																<div className="day">Thứ 7</div>
 																<div className="time-items">
 																	<span className="time">07:00 AM - 09:00 PM</span>
 																</div>
 															</div>
 															<div className="listing-day closed">
-																<div className="day">Sunday</div>
+																<div className="day">Chủ nhật</div>
 																<div className="time-items">
-																	<span className="time"><span className="badge bg-danger-light">Closed</span></span>
+																	<span className="time"><span className="badge bg-danger-light">Off</span></span>
 																</div>
 															</div>
 														</div>

@@ -29,11 +29,11 @@ class BlogDetails extends React.Component {
                             <div className="col-md-12 col-12">
                                 <nav aria-label="breadcrumb" className="page-breadcrumb">
                                     <ol className="breadcrumb">
-                                        <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+                                        <li className="breadcrumb-item"><Link to="/">Trang chủ</Link></li>
                                         <li className="breadcrumb-item active" aria-current="page">Blog</li>
                                     </ol>
                                 </nav>
-                                <h2 className="breadcrumb-title">Blog Details</h2>
+                                <h2 className="breadcrumb-title">Chi tiết blog</h2>
                             </div>
                         </div>
                     </div>
@@ -54,13 +54,7 @@ class BlogDetails extends React.Component {
                                         <div className="blog-info clearfix">
                                             <div className="post-left">
                                                 <ul>
-                                                    <li>
-                                                        <div className="post-author">
-                                                            <Link to="/stylist-profile"><img src={StylistThumb} alt="Post Author" /> <span>Urban Mauldin</span></Link>
-                                                        </div>
-                                                    </li>
                                                     <li><FontAwesomeIcon icon={faCalendarCheck} />4 Dec 2020</li>
-                                                    <li><FontAwesomeIcon icon={faComments} />12 Comments</li>
                                                     <li><FontAwesomeIcon icon={faTags} />Nail Polish Tips</li>
                                                 </ul>
                                             </div>
@@ -74,7 +68,7 @@ class BlogDetails extends React.Component {
                                     
                                     <div className="card blog-share clearfix">
                                         <div className="card-header">
-                                            <h4 className="card-title">Share the post</h4>
+                                            <h4 className="card-title">Chia sẽ bài đăng</h4>
                                         </div>
                                         <div className="card-body">
                                             <ul className="social-share">
@@ -86,143 +80,6 @@ class BlogDetails extends React.Component {
                                             </ul>
                                         </div>
                                     </div>
-                                    <div className="card author-widget clearfix">
-                                        <div className="card-header">
-                                            <h4 className="card-title">About Author</h4>
-                                        </div>
-                                        <div className="card-body">
-                                            <div className="about-author">
-                                                <div className="about-author-img">
-                                                    <div className="author-img-wrap">
-                                                        <Link to="/stylist-profile"><img className="img-fluid rounded-circle" alt="" src={StylistThumb} /></Link>
-                                                    </div>
-                                                </div>
-                                                <div className="author-details">
-                                                    <Link to="/stylist-profile" className="blog-author-name">Urban Mauldin</Link>
-                                                    <p className="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="card blog-comments clearfix">
-                                        <div className="card-header">
-                                            <h4 className="card-title">Comments (12)</h4>
-                                        </div>
-                                        <div className="card-body pb-0">
-                                            <ul className="comments-list">
-                                                <li>
-                                                    <div className="comment">
-                                                        <div className="comment-author">
-                                                            <img className="avatar" alt="" src={CustomerImg1} />
-                                                        </div>
-                                                        <div className="comment-block">
-                                                            <span className="comment-by">
-                                                                <span className="blog-author-name">Jinnie Escamilla</span>
-                                                            </span>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae, gravida pellentesque urna varius vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                                            <p className="blog-date">Dec 6, 2017</p>
-                                                            <Link to="#" className="comment-btn">
-                                                                <FontAwesomeIcon icon={faReply} /> Reply
-                                                            </Link>
-                                                        </div>
-                                                    </div>
-                                                    <ul className="comments-list reply">
-                                                        <li>
-                                                            <div className="comment">
-                                                                <div className="comment-author">
-                                                                    <img className="avatar" alt="" src={CustomerImg2} />
-                                                                </div>
-                                                                <div className="comment-block">
-                                                                    <span className="comment-by">
-                                                                        <span className="blog-author-name">Ozie Mcgraw</span>
-                                                                    </span>
-                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae, gravida pellentesque urna varius vitae.</p>
-                                                                    <p className="blog-date">Dec 6, 2017</p>
-                                                            <Link to="#" className="comment-btn">
-                                                                <FontAwesomeIcon icon={faReply} /> Reply
-                                                            </Link>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div className="comment">
-                                                                <div className="comment-author">
-                                                                    <img className="avatar" alt="" src={CustomerImg3} />
-                                                                </div>
-                                                                <div className="comment-block">
-                                                                    <span className="comment-by">
-                                                                        <span className="blog-author-name">Corydon Brittain</span>
-                                                                    </span>
-                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae, gravida pellentesque urna varius vitae.</p>
-                                                                    <p className="blog-date">December 7, 2017</p>
-                                                            <Link to="#" className="comment-btn">
-                                                                <FontAwesomeIcon icon={faReply} /> Reply
-                                                            </Link>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <div className="comment">
-                                                        <div className="comment-author">
-                                                            <img className="avatar" alt="" src={CustomerImg4} />
-                                                        </div>
-                                                        <div className="comment-block">
-                                                            <span className="comment-by">
-                                                                <span className="blog-author-name">Doralia Vigil</span>
-                                                            </span>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                                            <p className="blog-date">December 11, 2017</p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div className="comment">
-                                                        <div className="comment-author">
-                                                            <img className="avatar" alt="" src={CustomerImg5} />
-                                                        </div>
-                                                        <div className="comment-block">
-                                                            <span className="comment-by">
-                                                                <span className="blog-author-name">Kaylia Elias</span>
-                                                            </span>
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                                            <p className="blog-date">December 13, 2017</p>
-                                                            <Link to="#" className="comment-btn">
-                                                                <FontAwesomeIcon icon={faReply} /> Reply
-                                                            </Link>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    
-                                    <div className="card new-comment clearfix">
-                                        <div className="card-header">
-                                            <h4 className="card-title">Leave Comment</h4>
-                                        </div>
-                                        <div className="card-body">
-                                            <form>
-                                                <div className="form-group">
-                                                    <label>Name <span className="text-danger">*</span></label>
-                                                    <input type="text" className="form-control" />
-                                                </div>
-                                                <div className="form-group">
-                                                    <label>Your Email AdStylistsess <span className="text-danger">*</span></label>
-                                                    <input type="email" className="form-control" />
-                                                </div>
-                                                <div className="form-group">
-                                                    <label>Comments</label>
-                                                    <textarea rows="4" className="form-control"></textarea>
-                                                </div>
-                                                <div className="submit-section">
-                                                    <button className="btn btn-primary submit-btn" type="submit">Submit</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    
                                 </div>
                             </div>
 

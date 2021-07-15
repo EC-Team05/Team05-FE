@@ -8,3 +8,4 @@ export * from './stylist-profile-settings';
 export * from './stylist-profile';
 export * from './stylist-register';
 export * from './appointments';
+export * from './invoices';

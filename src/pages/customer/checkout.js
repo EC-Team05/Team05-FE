@@ -20,7 +20,7 @@ class Checkout extends React.Component {
 							<div className="col-md-12 col-12">
 								<nav aria-label="breadcrumb" className="page-breadcrumb">
 									<ol className="breadcrumb">
-										<li className="breadcrumb-item"><Link to="/">Home</Link></li>
+										<li className="breadcrumb-item"><Link to="/">Trang chủ</Link></li>
 										<li className="breadcrumb-item active" aria-current="page">Checkout</li>
 									</ol>
 								</nav>
@@ -44,17 +44,17 @@ class Checkout extends React.Component {
 										
 											{/* Personal Information */}
 											<div className="info-widget">
-												<h4 className="card-title">Personal Information</h4>
+												<h4 className="card-title">Thông tin cá nhân</h4>
 												<div className="row">
 													<div className="col-md-6 col-sm-12">
 														<div className="form-group card-label">
-															<label>First Name</label>
+															<label>Họ và tên đệm</label>
 															<input className="form-control" type="text" />
 														</div>
 													</div>
 													<div className="col-md-6 col-sm-12">
 														<div className="form-group card-label">
-															<label>Last Name</label>
+															<label>Tên</label>
 															<input className="form-control" type="text" />
 														</div>
 													</div>
@@ -66,17 +66,23 @@ class Checkout extends React.Component {
 													</div>
 													<div className="col-md-6 col-sm-12">
 														<div className="form-group card-label">
-															<label>Phone</label>
+															<label>Số diện thoại</label>
+															<input className="form-control" type="text" />
+														</div>
+													</div>
+													<div className="col-md-12 col-sm-12">
+														<div className="form-group card-label">
+															<label>Thông tin khác</label>
 															<input className="form-control" type="text" />
 														</div>
 													</div>
 												</div>
-												<div className="exist-customer">Existing Customer? <Link to="#">Click here to login</Link></div>
+												<div className="exist-customer">Khách hàng hiện tại? <Link to="#">Click tại đây để đăng nhập</Link></div>
 											</div>
 											{/* Personal Information */}
 											
 											<div className="payment-widget">
-												<h4 className="card-title">Payment Method</h4>
+												<h4 className="card-title">Phương thức thanh toán</h4>
 												
 												{/* Credit Card Payment */}
 												<div className="payment-list">
@@ -88,63 +94,55 @@ class Checkout extends React.Component {
 													<div className="row">
 														<div className="col-md-6">
 															<div className="form-group card-label">
-																<label>Name on Card</label>
+																<label>Tên tài khoản</label>
 																<input className="form-control" id="card_name" type="text" />
 															</div>
 														</div>
 														<div className="col-md-6">
 															<div className="form-group card-label">
-																<label>Card Number</label>
+																<label>Số tài khoản</label>
 																<input className="form-control" id="card_number" placeholder="1234  5678  9876  5432" type="text" />
-															</div>
-														</div>
-														<div className="col-md-4">
-															<div className="form-group card-label">
-																<label>Expiry Month</label>
-																<input className="form-control" id="expiry_month" placeholder="MM" type="text" />
-															</div>
-														</div>
-														<div className="col-md-4">
-															<div className="form-group card-label">
-																<label>Expiry Year</label>
-																<input className="form-control" id="expiry_year" placeholder="YY" type="text" />
-															</div>
-														</div>
-														<div className="col-md-4">
-															<div className="form-group card-label">
-																<label>CVV</label>
-																<input className="form-control" id="cvv" type="text" />
 															</div>
 														</div>
 													</div>
 												</div>
 												{/* Credit Card Payment */}
 												
-												{/* Paypal Payment */}
+												{/* Momo Payment */}
 												<div className="payment-list">
 													<label className="payment-radio paypal-option">
 														<input type="radio" name="radio" />
 														<span className="checkmark"></span>
-														Paypal
+														Momo
 													</label>
 												</div>
-												{/* Paypal Payment */}
-												
+												{/* Momo Payment */}
+
+												{/* Momo Payment */}
+												<div className="payment-list">
+													<label className="payment-radio paypal-option">
+														<input type="radio" name="radio" />
+														<span className="checkmark"></span>
+														Thanh toán sau
+													</label>
+												</div>
+												{/* Momo Payment */}
+
 												{/* Terms Accept */}
 												<div className="terms-accept">
 													<div className="custom-checkbox">
 													<input type="checkbox" id="terms_accept" />
-													<label>I have read and accept <Link to="#">Terms &amp; Conditions</Link></label>
+													<label>Tôi đã đọc và chấp nhận <Link to="#">Điều khoản &amp; Điều kiện</Link></label>
 													</div>
 												</div>
 												{/* Terms Accept */}
 												
 												{/* Submit Section */}
 												<div className="submit-section mt-4">
-													<button type="submit" className="btn btn-primary submit-btn">Confirm and Pay</button>
-												</div>
-												{/* Submit Section */}
-												
+                            						<Link to="/booking-success" className="btn btn-primary submit-btn">Xác nhận</Link>
+                        						</div>
+                        						{/* Submit Section */}
+
 											</div>
 										</form>
 										{/* Checkout Form */}
@@ -159,7 +157,7 @@ class Checkout extends React.Component {
 								{/* Booking Summary */}
 								<div className="card booking-card">
 									<div className="card-header">
-										<h4 className="card-title">Booking Summary</h4>
+										<h4 className="card-title">Tổng</h4>
 									</div>
 									<div className="card-body">
 									
@@ -188,18 +186,17 @@ class Checkout extends React.Component {
 										<div className="booking-summary">
 											<div className="booking-item-wrap">
 												<ul className="booking-date">
-													<li>Date <span>16 Nov 2019</span></li>
-													<li>Time <span>10:00 AM</span></li>
+													<li>Ngày <span>16 Nov 2019</span></li>
+													<li>Giờ <span>10:00 AM</span></li>
 												</ul>
 												<ul className="booking-fee">
 													<li>Service Fee <span>$100</span></li>
 													<li>Booking Fee <span>$10</span></li>
-													<li>Video Call <span>$50</span></li>
 												</ul>
 												<div className="booking-total">
 													<ul className="booking-total-list">
 														<li>
-															<span>Total</span>
+															<span>Tổng</span>
 															<span className="total-cost">$160</span>
 														</li>
 													</ul>

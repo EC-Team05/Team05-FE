@@ -71,8 +71,8 @@ class BestService extends React.Component {
                     <div className="container">
 						<div className="row justify-content-center">	
 							<div className="section-header text-center">						
-								<h2>dịch vụ tốt nhất của chúng tôi</h2>
-								<p className="sub-title">Chúng tôi cung cấp các dịch vụ làm đẹp chuyên nghiệp với giá cả phải chăng. Trở nên xinh đẹp và tiết kiệm ngân sách của bạn với mức giá tuyệt vời của chúng tôi.</p>
+								<h2>Những dịch vụ tốt nhất của chúng tôi</h2>
+								<p className="sub-title">Nàng Beauty cung cấp các dịch vụ làm đẹp chuyên nghiệp với mức giá hợp lý. Bạn sẽ trở nên xinh đẹp và tiết kiệm túi tiền của bạn với mức giá tuyệt vời của chúng tôi.</p>
 							</div>
 						</div>
 
@@ -85,7 +85,6 @@ class BestService extends React.Component {
 										<div className="wrap-sec">
 											<div>
 												<h3>Sơn gel</h3>
-												<p>20 nhà tạo mẫu</p>
 											</div>
 										</div>
 									</Link>
@@ -101,7 +100,6 @@ class BestService extends React.Component {
 										<div className="wrap-sec">
 											<div>
 												<h3>Cắt da</h3>
-												<p>1140 nhà tạo mẫu</p>
 											</div>
 										</div>
 									</Link>
@@ -117,7 +115,6 @@ class BestService extends React.Component {
 										<div className="wrap-sec">
 											<div>
 												<h3>Massage</h3>
-												<p>420 nhà tạo mẫu</p>
 											</div>
 										</div>
 									</Link>
@@ -133,7 +130,6 @@ class BestService extends React.Component {
 										<div className="wrap-sec">
 											<div>
 												<h3>Ẩn xà cừ</h3>
-												<p>140 nhà tạo mẫu</p>
 											</div>
 										</div>
 									</Link>
@@ -149,7 +145,6 @@ class BestService extends React.Component {
 										<div className="wrap-sec">
 											<div>
 												<h3>Up móng giả</h3>
-												<p>180 nhà tạo mẫu</p>
 											</div>
 										</div>
 									</Link>
@@ -165,7 +160,6 @@ class BestService extends React.Component {
 										<div className="wrap-sec">
 											<div>
 												<h3>Phá gel</h3>
-												<p>120 nhà tạo mẫu</p>
 											</div>
 										</div>
 									</Link>
@@ -181,7 +175,6 @@ class BestService extends React.Component {
 										<div className="wrap-sec">
 											<div>
 												<h3>Vẽ mắt mèo</h3>
-												<p>20 nhà tạo mẫu</p>
 											</div>
 										</div>
 									</Link>
@@ -197,7 +190,6 @@ class BestService extends React.Component {
 										<div className="wrap-sec">
 											<div>
 												<h3>Phủ gel dày móng</h3>
-												<p>20 nhà tạo mẫu</p>
 											</div>
 										</div>
 									</Link>

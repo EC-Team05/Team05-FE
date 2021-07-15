@@ -77,7 +77,7 @@ class Chat extends React.Component {
 									{/* Chat Left */}
 									<div className="chat-cont-left">
 										<div className="chat-header">
-											<span>Chats</span>
+											<span>Trò chuyện</span>
 											<Link to="#" className="chat-compose">
 												<FontAwesomeIcon icon={faPlusCircle}/>
 											</Link>
@@ -87,7 +87,7 @@ class Chat extends React.Component {
 												<div className="input-group-prepend">
 													<FontAwesomeIcon icon={faSearch} />
 												</div>
-												<input type="text" className="form-control" placeholder="Search" />
+												<input type="text" className="form-control" placeholder="Tìm kiếm" />
 											</div>
 										</form>
 
@@ -106,7 +106,7 @@ class Chat extends React.Component {
 															<div className="user-last-chat">Hey, How are you?</div>
 														</div>
 														<div>
-															<div className="last-chat-time block">2 min</div>
+															<div className="last-chat-time block">2 phút</div>
 															<div className="badge badge-success badge-pill">15</div>
 														</div>
 													</div>
@@ -204,7 +204,7 @@ class Chat extends React.Component {
 															<div className="user-last-chat">This has allowed me to showcase not only my technical skills</div>
 														</div>
 														<div>
-															<div className="last-chat-time block">Yesterday</div>
+															<div className="last-chat-time block">Hôm qua</div>
 														</div>
 													</div>
 												</Link>
@@ -220,7 +220,7 @@ class Chat extends React.Component {
 															<div className="user-last-chat">Let's talk briefly in the evening. </div>
 														</div>
 														<div>
-															<div className="last-chat-time block">Sunday</div>
+															<div className="last-chat-time block">Chủ nhật</div>
 														</div>
 													</div>
 												</Link>
@@ -236,7 +236,7 @@ class Chat extends React.Component {
 															<div className="user-last-chat">Do you have any collections? If so, what of?</div>
 														</div>
 														<div>
-															<div className="last-chat-time block">Saturday</div>
+															<div className="last-chat-time block">Thứ 7</div>
 														</div>
 													</div>
 												</Link>
@@ -252,7 +252,7 @@ class Chat extends React.Component {
 															<div className="user-last-chat">Connect the two modules with in 1 day.</div>
 														</div>
 														<div>
-															<div className="last-chat-time block">Friday</div>
+															<div className="last-chat-time block">Thứ 6</div>
 														</div>
 													</div>
 												</Link>
@@ -275,7 +275,7 @@ class Chat extends React.Component {
 												</div>
 												<div className="media-body">
 													<div className="user-name">Urban Mauldin</div>
-													<div className="user-status">online</div>
+													<div className="user-status">Trực tuyến</div>
 												</div>
 											</div>
 											<div className="chat-options">
@@ -294,7 +294,7 @@ class Chat extends React.Component {
 																	<div className="call-user">
 																		<img alt="User Image" src={ChatRightImg} className="call-avatar" />
 																		<h4>Darren Elder</h4>
-																		<span>Connecting...</span>
+																		<span>Đang kết nối...</span>
 																	</div>							
 																	<div className="call-items">
 																		<a className="btn call-item call-end" onClick={()=>this.openModal()}>
@@ -569,7 +569,7 @@ class Chat extends React.Component {
 														<input type="file" />
 													</div>
 												</div>
-												<input type="text" className="input-msg-send form-control" placeholder="Type something" />
+												<input type="text" className="input-msg-send form-control" placeholder="Nhập tin nhắn" />
 												<div className="input-group-append">
 													<button type="button" className="btn msg-send-btn"><FontAwesomeIcon icon={faTelegramPlane} /></button>
 												</div>

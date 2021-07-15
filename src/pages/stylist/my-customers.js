@@ -70,7 +70,6 @@ class MyCustomers extends React.Component {
 															
 															<div className="customer-details">
 																<h5><b>ID khách hàng :</b> P0016</h5>
-																<h5 className="mb-0"><FontAwesomeIcon icon={faMapMarkerAlt} /> Alabama, USA</h5>
 															</div>
 														</div>
 													</div>
@@ -79,7 +78,6 @@ class MyCustomers extends React.Component {
 													<ul>
 														<li>SDT <span>+1 952 001 8563</span></li>
 														<li>Tuổi <span>38 Years, Male</span></li>
-														<li>Đặt <span>Nail Art</span></li>
 													</ul>
 												</div>
 											</div>
@@ -98,7 +96,6 @@ class MyCustomers extends React.Component {
 															
 															<div className="customer-details">
 																<h5><b>ID khách hàng :</b> P0016</h5>
-																<h5 className="mb-0"><FontAwesomeIcon icon={faMapMarkerAlt} /> Alabama, USA</h5>
 															</div>
 														</div>
 													</div>
@@ -107,7 +104,6 @@ class MyCustomers extends React.Component {
 													<ul>
 														<li>SDT <span>+1 952 001 8563</span></li>
 														<li>Tuổi <span>38 Years, Male</span></li>
-														<li>Đặt <span>Nail Art</span></li>
 													</ul>
 												</div>
 											</div>
@@ -126,7 +122,6 @@ class MyCustomers extends React.Component {
 															
 															<div className="customer-details">
 																<h5><b>ID khách hàng :</b> P0016</h5>
-																<h5 className="mb-0"><FontAwesomeIcon icon={faMapMarkerAlt} /> Alabama, USA</h5>
 															</div>
 														</div>
 													</div>
@@ -135,7 +130,6 @@ class MyCustomers extends React.Component {
 													<ul>
 														<li>SDT <span>+1 952 001 8563</span></li>
 														<li>Tuổi <span>38 Years, Male</span></li>
-														<li>Đặt <span>Nail Art</span></li>
 													</ul>
 												</div>
 											</div>
@@ -154,7 +148,6 @@ class MyCustomers extends React.Component {
 															
 															<div className="customer-details">
 																<h5><b>ID khách hàng :</b> P0016</h5>
-																<h5 className="mb-0"><FontAwesomeIcon icon={faMapMarkerAlt} /> Alabama, USA</h5>
 															</div>
 														</div>
 													</div>
@@ -163,7 +156,6 @@ class MyCustomers extends React.Component {
 													<ul>
 														<li>SDT <span>+1 952 001 8563</span></li>
 														<li>Tuổi <span>38 Years, Male</span></li>
-														<li>Đặt <span>Nail Art</span></li>
 													</ul>
 												</div>
 											</div>
@@ -182,7 +174,6 @@ class MyCustomers extends React.Component {
 															
 															<div className="customer-details">
 																<h5><b>ID khách hàng :</b> P0016</h5>
-																<h5 className="mb-0"><FontAwesomeIcon icon={faMapMarkerAlt} /> Alabama, USA</h5>
 															</div>
 														</div>
 													</div>
@@ -191,7 +182,6 @@ class MyCustomers extends React.Component {
 													<ul>
 														<li>SDT <span>+1 952 001 8563</span></li>
 														<li>Tuổi <span>38 Years, Male</span></li>
-														<li>Đặt <span>Nail Art</span></li>
 													</ul>
 												</div>
 											</div>
@@ -210,7 +200,6 @@ class MyCustomers extends React.Component {
 															
 															<div className="customer-details">
 																<h5><b>ID khách hàng :</b> P0016</h5>
-																<h5 className="mb-0"><FontAwesomeIcon icon={faMapMarkerAlt} /> Alabama, USA</h5>
 															</div>
 														</div>
 													</div>
@@ -219,7 +208,6 @@ class MyCustomers extends React.Component {
 													<ul>
 														<li>SDT <span>+1 952 001 8563</span></li>
 														<li>Tuổi <span>38 Years, Male</span></li>
-														<li>Đặt <span>Nail Art</span></li>
 													</ul>
 												</div>
 											</div>
@@ -238,7 +226,6 @@ class MyCustomers extends React.Component {
 															
 															<div className="customer-details">
 																<h5><b>ID khách hàng :</b> P0016</h5>
-																<h5 className="mb-0"><FontAwesomeIcon icon={faMapMarkerAlt} /> Alabama, USA</h5>
 															</div>
 														</div>
 													</div>
@@ -247,7 +234,6 @@ class MyCustomers extends React.Component {
 													<ul>
 														<li>SDT <span>+1 952 001 8563</span></li>
 														<li>Tuổi <span>38 Years, Male</span></li>
-														<li>Đặt <span>Nail Art</span></li>
 													</ul>
 												</div>
 											</div>
@@ -266,7 +252,6 @@ class MyCustomers extends React.Component {
 															
 															<div className="customer-details">
 																<h5><b>ID khách hàng :</b> P0016</h5>
-																<h5 className="mb-0"><FontAwesomeIcon icon={faMapMarkerAlt} /> Alabama, USA</h5>
 															</div>
 														</div>
 													</div>
@@ -275,7 +260,6 @@ class MyCustomers extends React.Component {
 													<ul>
 														<li>SDT <span>+1 952 001 8563</span></li>
 														<li>Tuổi <span>38 Years, Male</span></li>
-														<li>Đặt <span>Nail Art</span></li>
 													</ul>
 												</div>
 											</div>

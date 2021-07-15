@@ -16,11 +16,11 @@ class ForgotPassword extends React.Component {
 							<div className="col-md-12 col-12">
 								<nav aria-label="breadcrumb" className="page-breadcrumb">
 									<ol className="breadcrumb">
-										<li className="breadcrumb-item"><Link to="/">Home</Link></li>
-										<li className="breadcrumb-item active" aria-current="page">Forgot Password</li>
+										<li className="breadcrumb-item"><Link to="/">Trang chủ</Link></li>
+										<li className="breadcrumb-item active" aria-current="page">Quên mật khẩu</li>
 									</ol>
 								</nav>
-								<h2 className="breadcrumb-title">Forgot Password</h2>
+								<h2 className="breadcrumb-title">Quên mật khẩu</h2>
 							</div>
 						</div>
 					</div>
@@ -43,8 +43,8 @@ class ForgotPassword extends React.Component {
 											</div>
 											<div className="col-md-12 col-lg-6 login-right">
 												<div className="login-header">
-													<h3>Forgot Password?</h3>
-													<p className="small text-muted">Enter your email to get a password reset link</p>
+													<h3>Quên mật khẩu?</h3>
+													<p className="small text-muted">Nhập email của bạn để nhận liên kết đặt lại mật khẩu.</p>
 												</div>
 												
 												{/* Forgot Password Form */}
@@ -54,9 +54,9 @@ class ForgotPassword extends React.Component {
 														<label className="focus-label">Email</label>
 													</div>
 													<div className="text-right">
-														<Link to="/login" className="forgot-link">Remember your password?</Link>
+														<Link to="/login" className="forgot-link">Bạn nhớ mật khẩu không?</Link>
 													</div>
-													<button className="btn btn-primary btn-block btn-lg login-btn" type="submit">Reset Password</button>
+													<button className="btn btn-primary btn-block btn-lg login-btn" type="submit">Đặt lại mật khẩu</button>
 												</form>
 												{/* Forgot Password Form */}
 												

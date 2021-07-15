@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-import { StylistSidebar } from '../stylist/stylist-sidebar';
+import { StylistSidebar } from './stylist-sidebar';
 
 // Import Image
 import UserImg from '../../assets/img/customers/customer.jpg';
@@ -31,11 +31,11 @@ class Invoices extends React.Component {
 							<div className="col-md-12 col-12">
 								<nav aria-label="breadcrumb" className="page-breadcrumb">
 									<ol className="breadcrumb">
-										<li className="breadcrumb-item"><Link to="/">Home</Link></li>
-										<li className="breadcrumb-item active" aria-current="page">Blank Page</li>
+										<li className="breadcrumb-item"><Link to="/">Trang chủ</Link></li>
+										<li className="breadcrumb-item active" aria-current="page">Hóa đơn</li>
 									</ol>
 								</nav>
-								<h2 className="breadcrumb-title">Blank Page</h2>
+								<h2 className="breadcrumb-title">Hóa đơn</h2>
 							</div>
 						</div>
 					</div>
@@ -59,10 +59,10 @@ class Invoices extends React.Component {
 											<table className="table table-hover table-center mb-0">
 												<thead>
 													<tr>
-														<th>Invoice No</th>
-														<th>Student</th>
-														<th>Amount</th>
-														<th>Paid On</th>
+														<th>ID hóa đơn</th>
+														<th>Khách hàng</th>
+														<th>Chi phí</th>
+														<th>Được trả vào</th>
 														<th></th>
 													</tr>
 												</thead>
@@ -86,9 +86,6 @@ class Invoices extends React.Component {
 																<Link to="/invoice-view" className="btn btn-sm bg-info-light mr-1">
 																	<FontAwesomeIcon icon={faEye} /> View
 																</Link>
-																<Link to="#" className="btn btn-sm bg-primary-light">
-																	<FontAwesomeIcon icon={faPrint} /> Print
-																</Link>
 															</div>
 														</td>
 													</tr>
@@ -110,9 +107,6 @@ class Invoices extends React.Component {
 															<div className="table-action">
 																<Link to="/invoice-view" className="btn btn-sm bg-info-light mr-1">
 																	<FontAwesomeIcon icon={faEye} /> View
-																</Link>
-																<Link to="#" className="btn btn-sm bg-primary-light">
-																	<FontAwesomeIcon icon={faPrint} /> Print
 																</Link>
 															</div>
 														</td>
@@ -136,9 +130,6 @@ class Invoices extends React.Component {
 																<Link to="/invoice-view" className="btn btn-sm bg-info-light mr-1">
 																	<FontAwesomeIcon icon={faEye} /> View
 																</Link>
-																<Link to="#" className="btn btn-sm bg-primary-light">
-																	<FontAwesomeIcon icon={faPrint} /> Print
-																</Link>
 															</div>
 														</td>
 													</tr>
@@ -160,9 +151,6 @@ class Invoices extends React.Component {
 															<div className="table-action">
 																<Link to="/invoice-view" className="btn btn-sm bg-info-light mr-1">
 																	<FontAwesomeIcon icon={faEye} /> View
-																</Link>
-																<Link to="#" className="btn btn-sm bg-primary-light">
-																	<FontAwesomeIcon icon={faPrint} /> Print
 																</Link>
 															</div>
 														</td>
@@ -186,9 +174,6 @@ class Invoices extends React.Component {
 																<Link to="/invoice-view" className="btn btn-sm bg-info-light mr-1">
 																	<FontAwesomeIcon icon={faEye} /> View
 																</Link>
-																<Link to="#" className="btn btn-sm bg-primary-light">
-																	<FontAwesomeIcon icon={faPrint} /> Print
-																</Link>
 															</div>
 														</td>
 													</tr>
@@ -210,9 +195,6 @@ class Invoices extends React.Component {
 															<div className="table-action">
 																<Link to="/invoice-view" className="btn btn-sm bg-info-light mr-1">
 																	<FontAwesomeIcon icon={faEye} /> View
-																</Link>
-																<Link to="#" className="btn btn-sm bg-primary-light">
-																	<FontAwesomeIcon icon={faPrint} /> Print
 																</Link>
 															</div>
 														</td>
@@ -236,9 +218,6 @@ class Invoices extends React.Component {
 																<Link to="/invoice-view" className="btn btn-sm bg-info-light mr-1">
 																	<FontAwesomeIcon icon={faEye} /> View
 																</Link>
-																<Link to="#" className="btn btn-sm bg-primary-light">
-																	<FontAwesomeIcon icon={faPrint} /> Print
-																</Link>
 															</div>
 														</td>
 													</tr>
@@ -260,9 +239,6 @@ class Invoices extends React.Component {
 															<div className="table-action">
 																<Link to="/invoice-view" className="btn btn-sm bg-info-light mr-1">
 																	<FontAwesomeIcon icon={faEye} /> View
-																</Link>
-																<Link to="#" className="btn btn-sm bg-primary-light">
-																	<FontAwesomeIcon icon={faPrint} /> Print
 																</Link>
 															</div>
 														</td>
@@ -286,9 +262,6 @@ class Invoices extends React.Component {
 																<Link to="/invoice-view" className="btn btn-sm bg-info-light mr-1">
 																	<FontAwesomeIcon icon={faEye} /> View
 																</Link>
-																<Link to="#" className="btn btn-sm bg-primary-light">
-																	<FontAwesomeIcon icon={faPrint} /> Print
-																</Link>
 															</div>
 														</td>
 													</tr>
@@ -310,9 +283,6 @@ class Invoices extends React.Component {
 															<div className="table-action">
 																<Link to="/invoice-view" className="btn btn-sm bg-info-light mr-1">
 																	<FontAwesomeIcon icon={faEye} /> View
-																</Link>
-																<Link to="#" className="btn btn-sm bg-primary-light">
-																	<FontAwesomeIcon icon={faPrint} /> Print
 																</Link>
 															</div>
 														</td>

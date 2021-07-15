@@ -16,9 +16,9 @@ class Banner extends React.Component {
                             <div className="col-md-12 col-lg-8">
                                 <div className="banner-wrapper">
                                     <div className="banner-header">
-                                        <p>Search Stylist, Make an Appointment</p>
-                                        <h1>In Our Hand Your Body Look Beautifully And Clean</h1>
-                                        <Link to="/login" className="btn-pink">BẮT ĐẦU</Link>
+                                        <p>Hãy chọn nhà tạo mẫu và tạo cuộc hẹn</p>
+                                        <h1>Chăm sóc và nâng niu đôi tay bạn với những dịch vụ tốt nhất</h1>
+                                        <Link to="/booking" className="btn-pink">ĐẶT LỊCH HẸN</Link>
                                     </div>
                                 </div>
                             </div>

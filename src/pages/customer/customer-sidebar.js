@@ -41,32 +41,32 @@ class CustomerSidebar extends React.Component {
                                 <li>
                                     <Link to="/favourites">
                                         <FontAwesomeIcon icon={faBookmark} />
-                                        <span>Favourites</span>
+                                        <span>Yêu thích</span>
                                     </Link>
                                 </li>
                                 <li>
                                     <Link to="/chat">
                                         <FontAwesomeIcon icon={faComments} />
-                                        <span>Message</span>
+                                        <span>Trò chuyện</span>
                                         <small className="unread-msg">23</small>
                                     </Link>
                                 </li>
                                 <li>
                                     <Link to="/profile-settings">
                                         <FontAwesomeIcon icon={faUserCog} />
-                                        <span>Profile Settings</span>
+                                        <span>Cài đặt cấu hình</span>
                                     </Link>
                                 </li>
                                 <li>
                                     <Link to="/change-password">
                                         <FontAwesomeIcon icon={faLock} />
-                                        <span>Change Password</span>
+                                        <span>Thay đổi mật khẩu</span>
                                     </Link>
                                 </li>
                                 <li>
                                     <Link to="/">
                                         <FontAwesomeIcon icon={faSignOutAlt} />
-                                        <span>Logout</span>
+                                        <span>Đăng xuất</span>
                                     </Link>
                                 </li>
                             </ul>

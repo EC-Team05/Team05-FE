@@ -52,7 +52,7 @@ class TopStylist extends React.Component {
                         <div className="row justify-content-center">	
                             <div className="section-header text-center">						
                                 <h2>Nhà tạo mẫu hàng đầu</h2>
-                                <p className="sub-title">Create an original image for your personality</p>
+                                <p className="sub-title">Top những nhà tạo mẫu được yêu thích</p>
                             </div>
                         </div>
 
