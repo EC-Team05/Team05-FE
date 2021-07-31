@@ -91,22 +91,13 @@ class Header extends React.Component {
 							<li className={pathname === ('/') ? 'active' : ''}>
 								<Link to = "/">Trang chủ</Link>
 							</li>
-
-							<li className={`has-submenu ${pathname === ('/stylist-dashboard') ? 'active' : pathname === ('/appointments') ? 'active' : pathname === ('/schedule-timings') ? 'active' : pathname === ('/my-customers') ? 'active' : pathname === ('/customer-profile') ? 'active' : pathname === ('/chat-stylist') ? 'active' : pathname === ('/stylist-profile-settings') ? 'active' : pathname === ('/reviews') ? 'active' : pathname === ('/stylist-register') ? 'active' : ''}`}>
-								<Link to="">Nhà tạo mẫu<FontAwesomeIcon icon={faChevronDown} /></Link>
-								<ul className="submenu">
-									<li className={`${pathname === ('/stylist-dashboard') ? 'active' : ''}`}>
-										<Link to = "/stylist-dashboard">Dashboard</Link>
-									</li>	
-									<li className={`${pathname === ('/stylist-register') ? 'active' : ''}`}>
-										<Link to = "/login">Đăng nhập</Link>
-									</li>							
-									<li className={`${pathname === ('/stylist-register') ? 'active' : ''}`}>
-										<Link to = "/stylist-register">Đăng kí nhà tạo mẫu</Link>
-									</li>
-								</ul>
-							</li>	
-							<li className={`has-submenu ${pathname === ('/map-grid') ? 'active' : pathname === ('/map-list') ? 'active' : pathname === ('/search') ? 'active' : pathname === ('/stylist-profile') ? 'active' : pathname === ('/booking') ? 'active' : pathname === ('/checkout') ? 'active' : pathname === ('/booking-success') ? 'active' : pathname === ('/customer-dashboard') ? 'active' : pathname === ('/favourites') ? 'active' : pathname === ('/chat') ? 'active' : pathname === ('/profile-settings') ? 'active' : pathname === ('/change-password') ? 'active' : ''}`}>
+							<li className={pathname === ('/stylist-dashboard') ? 'active' : ''}>
+								<Link to = "/stylist-dashboard">Nhà tạo mẫu</Link>
+							</li>
+							<li className={pathname === ('/staff-dashboard') ? 'active' : ''}>
+								<Link to = "/staff-dashboard">Nhân viên tiếp nhận</Link>
+							</li>
+							<li className={`has-submenu ${pathname === ('/search') ? 'active' : pathname === ('/booking') ? 'active' : pathname === ('/customer-dashboard') ? 'active' : pathname === ('/login') ? 'active' : pathname === ('/register') ? 'active' :''}`}>
 								<Link to="">Khách hàng <FontAwesomeIcon icon={faChevronDown} /></Link>
 								<ul className="submenu">
 									<li className={`${pathname === ('/search') ? 'active' : ''}`}>
@@ -118,33 +109,21 @@ class Header extends React.Component {
 									<li className={`${pathname === ('/customer-dashboard') ? 'active' : ''}`}>
 										<Link to = "/customer-dashboard">Dashboard</Link>
 									</li>
-									<li className={`${pathname === ('/login') ? 'active' : ''}`}>
-										<Link to = "/login">Đăng nhập</Link>
-									</li>
-									<li className={`${pathname === ('/login') ? 'active' : ''}`}>
+									<li className={`${pathname === ('/register') ? 'active' : ''}`}>
 										<Link to = "/register">Đăng ký</Link>
 									</li>
 								</ul>
 							</li>
-							<li className={`has-submenu ${pathname === ('/blog-list') ? 'active' : pathname === ('/blog-grid') ? 'active' : pathname === ('/blog-details') ? 'active' : ''}`}>
-								<Link to="">Blog <FontAwesomeIcon icon={faChevronDown} /></Link>
-								<ul className="submenu">
-									<li className={`${pathname === ('/blog-list') ? 'active' : ''}`}>
-										<Link to = "/blog-list">Blog List</Link>
-									</li>
-									<li className={`${pathname === ('/blog-grid') ? 'active' : ''}`}>
-										<Link to = "/blog-grid">Blog Grid</Link>
-									</li>
-								</ul>
+							<li className={pathname === ('/blog-list') ? 'active' : ''}>
+								<Link to = "/blog-list">Blog</Link>
 							</li>
-							
+							<li className={pathname === ('/booking-service') ? 'active' : ''}>
+								<Link to = "/booking-service">Dịch vụ</Link>
+							</li>
 							{(pathname === ('/') || pathname === ('login') ? 
 							(
-								<li className="dropdown log-menu">
-									<span className="dropdown-toggle log-select" id="log-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button"><FontAwesomeIcon icon={faUser} /> Đăng nhập </span>
-									<div className="dropdown-menu dropdown-menu-right" aria-labelledby="language-dropdown">
-										<Link to="/login" className="dropdown-item">Đăng nhập</Link>
-									</div>
+								<li className={pathname === ('/login') ? 'active' : ''}>
+									<Link to = "/login">Đăng nhập</Link>
 								</li>
 							) : 
 							(

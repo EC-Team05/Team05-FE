@@ -45,13 +45,6 @@ class CustomerSidebar extends React.Component {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/chat">
-                                        <FontAwesomeIcon icon={faComments} />
-                                        <span>Trò chuyện</span>
-                                        <small className="unread-msg">23</small>
-                                    </Link>
-                                </li>
-                                <li>
                                     <Link to="/profile-settings">
                                         <FontAwesomeIcon icon={faUserCog} />
                                         <span>Cài đặt cấu hình</span>

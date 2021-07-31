@@ -7,17 +7,12 @@ import {
     EditBilling,
     AddFollowUp,
     EditFollowUp,
-    BlankPage,
     BlogDetails,
-    BlogGrid,
     BlogList,
     Booking,
     BookingSuccess,
     ChangePassword,
-    Chat,
-    ChatStylist,
     Checkout,
-    Components,
     Favourites,
     ForgotPassword,
     Invoices,
@@ -29,25 +24,20 @@ import {
     StylistDashboard,
     StylistProfileSettings,
     StylistProfile,
-    StylistRegister,
     Register,
     Reviews,
     ProfileSettings,
     Search,
-    Session,
-    SocialMedia,
     CustomerDashboard,
-    CustomerProfile,    
-    VideoCall,
-    VoiceCall,
+    CustomerProfile,  
     MyCustomers,
-    StylistGrid,
     StylistList,
     Calendar,
     ScheduleTimings,
     ServiceDetails,
-    Appointments
-
+    Appointments,
+    BookingService,
+    StaffDashboard
 } from '../pages';
 
 import { Header, Footer } from '../_components';
@@ -80,18 +70,13 @@ class RouterComponent extends React.Component {
                         <Route path="/edit-billing" component={EditBilling} />
                         <Route path="/add-follow-up" component={AddFollowUp} />
                         <Route path="/edit-follow-up" component={EditFollowUp} />
-                        <Route path="/blank-page" component={BlankPage} />
                         <Route path="/blog-details" component={BlogDetails} />
-                        <Route path="/blog-grid" component={BlogGrid} />
                         <Route path="/blog-list" component={BlogList} />
                         <Route path="/booking" component={Booking} />
                         <Route path="/booking-success" component={BookingSuccess} />
                         <Route path="/calendar" component={Calendar} />
                         <Route path="/change-password" component={ChangePassword} />
-                        <Route path="/chat" component={Chat} />
-                        <Route path="/chat-stylist" component={ChatStylist} />
                         <Route path="/checkout" component={Checkout} />
-                        <Route path="/components" component={Components} />
                         <Route path="/favourites" component={Favourites} />
                         <Route path="/forgot-password" component={ForgotPassword} />
                         <Route path="/invoices" component={Invoices} />
@@ -103,22 +88,19 @@ class RouterComponent extends React.Component {
                         <Route path="/stylist-dashboard" component={StylistDashboard} />
                         <Route path="/stylist-profile-settings" component={StylistProfileSettings} />
                         <Route path="/stylist-profile" component={StylistProfile} />
-                        <Route path="/stylist-register" component={StylistRegister} />
                         <Route path="/register" component={Register} />
                         <Route path="/reviews" component={Reviews} />
                         <Route path="/profile-settings" component={ProfileSettings} />
                         <Route path="/search" component={Search} />
                         <Route path="/service-details" component={ServiceDetails} />
-                        <Route path="/social-media" component={SocialMedia} />
                         <Route path="/customer-dashboard" component={CustomerDashboard} />
                         <Route path="/customer-profile" component={CustomerProfile} />
-                        <Route path="/video-call" component={VideoCall} />
-                        <Route path="/voice-call" component={VoiceCall} />
                         <Route path="/my-customers" component={MyCustomers} />
-                        <Route path="/map-grid" component={StylistGrid} />
                         <Route path="/map-list" component={StylistList} />                        
                         <Route path="/schedule-timings" component={ScheduleTimings} />
                         <Route path="/appointments" component={Appointments} />
+                        <Route path="/booking-service" component={BookingService} />
+                        <Route path="/staff-dashboard" component={StaffDashboard} />
                     </Switch>
                     <Route render={(props) => <Footer {...props} />} />
                     

@@ -817,7 +817,7 @@ button.bg-danger:hover {
     margin-bottom: 15px;
 }
 .card-header {
-	border-bottom: 1px solid #f0f0f0;
+	border-top: 1px solid #f0f0f0;
 	padding: 1rem 1.5rem;
 }
 .card-footer {
@@ -827,7 +827,7 @@ button.bg-danger:hover {
 }
 .card .card-header {
     background-color: #fff;
-    border-bottom: 1px solid #f0f0f0;
+    border-top: 1px solid #f0f0f0;
 }
 .card .card-header .card-title {
     margin-bottom: 0;
@@ -1127,7 +1127,7 @@ button.bg-danger:hover {
 	border-bottom: 1px solid #f0f0f0;
 }
 .card-header-tabs {
-    border-bottom: 0;
+    border-top: 0;
 }
 .nav-tabs > li > a {
 	margin-right: 0;

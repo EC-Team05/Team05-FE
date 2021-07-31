@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 // Import Sidebar
-import { StylistSidebar } from './stylist-sidebar';
+import {StaffSidebar } from './staff-sidebar';
 
 // Import Components
 import { Tabs, Tab } from "react-bootstrap";
@@ -28,7 +28,7 @@ import UserAvatar11 from '../../assets/img/customers/customer11.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faEye, faTimes } from '@fortawesome/fontawesome-free-solid';
 
-class StylistDashboard extends React.Component {
+class StaffDashboard extends React.Component {
 	
     render() {
         return (
@@ -56,55 +56,9 @@ class StylistDashboard extends React.Component {
 					<div className="container">
 						<div className="row">
 							<div className="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
-								<StylistSidebar />
+								<StaffSidebar />
 							</div>
 							<div className="col-md-7 col-lg-8 col-xl-9">
-								<div className="row">
-									<div className="col-md-12">
-										<div className="card dash-card">
-											<div className="card-body">
-												<div className="row">
-													<div className="col-md-12 col-lg-4">
-														<div className="dash-widget dct-border-rht">
-														
-															<div className="circle-bar circle-bar1">
-																<img src={ImgIcon1} className="img-fluid" alt="Student" />
-															</div>
-															<div className="dash-widget-info">
-																<h6>Tổng khách hàng</h6>
-																<h3>1500</h3>
-															</div>
-														</div>
-													</div>
-													
-													<div className="col-md-12 col-lg-4">
-														<div className="dash-widget dct-border-rht">
-															<div className="circle-bar circle-bar2">
-																<img src={ImgIcon2} className="img-fluid" alt="Student" />
-															</div>
-															<div className="dash-widget-info">
-																<h6>Khách hàng hôm nay</h6>
-																<h3>160</h3>
-															</div>
-														</div>
-													</div>
-													
-													<div className="col-md-12 col-lg-4">
-														<div className="dash-widget">
-															<div className="circle-bar circle-bar3">
-																<img src={ImgIcon3} className="img-fluid" alt="Student" />
-															</div>
-															<div className="dash-widget-info">
-																<h6>Lịch hẹn</h6>
-																<h3>85</h3>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
 								<div className="row">							
 									<div className="col-md-12">
 										<h4 className="mb-4">Lịch hẹn khách hàng</h4>
@@ -470,4 +424,4 @@ class StylistDashboard extends React.Component {
         )
     }
 }
-export { StylistDashboard };
+export { StaffDashboard };
