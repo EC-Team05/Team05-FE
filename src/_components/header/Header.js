@@ -112,6 +112,9 @@ class Header extends React.Component {
 									<li className={`${pathname === ('/register') ? 'active' : ''}`}>
 										<Link to = "/register">Đăng ký</Link>
 									</li>
+									<li className={`${pathname === ('/Payment-Guide') ? 'active' : ''}`}>
+										<Link to = "/Payment-Guide">Hướng dẫn thanh toán</Link>
+									</li>
 								</ul>
 							</li>
 							<li className={pathname === ('/blog-list') ? 'active' : ''}>

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 // Import Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/fontawesome-free-solid';
+import { Form } from "react-bootstrap";
 
 class BookingService extends React.Component {
 	render() {
@@ -87,35 +88,321 @@ class BookingService extends React.Component {
 								<div className="card search-filter">
 									<div className="card-body">
 										<div className="filter-widget">
-											<div className="card-header">
-												<h4 className="card-title mb-0">Dịch vụ đã chọn</h4>
-											</div>
-											<div>
-												<label>Sơn gel</label>
-											</div>
-											<div>
-												<label>Vẽ gel</label>
-											</div>
+											<h4>Dịch vụ đã chọn</h4>
+											<ul className="list-unstyled mb-0">
+												<li>Sơn gel</li>
+												<li>Vẽ gel</li>
+											</ul>
 											<div className="card-header">
 												<h4 className="card-title mb-0">Tổng</h4>
+											</div>
+											<div className="btn-search">
+												<button type="button" className="btn btn-block">Xác nhận</button>
 											</div>
 										</div>
 									</div>
 								</div>
 								{/* Choose service */}
-
 							</div>
-
 							<div className="col-md-12 col-lg-8 col-xl-9">
-
+								{/* Choose service */}
+								<div className="row">
+									<div className="card col-10">
+										<div className="card-body">
+											<div className="">
+												<h4 className="doc-name">Cắt da, sửa móng tay chân</h4>
+												<div class="row">
+													<div class="col-10 doc-speciality">30 phút</div>
+													<div class="col-2 doc-speciality">30.000</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div className="card col-2 d-flex justify-content-center align-items-center" style={{ backgroundColor: 'rgba(256, 256, 256, 0)', border: 'none' }}>
+										<label className="custom_check">
+											<input type="checkbox" name="gender_type" defaultChecked />
+											<span className="checkmark"></span>
+										</label>
+									</div>
+								</div>
+								{/* Choose service */}
+								{/* Choose service */}
+								<div className="row">
+									<div className="card col-10">
+										<div className="card-body">
+											<div className="">
+												<h4 className="doc-name">Sơn gel</h4>
+												<div class="row">
+													<div class="col-10 doc-speciality">20 phút</div>
+													<div class="col-2 doc-speciality">80.000</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div className="card col-2 d-flex justify-content-center align-items-center" style={{ backgroundColor: 'rgba(256, 256, 256, 0)', border: 'none' }}>
+										<label className="custom_check">
+											<input type="checkbox" name="gender_type" defaultChecked />
+											<span className="checkmark"></span>
+										</label>
+									</div>
+								</div>
+								{/* Choose service */}
+								{/* Choose service */}
+								<div className="row">
+									<div className="card col-10">
+										<div className="card-body">
+											<div className="">
+												<h4 className="doc-name">Phá sơn sel</h4>
+												<div class="row">
+													<div class="col-10 doc-speciality">20 phút</div>
+													<div class="col-2 doc-speciality">20.000</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div className="card col-2 d-flex justify-content-center align-items-center" style={{ backgroundColor: 'rgba(256, 256, 256, 0)', border: 'none' }}>
+										<label className="custom_check">
+											<input type="checkbox" name="gender_type" defaultChecked />
+											<span className="checkmark"></span>
+										</label>
+									</div>
+								</div>
+								{/* Choose service */}
+								{/* Choose service */}
+								<div className="row">
+									<div className="card col-10">
+										<div className="card-body">
+											<div className="">
+												<h4 className="doc-name">Phá gel cứng</h4>
+												<div class="row">
+													<div class="col-10 doc-speciality">25 phút</div>
+													<div class="col-2 doc-speciality">50.000</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div className="card col-2 d-flex justify-content-center align-items-center" style={{ backgroundColor: 'rgba(256, 256, 256, 0)', border: 'none' }}>
+										<label className="custom_check">
+											<input type="checkbox" name="gender_type" defaultChecked />
+											<span className="checkmark"></span>
+										</label>
+									</div>
+								</div>
+								{/* Choose service */}
+								{/* Choose service */}
+								<div className="row">
+									<div className="card col-10">
+										<div className="card-body">
+											<div className="">
+												<h4 className="doc-name">Nổi móng đắp gel IDP Mỹ</h4>
+												<div class="row">
+													<div class="col-10 doc-speciality">120 phút</div>
+													<div class="col-2 doc-speciality">200.000</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div className="card col-2 d-flex justify-content-center align-items-center" style={{ backgroundColor: 'rgba(256, 256, 256, 0)', border: 'none' }}>
+										<label className="custom_check">
+											<input type="checkbox" name="gender_type" defaultChecked />
+											<span className="checkmark"></span>
+										</label>
+									</div>
+								</div>
+								{/* Choose service */}
+								{/* Choose service */}
+								<div className="row">
+									<div className="card col-10">
+										<div className="card-body">
+											<div className="">
+												<h4 className="doc-name">Úp móng giả</h4>
+												<div class="row">
+													<div class="col-10 doc-speciality">60 phút</div>
+													<div class="col-2 doc-speciality">60.000</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div className="card col-2 d-flex justify-content-center align-items-center" style={{ backgroundColor: 'rgba(256, 256, 256, 0)', border: 'none' }}>
+										<label className="custom_check">
+											<input type="checkbox" name="gender_type" defaultChecked />
+											<span className="checkmark"></span>
+										</label>
+									</div>
+								</div>
+								{/* Choose service */}
+								{/* Choose service */}
+								<div className="row">
+									<div className="card col-10">
+										<div className="card-body">
+											<div className="">
+												<h4 className="doc-name">Vẽ gel</h4>
+												<div class="row">
+													<div class="col-10 doc-speciality">5 phút</div>
+													<div class="col-2 doc-speciality">5.000/móng</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div className="card col-2 d-flex justify-content-center align-items-center" style={{ backgroundColor: 'rgba(256, 256, 256, 0)', border: 'none' }}>
+										<label className="custom_check">
+											<input type="checkbox" name="gender_type" defaultChecked />
+											<span className="checkmark"></span>
+										</label>
+									</div>
+								</div>
+								{/* Choose service */}
+								{/* Choose service */}
+								<div className="row">
+									<div className="card col-10">
+										<div className="card-body">
+											<div className="">
+												<h4 className="doc-name">Ombre - nail cat eyes</h4>
+												<div class="row">
+													<div class="col-10 doc-speciality">5 phút</div>
+													<div class="col-2 doc-speciality">25.000/móng</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div className="card col-2 d-flex justify-content-center align-items-center" style={{ backgroundColor: 'rgba(256, 256, 256, 0)', border: 'none' }}>
+										<label className="custom_check">
+											<input type="checkbox" name="gender_type" defaultChecked />
+											<span className="checkmark"></span>
+										</label>
+									</div>
+								</div>
+								{/* Choose service */}
+								{/* Choose service */}
+								<div className="row">
+									<div className="card col-10">
+										<div className="card-body">
+											<div className="">
+												<h4 className="doc-name">Markble, galaxy</h4>
+												<div class="row">
+													<div class="col-10 doc-speciality">10 phút</div>
+													<div class="col-2 doc-speciality">20.000/móng</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div className="card col-2 d-flex justify-content-center align-items-center" style={{ backgroundColor: 'rgba(256, 256, 256, 0)', border: 'none' }}>
+										<label className="custom_check">
+											<input type="checkbox" name="gender_type" defaultChecked />
+											<span className="checkmark"></span>
+										</label>
+									</div>
+								</div>
+								{/* Choose service */}
+								{/* Choose service */}
+								<div className="row">
+									<div className="card col-10">
+										<div className="card-body">
+											<div className="">
+												<h4 className="doc-name">Hoa khô/xà cừ/mirror</h4>
+												<div class="row">
+													<div class="col-10 doc-speciality">5 phút</div>
+													<div class="col-2 doc-speciality">25.000/móng</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div className="card col-2 d-flex justify-content-center align-items-center" style={{ backgroundColor: 'rgba(256, 256, 256, 0)', border: 'none' }}>
+										<label className="custom_check">
+											<input type="checkbox" name="gender_type" defaultChecked />
+											<span className="checkmark"></span>
+										</label>
+									</div>
+								</div>
+								{/* Choose service */}
+								{/* Choose service */}
+								<div className="row">
+									<div className="card col-10">
+										<div className="card-body">
+											<div className="">
+												<h4 className="doc-name">Đá nhỏ, phụ kiện</h4>
+												<div class="row">
+													<div class="col-10 doc-speciality">5 phút</div>
+													<div class="col-2 doc-speciality">2.500/móng</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div className="card col-2 d-flex justify-content-center align-items-center" style={{ backgroundColor: 'rgba(256, 256, 256, 0)', border: 'none' }}>
+										<label className="custom_check">
+											<input type="checkbox" name="gender_type" defaultChecked />
+											<span className="checkmark"></span>
+										</label>
+									</div>
+								</div>
+								{/* Choose service */}
+								{/* Choose service */}
+								<div className="row">
+									<div className="card col-10">
+										<div className="card-body">
+											<div className="">
+												<h4 className="doc-name">Ngâm chân thư giản, giải độc + chà gót + dưỡng mask</h4>
+												<div class="row">
+													<div class="col-10 doc-speciality">120 phút</div>
+													<div class="col-2 doc-speciality">80.000</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div className="card col-2 d-flex justify-content-center align-items-center" style={{ backgroundColor: 'rgba(256, 256, 256, 0)', border: 'none' }}>
+										<label className="custom_check">
+											<input type="checkbox" name="gender_type" defaultChecked />
+											<span className="checkmark"></span>
+										</label>
+									</div>
+								</div>
+								{/* Choose service */}
+								{/* Choose service */}
+								<div className="row">
+									<div className="card col-10">
+										<div className="card-body">
+											<div className="">
+												<h4 className="doc-name">Massage tay/chân</h4>
+												<div class="row">
+													<div class="col-10 doc-speciality">120 phút</div>
+													<div class="col-2 doc-speciality">100.000</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div className="card col-2 d-flex justify-content-center align-items-center" style={{ backgroundColor: 'rgba(256, 256, 256, 0)', border: 'none' }}>
+										<label className="custom_check">
+											<input type="checkbox" name="gender_type" defaultChecked />
+											<span className="checkmark"></span>
+										</label>
+									</div>
+								</div>
+								{/* Choose service */}
+								{/* Choose service */}
+								<div className="row">
+									<div className="card col-10">
+										<div className="card-body">
+											<div className="">
+												<h4 className="doc-name">Combo ngâm chân thư giãn + giải độc + chà gót + dưỡng mask</h4>
+												<div class="row">
+													<div class="col-10 doc-speciality">120 phút</div>
+													<div class="col-2 doc-speciality">150.000</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div className="card col-2 d-flex justify-content-center align-items-center" style={{ backgroundColor: 'rgba(256, 256, 256, 0)', border: 'none' }}>
+										<label className="custom_check">
+											<input type="checkbox" name="gender_type" defaultChecked />
+											<span className="checkmark"></span>
+										</label>
+									</div>
+								</div>
+								{/* Choose service */}
 							</div>
 						</div>
 					</div>
-
 				</div>
-				{/* Page Content */}
-
-
 			</div>
 		)
 	}

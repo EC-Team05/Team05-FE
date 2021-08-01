@@ -83,31 +83,6 @@ class Checkout extends React.Component {
 											
 											<div className="payment-widget">
 												<h4 className="card-title">Phương thức thanh toán</h4>
-												
-												{/* Credit Card Payment */}
-												<div className="payment-list">
-													<label className="payment-radio credit-card-option">
-														<input type="radio" name="radio" defaultChecked />
-														<span className="checkmark"></span>
-														Credit card
-													</label>
-													<div className="row">
-														<div className="col-md-6">
-															<div className="form-group card-label">
-																<label>Tên tài khoản</label>
-																<input className="form-control" id="card_name" type="text" />
-															</div>
-														</div>
-														<div className="col-md-6">
-															<div className="form-group card-label">
-																<label>Số tài khoản</label>
-																<input className="form-control" id="card_number" placeholder="1234  5678  9876  5432" type="text" />
-															</div>
-														</div>
-													</div>
-												</div>
-												{/* Credit Card Payment */}
-												
 												{/* Momo Payment */}
 												<div className="payment-list">
 													<label className="payment-radio paypal-option">
@@ -123,7 +98,7 @@ class Checkout extends React.Component {
 													<label className="payment-radio paypal-option">
 														<input type="radio" name="radio" />
 														<span className="checkmark"></span>
-														Thanh toán sau
+														Thanh toán tại cửa hàng
 													</label>
 												</div>
 												{/* Momo Payment */}
@@ -190,8 +165,8 @@ class Checkout extends React.Component {
 													<li>Giờ <span>10:00 AM</span></li>
 												</ul>
 												<ul className="booking-fee">
-													<li>Service Fee <span>$100</span></li>
-													<li>Booking Fee <span>$10</span></li>
+													<li>Phí dịch vụ <span>$100</span></li>
+													<li>Phí đặt lịch <span>$10</span></li>
 												</ul>
 												<div className="booking-total">
 													<ul className="booking-total-list">
@@ -206,7 +181,6 @@ class Checkout extends React.Component {
 									</div>
 								</div>
 								{/* Booking Summary */}
-								
 							</div>
 						</div>
 					</div>

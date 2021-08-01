@@ -37,7 +37,8 @@ import {
     ServiceDetails,
     Appointments,
     BookingService,
-    StaffDashboard
+    StaffDashboard,
+    PaymentGuide
 } from '../pages';
 
 import { Header, Footer } from '../_components';
@@ -101,6 +102,7 @@ class RouterComponent extends React.Component {
                         <Route path="/appointments" component={Appointments} />
                         <Route path="/booking-service" component={BookingService} />
                         <Route path="/staff-dashboard" component={StaffDashboard} />
+                        <Route path="/Payment-Guide" component={PaymentGuide} />
                     </Switch>
                     <Route render={(props) => <Footer {...props} />} />
                     
