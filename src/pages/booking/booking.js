@@ -268,7 +268,7 @@ class Booking extends React.Component {
                         
                         {/* Submit Section */}
                         <div className="submit-section proceed-btn text-right">
-                            <Link to="/checkout" className="btn btn-primary submit-btn">Đặt lịch</Link>
+                            <Link to="/booking-stylist" className="btn btn-primary submit-btn">Đặt lịch</Link>
                         </div>
                         {/* Submit Section */}
                     </div>

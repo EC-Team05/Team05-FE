@@ -41,42 +41,8 @@ class InvoiceView extends React.Component {
 													<img src={Logo} alt="logo" />
 												</div>
 											</div>
-											<div className="col-md-6">
-												<p className="invoice-details">
-													<strong>ID:</strong> #00124 <br />
-													<strong>Được cấp ngày:</strong> 20/07/2020
-												</p>
-											</div>
 										</div>
 									</div>
-									
-									{/* Invoice Item */}
-									<div className="invoice-item">
-										<div className="row">
-											<div className="col-md-6">
-												<div className="invoice-info">
-													<strong className="customer-text">Hóa đơn từ</strong>
-													<p className="invoice-details invoice-details-two">
-														Urban Mauldin <br />
-														806  Twin Willow Lane, Old Forge,<br />
-														Newyork, USA <br />
-													</p>
-												</div>
-											</div>
-											<div className="col-md-6">
-												<div className="invoice-info invoice-info2">
-													<strong className="customer-text">Hóa đơn đến</strong>
-													<p className="invoice-details">
-														Kiril Fine <br />
-														299 Star Trek Drive, Panama City, <br />
-														Florida, 32405, USA <br />
-													</p>
-												</div>
-											</div>
-										</div>
-									</div>
-									{/* Invoice Item */}
-									
 									{/* Invoice Item */}
 									<div className="invoice-item">
 										<div className="row">
@@ -84,9 +50,11 @@ class InvoiceView extends React.Component {
 												<div className="invoice-info">
 													<strong className="customer-text">Phương thức thanh toán</strong>
 													<p className="invoice-details invoice-details-two">
-														Debit Card <br />
-														XXXXXXXXXXXX-2541 <br />
-														HDFC Bank<br />
+														Thanh toán tại cửa hàng <br />
+														Order: #00124 <br />
+														Issued: 20/07/2020 <br />
+														Invoice From: Nàng Beauty <br />
+														Invoice To: Quỳnh Như <br />
 													</p>
 												</div>
 											</div>
@@ -110,16 +78,16 @@ class InvoiceView extends React.Component {
 														</thead>
 														<tbody>
 															<tr>
-																<td>General Session</td>
+																<td>Sơn gel</td>
 																<td className="text-center">1</td>
-																<td className="text-center">$0</td>
-																<td className="text-right">$100</td>
+																<td className="text-center">0</td>
+																<td className="text-right">80.000</td>
 															</tr>
 															<tr>
-																<td>Video Call Booking</td>
+																<td>Vẽ gel</td>
 																<td className="text-center">1</td>
-																<td className="text-center">$0</td>
-																<td className="text-right">$250</td>
+																<td className="text-center">0</td>
+																<td className="text-right">20.000</td>
 															</tr>
 														</tbody>
 													</table>
@@ -130,8 +98,8 @@ class InvoiceView extends React.Component {
 													<table className="invoice-table-two table">
 														<tbody>
 														<tr>
-															<th>Tổng:</th>
-															<td><span>$350</span></td>
+															<th>Tổng tạm tính:</th>
+															<td><span>100.000 VND</span></td>
 														</tr>
 														<tr>
 															<th>Giảm giá:</th>
@@ -139,7 +107,7 @@ class InvoiceView extends React.Component {
 														</tr>
 														<tr>
 															<th>Tổng số tiền:</th>
-															<td><span>$315</span></td>
+															<td><span>90.000 VND</span></td>
 														</tr>
 														</tbody>
 													</table>

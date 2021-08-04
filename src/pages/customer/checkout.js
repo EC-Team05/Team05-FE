@@ -1,3 +1,5 @@
+//reactjs js if checkbox choose this để chọn phương thức thanh toan
+
 import React from 'react';
 import { Link } from 'react-router-dom'
 
@@ -150,9 +152,6 @@ class Checkout extends React.Component {
 													<FontAwesomeIcon icon={faStar} className="filled" />
 													<FontAwesomeIcon icon={faStar} />
 													<span className="d-inline-block average-rating">35</span>
-												</div>
-												<div className="clinic-details">
-													<p className="doc-location"><FontAwesomeIcon icon={faMapMarkerAlt} className="filled" /> Newyork, USA</p>
 												</div>
 											</div>
 										</div>
