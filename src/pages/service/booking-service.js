@@ -97,11 +97,8 @@ class BookingService extends React.Component {
 												<h4 className="card-title mb-0">Tổng</h4>
 											</div>
 											<div className="btn-searchsubmit-section proceed-btn text-right btn btn-block">
-												<Link to="/booking-stylist" className="btn btn-primary submit-btn">Xác nhận</Link>
+												<Link to="/booking" className="btn btn-primary submit-btn">Xác nhận</Link>
 											</div>
-											{/* <div className="btn-search">
-												<button type="button" className="btn btn-block"><Link to="/">Xác nhận</Link></button>
-											</div> */}
 										</div>
 									</div>
 								</div>
