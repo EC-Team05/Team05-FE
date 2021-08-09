@@ -108,16 +108,13 @@ class Footer extends React.Component {
 											<p className="title">Connect with us</p>
 											<ul>
 												<li>
-													{/*<Link to="https://www.facebook.com/N%C3%A0ng-Beauty-105131045177329">
-														<FontAwesomeIcon icon={faFacebookF} />
-													</Link>                    */}
-													<Link to="#" target="_blank"><FontAwesomeIcon icon={faFacebookF} /> </Link>
+													<a href="https://www.facebook.com/N%C3%A0ng-Beauty-105131045177329" target="_blank"><FontAwesomeIcon icon={faFacebookF} /> </a>
 												</li>
 												<li>
 													<Link to="#" target="_blank"><FontAwesomeIcon icon={faTwitter} /> </Link>
 												</li>
 												<li>
-													<Link to="#" target="_blank"><FontAwesomeIcon icon={faYoutube} /> </Link>
+													<Link href="https://www.youtube.com/channel/UCQM6BH9ZEZmNUl4zpYfMs-Q" target="_blank"><FontAwesomeIcon icon={faYoutube} /> </Link>
 												</li>
 												<li>
 													<Link to="#" target="_blank"><FontAwesomeIcon icon={faInstagram} /></Link>
