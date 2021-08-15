@@ -73,7 +73,6 @@ class StaffDashboard extends React.Component {
 																		<tr>
 																			<th>Tên khách hàng</th>
 																			<th>Ngày hẹn</th>
-																			<th>Mục đích</th>
 																			<th className="text-center">Số tiền thanh toán</th>
 																			<th></th>
 																		</tr>
@@ -87,7 +86,6 @@ class StaffDashboard extends React.Component {
 																				</h2>
 																			</td>
 																			<td>11 Nov 2019 <span className="d-block text-info">10.00 AM</span></td>
-																			<td>Nail Art</td>
 																			<td className="text-center">$150</td>
 																			<td className="text-right">
 																				<div className="table-action">
@@ -112,7 +110,6 @@ class StaffDashboard extends React.Component {
 																				</h2>
 																			</td>
 																			<td>11 Nov 2019 <span className="d-block text-info">10.00 AM</span></td>
-																			<td>Nail Art</td>
 																			<td className="text-center">$150</td>
 																			<td className="text-right">
 																				<div className="table-action">
@@ -137,7 +134,6 @@ class StaffDashboard extends React.Component {
 																				</h2>
 																			</td>
 																			<td>11 Nov 2019 <span className="d-block text-info">10.00 AM</span></td>
-																			<td>Nail Art</td>
 																			<td className="text-center">$150</td>
 																			<td className="text-right">
 																				<div className="table-action">
@@ -162,7 +158,6 @@ class StaffDashboard extends React.Component {
 																				</h2>
 																			</td>
 																			<td>11 Nov 2019 <span className="d-block text-info">10.00 AM</span></td>
-																			<td>Nail Art</td>
 																			<td className="text-center">$150</td>
 																			<td className="text-right">
 																				<div className="table-action">
@@ -187,7 +182,6 @@ class StaffDashboard extends React.Component {
 																				</h2>
 																			</td>
 																			<td>11 Nov 2019 <span className="d-block text-info">10.00 AM</span></td>
-																			<td>Nail Art</td>
 																			<td className="text-center">$150</td>
 																			<td className="text-right">
 																				<div className="table-action">
@@ -212,7 +206,6 @@ class StaffDashboard extends React.Component {
 																				</h2>
 																			</td>
 																			<td>11 Nov 2019 <span className="d-block text-info">10.00 AM</span></td>
-																			<td>Nail Art</td>
 																			<td className="text-center">$150</td>
 																			<td className="text-right">
 																				<div className="table-action">

@@ -51,7 +51,6 @@ class Booking extends React.Component {
                                                     <FontAwesomeIcon icon={faStar} />
                                                     <span className="d-inline-block average-rating">35</span>
                                                 </div>
-                                                <p className="text-muted mb-0">Nail Art</p>
                                             </div>
                                         </div>
                                     </div>

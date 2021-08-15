@@ -227,9 +227,6 @@ class BookingStylist extends React.Component {
                                     </div>
                                 </div>
                                 {/* Professor Widget */}
-                                <div className="load-more text-center">
-                                    <Link to="" className="btn btn-primary btn-sm">Tải thêm</Link>
-                                </div>
                             </div>
                         </div>
                     </div>
