@@ -7,7 +7,7 @@ import BlogThumb2 from '../../assets/img/blog/blog-thumb-02.jpg';
 import BlogThumb3 from '../../assets/img/blog/blog-thumb-03.jpg';
 import BlogThumb4 from '../../assets/img/blog/blog-thumb-04.jpg';
 import BlogThumb5 from '../../assets/img/blog/blog-thumb-05.jpg';
-
+import Ads from '../../assets/img/blog/ads.jpg';
 
 // Import Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -15,7 +15,7 @@ import { faSearch } from '@fortawesome/fontawesome-free-solid';
 
 class BlogSidebar extends React.Component {
     render() {
-        return(
+        return (
             <div>
                 {/* Search */}
                 <div className="card search-widget">
@@ -123,7 +123,13 @@ class BlogSidebar extends React.Component {
                     </div>
                 </div>
                 {/* Categories */}
-
+                {/* Blog Post */}
+                <div className="blog">
+                    <div className="blog-image">
+                        <a href="https://www.maxfactor.com/en"><img className="img-fluid" src={Ads} alt="Post Image" /></a>
+                    </div>
+                </div>
+                {/* Blog Post */}
             </div>
         )
     }

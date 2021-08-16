@@ -84,25 +84,23 @@ class BookingService extends React.Component {
 									</div>
 								</div>
 								{/* Search Filter */}
-								{/* Choose service */}
-								<div className="card search-filter">
+								<div className="card category-widget">
+									<div className="card-header">
+										<h4 className="card-title">Dịch vụ đã chọn</h4>
+									</div>
 									<div className="card-body">
-										<div className="filter-widget">
-											<h4>Dịch vụ đã chọn</h4>
-											<ul className="list-unstyled mb-0">
-												<li>Sơn gel</li>
-												<li>Vẽ gel</li>
-											</ul>
-											<div className="card-header">
-												<h4 className="card-title mb-0">Tổng</h4>
-											</div>
-											<div className="btn-searchsubmit-section proceed-btn text-right btn btn-block">
-												<Link to="/booking" className="btn btn-primary submit-btn">Xác nhận</Link>
-											</div>
-										</div>
+										<ul className="categories">
+											<li>Sơn gel <span>80.000</span></li>
+											<li>Sơn gel <span>80.000</span></li>
+										</ul>
+									</div>
+									<div className="card-header">
+										<h4 className="card-title mb-0">Tổng <span>160.000</span></h4>
+									</div>
+									<div className="btn-searchsubmit-section proceed-btn text-right btn btn-block">
+										<Link to="/booking" className="btn btn-primary submit-btn">Xác nhận</Link>
 									</div>
 								</div>
-								{/* Choose service */}
 							</div>
 							<div className="col-md-12 col-lg-8 col-xl-9">
 								{/* Choose service */}
