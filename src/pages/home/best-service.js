@@ -20,22 +20,51 @@ import { faStar } from '@fortawesome/fontawesome-free-solid';
 
 class BestService extends React.Component {
 
-	state= {
-        responsive:{
-            0: {
-                items: 1,
-            },
-            450: {
-                items: 1,
-            },
-            600: {
-                items: 2,
-            },
-            1000: {
-                items: 2,
-            },
-        },
-    }
+	// state= {
+    //     responsive:{
+    //         0: {
+    //             items: 1,
+    //         },
+    //         450: {
+    //             items: 1,
+    //         },
+    //         600: {
+    //             items: 2,
+    //         },
+    //         1000: {
+    //             items: 2,
+    //         },
+    //     },
+    // }
+
+	constructor(props) {
+		super(props);
+		this.state = {
+		  error: null,
+		  isLoaded: false,
+		  services: []
+		};
+	  }
+	
+	  componentDidMount() {
+		fetch("http://localhost:3000/")
+		  .then(res => res.json())
+		  .then(
+			(result) => {
+			  this.setState({
+				isLoaded: true,
+				services: result.service 
+			  });
+			},
+			(error) => {
+			  this.setState({
+				isLoaded: true,
+				error 
+			  });
+			}
+		  )
+	  }
+
 
     render() {
         var settings = {
@@ -77,125 +106,28 @@ class BestService extends React.Component {
 						</div>
 
 						<Slider {...settings} className="stylist-slider">
-							{/* Servcie Widget */}
-							<div className="profile-widget">
-								<div className="doc-img">
-									<Link to="/service-details">
-										<img className="img-fluid" alt="User Image" src={Service1} />
-										<div className="wrap-sec">
-											<div>
-												<h3>Sơn gel</h3>
-											</div>
-										</div>
-									</Link>
-								</div>
-							</div>
-							{/* Servcie Widget */}
 
-							{/* Servcie Widget */}
-							<div className="profile-widget">
-								<div className="doc-img">
-									<Link to="/service-details">
-										<img className="img-fluid" alt="User Image" src={Service2} />
-										<div className="wrap-sec">
-											<div>
-												<h3>Cắt da</h3>
-											</div>
+							{
+								this.state.services.slice(0, 8).map(service => (
+									<div className="profile-widget">
+										<div className="doc-img">
+											<Link to="/service-details">
+												<img 
+													className="img-fluid" 
+													alt="User Image" 
+													src={service.img}
+												/>
+												<div className="wrap-sec">
+													<div>
+														<h3>{service.name}</h3>
+													</div>
+												</div>
+											</Link>
 										</div>
-									</Link>
-								</div>
-							</div>
-							{/* Servcie Widget */}
-
-							{/* Servcie Widget */}
-							<div className="profile-widget">
-								<div className="doc-img">
-									<Link to="/service-details">
-										<img className="img-fluid" alt="User Image" src={Service3} />
-										<div className="wrap-sec">
-											<div>
-												<h3>Massage</h3>
-											</div>
-										</div>
-									</Link>
-								</div>
-							</div>
-							{/* Servcie Widget */}
-
-							{/* Servcie Widget */}
-							<div className="profile-widget">
-								<div className="doc-img">
-									<Link to="/service-details">
-										<img className="img-fluid" alt="User Image" src={Service4} />
-										<div className="wrap-sec">
-											<div>
-												<h3>Ẩn xà cừ</h3>
-											</div>
-										</div>
-									</Link>
-								</div>
-							</div>
-							{/* Servcie Widget */}
-
-							{/* Servcie Widget */}
-							<div className="profile-widget">
-								<div className="doc-img">
-									<Link to="/service-details">
-										<img className="img-fluid" alt="User Image" src={Service5} />
-										<div className="wrap-sec">
-											<div>
-												<h3>Up móng giả</h3>
-											</div>
-										</div>
-									</Link>
-								</div>
-							</div>
-							{/* Servcie Widget */}
-
-							{/* Servcie Widget */}
-							<div className="profile-widget">
-								<div className="doc-img">
-									<Link to="/service-details">
-										<img className="img-fluid" alt="User Image" src={Service6} />
-										<div className="wrap-sec">
-											<div>
-												<h3>Phá gel</h3>
-											</div>
-										</div>
-									</Link>
-								</div>
-							</div>
-							{/* Servcie Widget */}
-
-							{/* Servcie Widget */}
-							<div className="profile-widget">
-								<div className="doc-img">
-									<Link to="/service-details">
-										<img className="img-fluid" alt="User Image" src={Service7} />
-										<div className="wrap-sec">
-											<div>
-												<h3>Vẽ mắt mèo</h3>
-											</div>
-										</div>
-									</Link>
-								</div>
-							</div>
-							{/* Servcie Widget */}
-
-							{/* Servcie Widget */}
-							<div className="profile-widget">
-								<div className="doc-img">
-									<Link to="/service-details">
-										<img className="img-fluid" alt="User Image" src={Service8} />
-										<div className="wrap-sec">
-											<div>
-												<h3>Phủ gel dày móng</h3>
-											</div>
-										</div>
-									</Link>
-								</div>
-							</div>
-							{/* Servcie Widget */}
+									</div>
+								))
+							}
+							
 
 						</Slider>
 

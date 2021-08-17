@@ -9,6 +9,48 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faGoogle } from '@fortawesome/free-brands-svg-icons';
 
 class Login extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			username: '',
+			password: ''
+		};
+	
+		this.handleChangeUsername = this.handleChangeUsername.bind(this);
+		this.handleChangePassword = this.handleChangePassword.bind(this);
+
+		this.handleSubmit = this.handleSubmit.bind(this);
+	}
+	
+	handleChangeUsername(event) {
+		this.setState({username: event.target.value});
+	}
+
+	handleChangePassword(event) {
+		this.setState({password: event.target.value});
+	}
+	
+	handleSubmit(event) {
+		event.preventDefault();
+		console.log(this.state)
+		fetch(
+				"http://localhost:3000/user/login",
+				{
+					method: "POST",
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({
+						email: this.state.username,
+						password: this.state.password
+					})
+				}
+			).then(res => res.text()).then(
+				res => { console.log(res) }
+			).catch(
+				res => { console.log(res) }
+			)
+	}
 	
     render() {
         return (
@@ -31,13 +73,13 @@ class Login extends React.Component {
 												<div className="login-header">
 													<h3>Đăng nhập</h3>
 												</div>
-												<form action="/index">
+												<form action="/index" onSubmit={this.handleSubmit}>
 													<div className="form-group form-focus">
-														<input type="email" className="form-control floating" />
+														<input type="email" className="form-control floating" value={this.state.username} onChange={this.handleChangeUsername}/>
 														<label className="focus-label">Email hoặc số điện thoại</label>
 													</div>
 													<div className="form-group form-focus">
-														<input type="password" className="form-control floating" />
+														<input type="password" className="form-control floating" value={this.state.password} onChange={this.handleChangePassword}/>
 														<label className="focus-label">Mật khẩu</label>
 													</div>
 													<div className="text-right">
