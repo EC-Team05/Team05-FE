@@ -6,12 +6,6 @@ import { BlogSidebar } from './blog-sidebar';
 
 // Import Images
 import BlogImg from '../../assets/img/blog/blog-01.jpg';
-import StylistThumb from '../../assets/img/stylists/stylist-thumb-02.jpg';
-import CustomerImg1 from '../../assets/img/customers/customer4.jpg';
-import CustomerImg2 from '../../assets/img/customers/customer5.jpg';
-import CustomerImg3 from '../../assets/img/customers/customer3.jpg';
-import CustomerImg4 from '../../assets/img/customers/customer6.jpg';
-import CustomerImg5 from '../../assets/img/customers/customer7.jpg';
 
 // Import Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -55,7 +49,6 @@ class BlogDetails extends React.Component {
                                             <div className="post-left">
                                                 <ul>
                                                     <li><FontAwesomeIcon icon={faCalendarCheck} />4 Dec 2020</li>
-                                                    <li><FontAwesomeIcon icon={faTags} />Nail Polish Tips</li>
                                                 </ul>
                                             </div>
                                         </div>

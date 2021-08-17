@@ -4,16 +4,6 @@ import { Link } from 'react-router-dom'
 // Import Slick Slider
 import Slider from "react-slick";
 
-// Import Images
-import Service1 from '../../assets/img/service/service-01.jpg';
-import Service2 from '../../assets/img/service/service-02.jpg';
-import Service3 from '../../assets/img/service/service-03.jpg';
-import Service4 from '../../assets/img/service/service-04.jpg';
-import Service5 from '../../assets/img/service/service-05.jpg';
-import Service6 from '../../assets/img/service/service-06.jpg';
-import Service7 from '../../assets/img/service/service-07.jpg';
-import Service8 from '../../assets/img/service/service-08.jpg';
-
 // Import Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/fontawesome-free-solid';
