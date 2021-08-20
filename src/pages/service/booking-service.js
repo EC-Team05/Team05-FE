@@ -84,7 +84,7 @@ class BookingService extends React.Component {
 												<h4>Loại dịch vụ</h4>
 												<div>
 													<label className="custom_check">
-														<input type="checkbox" name="gender_type" defaultChecked />
+														<input type="checkbox" name="gender_type"/>
 														<span className="checkmark"></span> Dịch vụ chăm sóc móng
 													</label>
 												</div>
@@ -97,7 +97,7 @@ class BookingService extends React.Component {
 												<h4>Sắp xếp</h4>
 												<div>
 													<label className="custom_check">
-														<input type="checkbox" name="gender_type" defaultChecked />
+														<input type="checkbox" name="gender_type"/>
 														<span className="checkmark"></span> Giá từ thấp đến cao
 													</label>
 												</div>
@@ -152,7 +152,7 @@ class BookingService extends React.Component {
 													</div>
 													<div className="card col-2 d-flex justify-content-center align-items-center" style={{ backgroundColor: 'rgba(256, 256, 256, 0)', border: 'none' }}>
 														<label className="custom_check">
-															<input type="checkbox" name="gender_type" value={service._id} defaultChecked />
+															<input type="checkbox" name="gender_type" value={service._id}/>
 															<span className="checkmark"></span>
 														</label>
 													</div>
