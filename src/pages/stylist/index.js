@@ -6,4 +6,3 @@ export * from './stylist-dashboard';
 export * from './stylist-profile-settings';
 export * from './stylist-profile';
 export * from './appointments';
-export * from './invoices';

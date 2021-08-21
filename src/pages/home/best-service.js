@@ -101,7 +101,7 @@ class BestService extends React.Component {
 								this.state.services.slice(0, 8).map(service => (
 									<div className="profile-widget">
 										<div className="doc-img">
-											<Link to="/service-details">
+											<Link to="#">
 												<img
 													className="img-fluid"
 													alt="User Image"
@@ -117,8 +117,6 @@ class BestService extends React.Component {
 									</div>
 								))
 							}
-
-
 						</Slider>
 
 						<div className="row justify-content-center">

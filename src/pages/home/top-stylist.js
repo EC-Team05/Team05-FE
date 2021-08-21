@@ -90,24 +90,26 @@ class TopStylist extends React.Component {
 												<Link to="/stylist-profile">{`${employee.lastname} ${employee.firstname}`}</Link>
 											</h3>
 											<div className="rating text-center">
-												<FontAwesomeIcon icon={faStar} className="filled" />
-												<FontAwesomeIcon icon={faStar} className="filled" />
-												<FontAwesomeIcon icon={faStar} className="filled" />
-												<FontAwesomeIcon icon={faStar} className="filled" />
-												<FontAwesomeIcon icon={faStar} />
+												{
+													[...Array(employee.rate | 0).fill(1), ...Array(5 - (employee.rate | 0)).fill(0)].map(i => {
+														return i ?
+															(<FontAwesomeIcon icon={faStar} className='filled' />) :
+															(<FontAwesomeIcon icon={faStar} />)
+													})
+												}
 											</div>
 											<div className="row row-sm mb-4 text-center">
 												<div className="col-6">
 													<p>Kinh nghiệm</p>
-													<p className="num">19</p>
+													<p className="num">{employee.experience}</p>
 												</div>
 												<div className="col-6">
 													<p>Đã tham gia</p>
-													<p className="num">220</p>
+													<p className="num">{employee.attended}</p>
 												</div>
 											</div>
 											<div className="row row-sm justify-content-center">
-												<Link to="/booking" className="btn-pink">Đặt lịch ngay</Link>
+												<Link to="/booking-service" className="btn-pink">Đặt lịch ngay</Link>
 											</div>
 										</div>
 									</div>

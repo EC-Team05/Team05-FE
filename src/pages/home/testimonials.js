@@ -52,7 +52,7 @@ class Testimonials extends React.Component {
                                 this.state.reviews.slice(0, 3).map(review => (
                                     <div className="col-md-6 col-lg-4 cust-says">
                                         <div className="testi-user">
-                                            <img src={Client1} alt="Testimonial" />
+                                            <img src={review.cus[0].img} alt="Testimonial" />
                                         </div>
                                         <div className="card">
                                             <div className="cust-header">

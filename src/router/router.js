@@ -27,14 +27,12 @@ import {
     Register,
     Reviews,
     ProfileSettings,
-    Search,
     CustomerDashboard,
     CustomerProfile,  
     MyCustomers,
     StylistList,
     Calendar,
     ScheduleTimings,
-    ServiceDetails,
     Appointments,
     BookingService,
     StaffDashboard,
@@ -93,8 +91,6 @@ class RouterComponent extends React.Component {
                         <Route path="/register" component={Register} />
                         <Route path="/reviews" component={Reviews} />
                         <Route path="/profile-settings" component={ProfileSettings} />
-                        <Route path="/search" component={Search} />
-                        <Route path="/service-details" component={ServiceDetails} />
                         <Route path="/customer-dashboard" component={CustomerDashboard} />
                         <Route path="/customer-profile" component={CustomerProfile} />
                         <Route path="/my-customers" component={MyCustomers} />
