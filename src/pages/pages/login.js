@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import Axios from 'axios'
 
 // Import Image
 import LoginImg from '../../assets/img/login-banner.png';
@@ -7,6 +8,8 @@ import LoginImg from '../../assets/img/login-banner.png';
 // Import Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { AirlineSeatIndividualSuiteSharp } from '@material-ui/icons';
+import axios from 'axios';
 
 class Login extends React.Component {
 	constructor(props) {
@@ -46,16 +49,38 @@ class Login extends React.Component {
 					})
 				}
 			).then(res => res.text()).then(
-				res => { console.log(res) }
+				res => { 
+					console.log(res);
+					localStorage.setItem("Accesstoken",res)
+				}
 			).catch(
 				res => { console.log(res) }
 			)
 	}
-	
+	handleSubmit(event) {
+		event.preventDefault();
+		console.log(this.state)
+		fetch("http://localhost:3000/user/profile",
+				{
+					method: "POST",
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({
+						token: localStorage.getItem("Accesstoken")
+					})
+				}
+			).then(res => res.text()).then(
+				res => { 
+					console.log(res);
+				}
+			).catch(
+				res => { console.log(res) }
+			)
+	}
     render() {
         return (
 			<div>
-
 				{/* Page Content */}
 				<div className="account-page">
 					<div className="content">
@@ -112,6 +137,7 @@ class Login extends React.Component {
 					</div>
 				</div>					
 				{/* Page Content */}
+				
 			</div>
         )
     }
