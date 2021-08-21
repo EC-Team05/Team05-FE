@@ -206,5 +206,4 @@ Version      : 1.0
 			return false;
 		}
 	});
-	
 })(jQuery);

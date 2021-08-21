@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-
 // Import Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/fontawesome-free-solid';
-
+import { faRProject } from '@fortawesome/free-brands-svg-icons';
 
 class BookingService extends React.Component {
 
@@ -34,9 +33,10 @@ class BookingService extends React.Component {
 					});
 				}
 			)
+
 	}
 
-
+	
 	render() {
 		return (
 			<div>
@@ -151,9 +151,11 @@ class BookingService extends React.Component {
 														</div>
 													</div>
 													<div className="card col-2 d-flex justify-content-center align-items-center" style={{ backgroundColor: 'rgba(256, 256, 256, 0)', border: 'none' }}>
-														<label className="custom_check">
-															<input type="checkbox" name="gender_type" value={service._id}/>
-															<span className="checkmark"></span>
+														<label className="button-added">
+														<input type="checkbox" name="gender_type" value={service._id}/>
+														<span className="checkmark"></span>
+														
+	
 														</label>
 													</div>
 												</div>)
@@ -169,4 +171,5 @@ class BookingService extends React.Component {
 		)
 	}
 }
+
 export { BookingService };
