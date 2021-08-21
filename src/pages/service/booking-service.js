@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-
+// const id_sv = [];
+// let i=0;
 // Import Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/fontawesome-free-solid';
+import axios from 'axios';
 
 
 class BookingService extends React.Component {
@@ -13,10 +15,12 @@ class BookingService extends React.Component {
 		this.state = {
 			error: null,
 			isLoaded: false,
-			services: []
+			services: [],
+			serviceOrder:[],
 		};
-	}
+		this.temp= this.temp.bind(this)
 
+	}
 	componentDidMount() {
 		fetch("http://localhost:3000/booking-service")
 			.then(res => res.json())
@@ -35,9 +39,43 @@ class BookingService extends React.Component {
 				}
 			)
 	}
-
-
+	handleChange(event) {
+		let isChecked = event.target.checked;
+		const newServiceOrder=this.state.serviceOrder;
+		if(isChecked){
+			newServiceOrder.push(event.target.value);
+		}
+		else{
+			let value =event.target.value;
+			let index =newServiceOrder.indexOf(value);
+			if (index => 0)
+			newServiceOrder.splice(index,1)
+		}
+		this.setState({
+			...this.state,
+			serviceOrder: newServiceOrder
+		})
+		console.log( this.state.serviceOrder)
+	}
+	/*handleSubmit(event) {
+		event.preventDefault();
+		console.log(this.state)
+		axios.post('http://localhost:3000/booking-service',id_sv)
+			.then(res => {
+				console.log(res)
+			})
+			.catch(error => {
+				console.log(error)
+			})
+	}	*/	
+	temp=(idsv)=>{
+		const serviceItem=this.state.services.find((service)=>{service.idservice===idsv})
+		return  serviceItem
+	}
 	render() {
+		let {serviceOrder,services}=this.state
+		console.log(serviceOrder)
+		let  sum =0 ;
 		return (
 			<div>
 				{/* Breadcrumb */}
@@ -121,12 +159,21 @@ class BookingService extends React.Component {
 										</div>
 										<div className="card-body">
 											<ul className="categories">
-												<li>Sơn gel <span>80.000</span></li>
-												<li>Sơn gel <span>80.000</span></li>
+											{
+												serviceOrder.map((idsv) => 
+													<li>
+													{services.find((service)=>(service.idservice==idsv)).name}
+													<span>{services.find((service)=>(service.idservice==idsv)).price}</span>
+												</li>
+												)
+											}
 											</ul>
 										</div>
 										<div className="card-header">
-											<h4 className="card-title mb-0">Tổng <span>160.000</span></h4>
+											{serviceOrder.map((idsv) =>
+												<h4 className="card-title mb-0">Tổng <span>{sum+=Number(services.find((service)=>(service.idservice==idsv)).price)}</span></h4>
+											)
+											}
 										</div>
 										<div className="btn-searchsubmit-section proceed-btn text-right btn btn-block">
 											<Link to="/booking" className="btn btn-primary submit-btn">Xác nhận</Link>
@@ -136,28 +183,28 @@ class BookingService extends React.Component {
 								<div className="col-md-12 col-lg-8 col-xl-9">
 									{/* Choose service */}
 									<ul>
-										{
-											this.state.services.map(service =>
-												<div className="row">
-													<div className="card col-10">
-														<div className="card-body">
-															<div className="">
-																<h4 className="doc-name">{service.name}</h4>
-																<div class="row">
-																	<div class="col-10 doc-speciality">{service.duration}</div>
-																	<div class="col-2 doc-speciality">{service.price}</div>
+											{
+												this.state.services.map(service =>
+													<div className="row">
+														<div className="card col-10">
+															<div className="card-body">
+																<div className="">
+																	<h4 className="doc-name">{service.name}</h4>
+																	<div class="row">
+																		<div class="col-10 doc-speciality">{service.duration}</div>
+																		<div class="col-2 doc-speciality">{service.price}</div>
+																	</div>
 																</div>
 															</div>
 														</div>
-													</div>
-													<div className="card col-2 d-flex justify-content-center align-items-center" style={{ backgroundColor: 'rgba(256, 256, 256, 0)', border: 'none' }}>
-														<label className="custom_check">
-															<input type="checkbox" name="gender_type" value={service._id} defaultChecked />
-															<span className="checkmark"></span>
-														</label>
-													</div>
-												</div>)
-										}
+														<div className="card col-2 d-flex justify-content-center align-items-center" style={{ backgroundColor: 'rgba(256, 256, 256, 0)', border: 'none' }}>
+															<label className="custom_check">
+																<input type="checkbox" name="gender_type" value = {service.idservice} onChange={(event)=>this.handleChange(event)} />
+																<span className="checkmark"></span>
+															</label>
+														</div>
+													</div>)
+											}
 									</ul>
 									{/* Choose service */}
 								</div>
