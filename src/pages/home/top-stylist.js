@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import axios from "axios";
-
 // Import Slick Slider
 import Slider from "react-slick";
 
@@ -9,38 +7,34 @@ import Slider from "react-slick";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/fontawesome-free-solid';
 
-const api = axios.create({
-	baseUrl: "http://localhost:3000/",
-});
-
 class TopStylist extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-		  error: null,
-		  isLoaded: false,
-		  employees: []
+			error: null,
+			isLoaded: false,
+			employees: []
 		};
-	  }
-	
-	  componentDidMount() {
+	}
+
+	componentDidMount() {
 		fetch("http://localhost:3000/")
-		  .then(res => res.json())
-		  .then(
-			(result) => {
-			  this.setState({
-				isLoaded: true,
-				employees: result.employee 
-			  });
-			},
-			(error) => {
-			  this.setState({
-				isLoaded: true,
-				error 
-			  });
-			}
-		  )
-	  }
+			.then(res => res.json())
+			.then(
+				(result) => {
+					this.setState({
+						isLoaded: true,
+						employees: result.employee
+					});
+				},
+				(error) => {
+					this.setState({
+						isLoaded: true,
+						error
+					});
+				}
+			)
+	}
 
 	render() {
 		var settings = {
@@ -82,7 +76,7 @@ class TopStylist extends React.Component {
 						</div>
 
 						<Slider {...settings} className="stylist-slider">
-							
+
 							{
 								this.state.employees.map(employee => (
 									<div className="profile-widget">
@@ -104,11 +98,11 @@ class TopStylist extends React.Component {
 											</div>
 											<div className="row row-sm mb-4 text-center">
 												<div className="col-6">
-													<p>Experience</p>
+													<p>Kinh nghiệm</p>
 													<p className="num">19</p>
 												</div>
 												<div className="col-6">
-													<p>Attended</p>
+													<p>Đã tham gia</p>
 													<p className="num">220</p>
 												</div>
 											</div>
