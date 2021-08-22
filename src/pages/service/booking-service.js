@@ -67,8 +67,8 @@ class BookingService extends React.Component {
 		//console.log(this.state)
 		axios.post('http://localhost:3000/booking-service',this.state.serviceOrder)
 			.then(res => {
-				console.log(res.data)
-				this.setState({redirect:true})
+				console.log(res.data),
+				this.setState({redirect:true}),
 				localStorage.setItem("id_app",res.data.id_apppoint)
 			})
 			.catch(error => {
