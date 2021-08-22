@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { Link,Redirect } from 'react-router-dom'
-import { Link } from 'react-router-dom'
 // Import Icons
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/fontawesome-free-solid';
 import { faRProject } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/fontawesome-free-solid';

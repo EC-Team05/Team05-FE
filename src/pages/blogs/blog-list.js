@@ -78,7 +78,16 @@ class BlogList extends React.Component {
                                                             alt="Post Image" />
                                                     </Link>
                                                 </div>
-                                                <h3 className="blog-title"><Link to="/blog-details">How to strengthen brittle nails naturally</Link></h3>
+                                                <h3 className="blog-title">
+                                                    <Link
+                                                        to={{
+                                                            'pathname': '/blog-details',
+                                                            'state': { 'blog': blog }
+                                                        }}
+                                                    >
+                                                        {blog.title}
+                                                    </Link>
+                                                </h3>
                                                 <div className="blog-info clearfix">
                                                     <div className="post-left">
                                                         <ul>
@@ -87,8 +96,18 @@ class BlogList extends React.Component {
                                                     </div>
                                                 </div>
                                                 <div className="blog-content">
-                                                    <p>{blog.content}</p>
-                                                    <Link to="/blog-details" className="read-more">Đọc thêm</Link>
+                                                    <p>{blog.brief}</p>
+                                                    {/* <Link to={`/blog-details?title=${blog.title}`} className="read-more">Đọc thêm</Link> */}
+                                                    <Link
+                                                        to={{
+                                                            'pathname': '/blog-details',
+                                                            'state': { 'blog': blog }
+                                                        }}
+                                                        className="read-more"
+                                                    >
+                                                        Đọc thêm
+                                                    </Link>
+
                                                 </div>
                                             </div>
                                         )
