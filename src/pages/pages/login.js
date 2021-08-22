@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import Axios from 'axios'
 
 // Import Image
@@ -53,11 +53,12 @@ class Login extends React.Component {
 					console.log(res);
 					localStorage.setItem("Accesstoken",res)
 				}
+				,<Redirect to="http://localhost:3002/nailsalon" />
 			).catch(
 				res => { console.log(res) }
 			)
 	}
-	handleSubmit(event) {
+	/*handleSubmit(event) {
 		event.preventDefault();
 		console.log(this.state)
 		fetch("http://localhost:3000/user/profile",
@@ -77,7 +78,7 @@ class Login extends React.Component {
 			).catch(
 				res => { console.log(res) }
 			)
-	}
+	}*/
     render() {
         return (
 			<div>

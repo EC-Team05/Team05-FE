@@ -13,6 +13,7 @@ import { faCalendarAlt, faCheck, faChevronCircleDown, faChevronDown, faChevronLe
 
 function Booking() {
     const [selectedDate, setSelectedDate] = useState(new Date());
+    
     return (
         <div>
             {/* Breadcrumb */}
