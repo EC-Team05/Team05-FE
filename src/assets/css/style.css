@@ -1657,16 +1657,21 @@ button.bg-danger:hover {
     -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
-    background-color: transparent;
+    background-color: #FDB7B7;
+
 }
 .header {
 	position: sticky;
 	top: 0;
 	z-index: 1060;
+	background-color: #FDB7B7;
+	color: #000;
 }
 .min-header .header-nav {
-    background-color: transparent;
+    background-color: #FDB7B7;
     border:none;
+	color: #000;
+
 }
 .header.min-header.nav-sticky {
 	position: sticky;
@@ -1676,6 +1681,7 @@ button.bg-danger:hover {
 .main-menu-wrapper {
     margin: 0;
     padding: 0;
+	color: #000;
 }
 .header-navbar-rht.menu-select {
     margin: 0;
@@ -1686,13 +1692,13 @@ button.bg-danger:hover {
     font-weight: 600;
 }
 .min-header .header-navbar-rht.menu-select {
-	color: #fff;
+	color: #000;
 }
 .header-navbar-rht.menu-select li {
 	cursor:pointer;
 }
 .min-header .main-nav li a {
-    color: #fff;
+    color: #000;
 }
 .min-header .main-nav li a.dropdown-item {
     color: #000;
@@ -1750,7 +1756,7 @@ button.bg-danger:hover {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	background-color: #fff;
+	background-color: #FDB7B7;
 	border: 0;
 	border-bottom: 1px solid #f0f0f0;
 	display: -webkit-box;
@@ -1765,6 +1771,7 @@ button.bg-danger:hover {
 	height: 85px;
 	padding: 0 30px;
 	margin-bottom: 0;
+	color: #000;
 }
 .main-nav {
 	display: -webkit-box;
@@ -1773,6 +1780,9 @@ button.bg-danger:hover {
 	list-style: none;
 	margin: 0;
 	padding: 0;
+	background-color: #FDB7B7;
+	color: #000;
+	
 }
 .main-nav > li.active > a {
 	color: #cc2d78;
@@ -2111,7 +2121,8 @@ html.menu-opened body {
 -----------------------*/
 
 .footer {
-    background-color: #cc2d78;
+    background-color: #FDB7B7;
+	text-align: center;
 }
 .footer.footer-padding .footer-top {
 	padding: 50px 0 60px;
@@ -2120,7 +2131,7 @@ html.menu-opened body {
 	padding: 40px 0;
 }
 .footer-title {
-    color: #fff;
+    color: #000;
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 30px;
@@ -2137,7 +2148,7 @@ html.menu-opened body {
 	margin-bottom: 30px;
 }
 .footer .footer-widget .footer-about-content p {
-	color: #fff;
+	color: #000;
 	font-size: 16px;
 	font-family: "Ubuntu",sans-serif;
 }
@@ -2152,7 +2163,7 @@ html.menu-opened body {
 	margin-bottom: 0;
 }
 .footer .footer-menu ul li a {
-	color: #fff;
+	color: #000;
 	font-family: "Ubuntu",sans-serif;
 	font-size: 16px;
 	position: relative;
@@ -2161,10 +2172,10 @@ html.menu-opened body {
 	transition: all 0.4s ease 0s;
 }
 .footer .footer-widget.footer-menu ul li a:hover {
-	color: #fff;
+	color: #000;
 }
 .footer-contact-info {
-	color: #fff;
+	color: #000;
 	font-size: 15px;
 }
 .footer-contact-info .footer-address {
@@ -2196,7 +2207,7 @@ html.menu-opened body {
 	transition: all 0.4s ease 0s;
 }
 .footer .footer-bottom .copyright-text p a:hover {
-	color: #fff;
+	color: #000;
 }
 .footer .footer-bottom .copyright-text p.title {
 	font-weight: 400;
@@ -8347,4 +8358,54 @@ html.menu-opened body {
     margin-bottom: 0;
     margin-top: 0;
     display: block;
+}
+
+
+/* <!dịch vụ */
+.buttons_added {
+    opacity:1;
+    display:inline-block;
+    display:-ms-inline-flexbox;
+    display:inline-flex;
+    white-space:nowrap;
+    vertical-align:top;
+}
+.is-form {
+    overflow:hidden;
+    position:relative;
+    background-color:#f9f9f9;
+    height:2.2rem;
+    width:1.9rem;
+    padding:0;
+    text-shadow:1px 1px 1px #fff;
+    border:1px solid #ddd;
+}
+.is-form:focus,.input-text:focus {
+    outline:none;
+}
+.is-form.minus {
+    border-radius:4px 0 0 4px;
+}
+.is-form.plus {
+    border-radius:0 4px 4px 0;
+}
+.input-qty {
+    background-color:#fff;
+    height:2.2rem;
+    text-align:center;
+    font-size:1rem;
+    display:inline-block;
+    vertical-align:top;
+    margin:0;
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    border-left:0;
+    border-right:0;
+    padding: 3px 6px;
+	width: 30px;
+	
+}
+.input-qty::-webkit-outer-spin-button,.input-qty::-webkit-inner-spin-button {
+    -webkit-appearance:none;
+    margin:0;
 }

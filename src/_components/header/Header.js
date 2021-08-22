@@ -92,16 +92,16 @@ class Header extends React.Component {
 								<Link to = "/">Trang chủ</Link>
 							</li>
 							<li className={pathname === ('/stylist-dashboard') ? 'active' : ''}>
-								<Link to = "/stylist-dashboard">Nhà tạo mẫu</Link>
+								<Link to = "/stylist-dashboard">Nhân viên nail</Link>
 							</li>
 							<li className={pathname === ('/staff-dashboard') ? 'active' : ''}>
-								<Link to = "/staff-dashboard">Nhân viên tiếp nhận</Link>
+								<Link to = "/staff-dashboard">Admin</Link>
 							</li>
 							<li className={`has-submenu ${pathname === ('/search') ? 'active' : pathname === ('/booking') ? 'active' : pathname === ('/customer-dashboard') ? 'active' : pathname === ('/login') ? 'active' : pathname === ('/register') ? 'active' :''}`}>
 								<Link to="">Khách hàng <FontAwesomeIcon icon={faChevronDown} /></Link>
 								<ul className="submenu">
 									<li className={`${pathname === ('/search') ? 'active' : ''}`}>
-										<Link to = "/search">Tìm kiếm nhà tạo mẫu</Link>
+										<Link to = "/search">Tìm kiếm nhân viên nail</Link>
 									</li>
 									<li className={`${pathname === ('/customer-dashboard') ? 'active' : ''}`}>
 										<Link to = "/customer-dashboard">Dashboard</Link>
@@ -167,9 +167,7 @@ class Header extends React.Component {
 								</Dropdown.Toggle>
 
 								<Dropdown.Menu>
-									<Dropdown.Item href="">Spanish</Dropdown.Item>
-									<Dropdown.Item href="">Portuguese</Dropdown.Item>
-									<Dropdown.Item href="">Russian</Dropdown.Item>
+									<Dropdown.Item href="">English</Dropdown.Item>
 								</Dropdown.Menu>
 							</Dropdown>
 						</li>

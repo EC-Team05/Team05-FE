@@ -55,10 +55,10 @@ class NewsandEvents extends React.Component {
                         {/* Section Header */}
 
                         <div className="row blog-grid-row">
-                            <div className="col-md-6 col-lg-4 col-sm-12">
+                            <div className="col-md-4 col-sm-4 col-4">
                                 {/* Blog Post */}
                                 {
-                                    this.state.blogs.slice(0, 3).map(blog => (
+                                    this.state.blogs.slice(0, 1).map(blog => (
                                         <div className="blog grid-blog">
                                             <div className="blog-image">
                                                 <Link to="/blog-details"><img className="img-fluid" src={blog.img} alt="Post Image" /></Link>
@@ -73,6 +73,7 @@ class NewsandEvents extends React.Component {
                                 }
                                 {/* Blog Post */}
                             </div>
+                          
                         </div>
                     </div>
                 </section>

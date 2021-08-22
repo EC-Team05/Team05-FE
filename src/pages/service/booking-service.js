@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Link,Redirect } from 'react-router-dom'
-// const id_sv = [];
-// let i=0;
+import { Link } from 'react-router-dom'
 // Import Icons
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/fontawesome-free-solid';
+import { faRProject } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/fontawesome-free-solid';
 import axios from 'axios';
@@ -38,7 +40,10 @@ class BookingService extends React.Component {
 					});
 				}
 			)
+
 	}
+
+	
 	handleChange(event) {
 		let isChecked = event.target.checked;
 		const newServiceOrder=this.state.serviceOrder;
@@ -70,10 +75,6 @@ class BookingService extends React.Component {
 				console.log(error)
 			})
 	}
-	/*temp=(idsv)=>{
-		const serviceItem=this.state.services.find((service)=>{service.idservice===idsv})
-		return  serviceItem
-	}*/
 	render() {
 		const { redirect } = this.state;
 		console.log(redirect)
