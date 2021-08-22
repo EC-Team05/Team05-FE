@@ -47,26 +47,16 @@ class Footer extends React.Component {
 									<h2 className="footer-title">Quick Links</h2>
 									<ul>
 										<li>
-											<Link to="/appointments">Appointments</Link>
+											<Link to="/login">Đăng nhập</Link>
 										</li>
 										<li>
-											<Link to="/chat">Chat</Link>
-										</li>
-										<li>
-											<Link to="/login">Login</Link>
-										</li>
-										<li>
-											<Link to="/stylist-register">Register</Link>
-										</li>
-										<li>
-											<Link to="/stylist-dashboard">Stylist Dashboard</Link>
+											<Link to="/stylist-register">Đăng kí</Link>
 										</li>
 									</ul>
 								</div>
 								{/* Footer Widget */}
 								
 							</div>
-							
 							
 							<div className="col-lg-3 col-md-6">
 							
@@ -75,19 +65,19 @@ class Footer extends React.Component {
 									<h2 className="footer-title">Useful links</h2>
 									<ul>
 										<li>
-											<Link to="/search">Search for Stylists</Link>
+											<Link to="/search">Tìm kiếm nhân viên nail</Link>
 										</li>
 										<li>
-											<Link to="/login">Login</Link>
+											<Link to="/login">Đăng nhập</Link>
 										</li>
 										<li>
-											<Link to="/stylist-register">Register</Link>
+											<Link to="/stylist-register">Đăng kí</Link>
 										</li>
 										<li>
 											<Link to="/booking">Booking</Link>
 										</li>
 										<li>
-											<Link to="/customer-dashboard">Customer Dashboard</Link>
+											<Link to="/customer-dashboard">Dashboard của khách hàng</Link>
 										</li>
 									</ul>
 								</div>

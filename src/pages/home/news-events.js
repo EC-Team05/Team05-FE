@@ -1,15 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-// Import Images
-import EventImg1 from '../../assets/img/profile/blog-01.jpg';
-import EventImg2 from '../../assets/img/profile/blog-02.jpg';
-import EventImg3 from '../../assets/img/profile/blog-03.jpg';
-
-// Import Icons
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPaperPlane } from '@fortawesome/fontawesome-free-solid';
-
 class NewsandEvents extends React.Component {
 
     constructor(props) {

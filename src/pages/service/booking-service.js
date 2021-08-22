@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-// const id_sv = [];
-// let i=0;
 // Import Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/fontawesome-free-solid';
-import axios from 'axios';
-
+import { faRProject } from '@fortawesome/free-brands-svg-icons';
 
 class BookingService extends React.Component {
 
@@ -216,4 +213,5 @@ class BookingService extends React.Component {
 		)
 	}
 }
+
 export { BookingService };

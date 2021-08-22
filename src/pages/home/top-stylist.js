@@ -70,7 +70,7 @@ class TopStylist extends React.Component {
 					<div className="container">
 						<div className="row justify-content-center">
 							<div className="section-header text-center">
-								<h2>Nhà tạo mẫu hàng đầu</h2>
+								<h2>Nhân viên nail hàng đầu của Nàng beauty</h2>
 								<p className="sub-title">Top những nhà tạo mẫu được yêu thích</p>
 							</div>
 						</div>
@@ -118,7 +118,7 @@ class TopStylist extends React.Component {
 						</Slider>
 
 						<div className="row justify-content-center">
-							<Link to="search.html" className="btn-pink">Tất cả nhà tạo mẫu</Link>
+							<Link to="search.html" className="btn-pink">Tất cả nhân viên Nail</Link>
 						</div>
 					</div>
 				</section>

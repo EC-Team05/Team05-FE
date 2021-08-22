@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 import LoginImg from '../../assets/img/login-banner.png';
 
 class ForgotPassword extends React.Component {
-	
     render() {
         return (
 			<div>
