@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import { Link,Redirect } from 'react-router-dom'
 // Import Icons
+import { faRProject } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/fontawesome-free-solid';
-import { faRProject } from '@fortawesome/free-brands-svg-icons';
+import axios from 'axios';
+
 
 class BookingService extends React.Component {
 
@@ -14,9 +16,9 @@ class BookingService extends React.Component {
 			isLoaded: false,
 			services: [],
 			serviceOrder:[],
+			redirect: false
 		};
-		this.temp= this.temp.bind(this)
-
+		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 	componentDidMount() {
 		fetch("http://localhost:3000/booking-service")
@@ -35,7 +37,10 @@ class BookingService extends React.Component {
 					});
 				}
 			)
+
 	}
+
+	
 	handleChange(event) {
 		let isChecked = event.target.checked;
 		const newServiceOrder=this.state.serviceOrder;
@@ -54,29 +59,33 @@ class BookingService extends React.Component {
 		})
 		console.log( this.state.serviceOrder)
 	}
-	/*handleSubmit(event) {
+	handleSubmit(event) {
 		event.preventDefault();
-		console.log(this.state)
-		axios.post('http://localhost:3000/booking-service',id_sv)
+		//console.log(this.state)
+		axios.post('http://localhost:3000/booking-service',this.state.serviceOrder)
 			.then(res => {
-				console.log(res)
+				console.log(res.data)
+				this.setState({redirect:true})
+				localStorage.setItem("id_app",res.data.id_apppoint)
 			})
 			.catch(error => {
 				console.log(error)
 			})
-	}	*/	
-	temp=(idsv)=>{
-		const serviceItem=this.state.services.find((service)=>{service.idservice===idsv})
-		return  serviceItem
 	}
 	render() {
+		const { redirect } = this.state;
+		console.log(redirect)
+     	if (redirect) {
+       		return <Redirect to='/booking'/>;
+     	}
 		let {serviceOrder,services}=this.state
 		console.log(serviceOrder)
 		let  sum =0 ;
+		let serviceObj;
 		return (
 			<div>
 				{/* Breadcrumb */}
-				<form action="/booking-service" method="POST">
+				<form action="/booking-service" method="POST" onSubmit={this.handleSubmit}>
 					<div className="breadcrumb-bar">
 						<div className="container-fluid">
 							<div className="row align-items-center">
@@ -111,7 +120,6 @@ class BookingService extends React.Component {
 						<div className="container">
 							<div className="row">
 								<div className="col-md-12 col-lg-4 col-xl-3 theiaStickySidebar">
-
 									{/* Search Filter */}
 									<div className="card search-filter">
 										<div className="card-body">
@@ -150,32 +158,29 @@ class BookingService extends React.Component {
 										</div>
 									</div>
 									{/* Search Filter */}
-									<div className="card category-widget">
-										<div className="card-header">
-											<h4 className="card-title">Dịch vụ đã chọn</h4>
+										<div className="card category-widget">
+											<div className="card-header">
+												<h4 className="card-title">Dịch vụ đã chọn</h4>
+											</div>
+											<div className="card-body">
+												<ul className="categories">
+												{
+													serviceOrder.map((idsv) => {
+														serviceObj = services.find((service)=>(service.idservice==idsv));
+														sum+=Number(serviceObj.price);
+														return<li>{serviceObj.name}<span>{serviceObj.price}</span>
+													</li>
+													})
+												}
+												</ul>
+											</div>
+											<div className="card-header">
+												<h4 className="card-title mb-0">Tổng: <span>{String(sum)+".000"}</span></h4>
+											</div>
+											<div className="btn-searchsubmit-section proceed-btn text-right btn btn-block">
+												<button className="btn btn-primary btn-block btn-lg login-btn" type="submit">Xác nhận</button>
+											</div>
 										</div>
-										<div className="card-body">
-											<ul className="categories">
-											{
-												serviceOrder.map((idsv) => 
-													<li>
-													{services.find((service)=>(service.idservice==idsv)).name}
-													<span>{services.find((service)=>(service.idservice==idsv)).price}</span>
-												</li>
-												)
-											}
-											</ul>
-										</div>
-										<div className="card-header">
-											{serviceOrder.map((idsv) =>
-												<h4 className="card-title mb-0">Tổng <span>{sum+=Number(services.find((service)=>(service.idservice==idsv)).price)}</span></h4>
-											)
-											}
-										</div>
-										<div className="btn-searchsubmit-section proceed-btn text-right btn btn-block">
-											<Link to="/booking" className="btn btn-primary submit-btn">Xác nhận</Link>
-										</div>
-									</div>
 								</div>
 								<div className="col-md-12 col-lg-8 col-xl-9">
 									{/* Choose service */}
@@ -213,5 +218,4 @@ class BookingService extends React.Component {
 		)
 	}
 }
-
 export { BookingService };
