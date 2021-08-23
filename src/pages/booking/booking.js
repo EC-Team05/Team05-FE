@@ -12,7 +12,7 @@ import { setMinutes, setHours } from 'date-fns';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendarAlt, faCheck, faChevronCircleDown, faChevronDown, faChevronLeft, faChevronRight, faMapMarkerAlt, faStar } from '@fortawesome/fontawesome-free-solid';
 class Booking extends React.Component {
-    constructor (props) {
+    constructor(props) {
         super(props)
         this.state = {
             startDate: new Date()
@@ -23,7 +23,7 @@ class Booking extends React.Component {
 
     handleChange(date) {
         this.setState({
-        startDate: date
+            startDate: date
         })
     }
 
@@ -33,54 +33,48 @@ class Booking extends React.Component {
         var day = ''
         var month = ''
 
-        if (this.state.startDate.getHours().toString().length < 2)
-        {
+        if (this.state.startDate.getHours().toString().length < 2) {
             time += '0'
             time += this.state.startDate.getHours().toString()
         }
-        else
-        {
+        else {
             time += this.state.startDate.getHours().toString()
         }
 
-        if (this.state.startDate.getDate().toString().length < 2)
-        {
+        if (this.state.startDate.getDate().toString().length < 2) {
             day += '0'
             day += this.state.startDate.getDate().toString()
         }
-        else
-        {
+        else {
             day += this.state.startDate.getDate().toString()
         }
-        
-        if ((this.state.startDate.getMonth()+1).toString().length < 2)
-        {
+
+        if ((this.state.startDate.getMonth() + 1).toString().length < 2) {
             month += '0'
-            month += (this.state.startDate.getMonth()+1).toString()
+            month += (this.state.startDate.getMonth() + 1).toString()
         }
-        else
-        {
-            month += (this.state.startDate.getMonth()+1).toString()
+        else {
+            month += (this.state.startDate.getMonth() + 1).toString()
         }
 
         var res = this.state.startDate.getFullYear().toString() + '-' + month + '-' + day
-        + "@" + time 
+            + "@" + time
         console.log(res)
         const data = {
             chosen_date: res
         }
 
-        axios.post('http://localhost:3000/booking',data)
-        .then(() => console.log('Ok'))
-        .catch(err => {
-            console.log(err);
-        })
+        axios.post('http://localhost:3000/booking', data)
+            .then(() => console.log('Ok'))
+            .catch(err => {
+                console.log(err);
+            })
         // $.getJSON('/nailsalon/booking-service/info?date='+res, function(data){
         //     console.log(data)
         // })
     }
     render() {
-        return(
+        return (
             <div>
                 {/* Breadcrumb */}
                 <div className="breadcrumb-bar">
@@ -107,31 +101,31 @@ class Booking extends React.Component {
                             <div className="col-md-12">
                                 <div className="card">
                                     <div className="card-body">
-                                    <div className="row">
-                            <div className="col-12 col-sm-4 col-md-6">
-                                <span>
-                                    Quý khách vui lòng chọn ngày giờ đặt lịch ở khung bên cạnh.
-                                </span>
-                            </div>
-                            <div className="col-12 col-sm-8 col-md-6 text-sm-right">
-                                <form onSubmit={ this.onFormSubmit }>
-                                    <div className="form-group">
-                                    <DatePicker
-                                        selected={ this.state.startDate }
-                                        onChange={ this.handleChange }
-                                        minTime = {setHours(this.state.startDate, 9)}
-                                        maxTime = {setHours(this.state.startDate, 21)}
-                                        showTimeSelect
-                                        timeFormat="HH:mm"
-                                        timeIntervals={60}
-                                        timeCaption="time"
-                                        dateFormat="MMMM d, yyyy h:mm aa"
-                                    />
-                                    <button className="btn btn-primary">Đặt lịch</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+                                        <div className="row">
+                                            <div className="col-12 col-sm-4 col-md-6">
+                                                <span>
+                                                    Quý khách vui lòng chọn ngày giờ đặt lịch ở khung bên cạnh.
+                                                </span>
+                                            </div>
+                                            <div className="col-12 col-sm-8 col-md-6 text-sm-right">
+                                                <form onSubmit={this.onFormSubmit}>
+                                                    <div className="form-group">
+                                                        <DatePicker
+                                                            selected={this.state.startDate}
+                                                            onChange={this.handleChange}
+                                                            minTime={setHours(this.state.startDate, 9)}
+                                                            maxTime={setHours(this.state.startDate, 21)}
+                                                            showTimeSelect
+                                                            timeFormat="HH:mm"
+                                                            timeIntervals={60}
+                                                            timeCaption="time"
+                                                            dateFormat="MMMM d, yyyy h:mm aa"
+                                                        />
+                                                        <button className="btn btn-primary">Đặt lịch</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

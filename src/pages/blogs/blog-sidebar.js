@@ -14,6 +14,35 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/fontawesome-free-solid';
 
 class BlogSidebar extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            error: null,
+            isLoaded: false,
+            blogs: []
+        };
+    }
+
+    componentDidMount() {
+        fetch("http://localhost:3000/")
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    this.setState({
+                        isLoaded: true,
+                        blogs: result.blog
+                    });
+                },
+                (error) => {
+                    this.setState({
+                        isLoaded: true,
+                        error
+                    });
+                }
+            )
+    }
+
     render() {
         return (
             <div>
@@ -39,71 +68,34 @@ class BlogSidebar extends React.Component {
                     </div>
                     <div className="card-body">
                         <ul className="latest-posts">
-                            <li>
-                                <div className="post-thumb">
-                                    <Link to="/blog-details">
-                                        <img className="img-fluid" src={BlogThumb1} alt="" />
-                                    </Link>
-                                </div>
-                                <div className="post-info">
-                                    <h4>
-                                        <Link to="/blog-details">How to strengthen brittle nails naturally</Link>
-                                    </h4>
-                                    <p>4 Dec 2020</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="post-thumb">
-                                    <Link to="/blog-details">
-                                        <img className="img-fluid" src={BlogThumb2} alt="" />
-                                    </Link>
-                                </div>
-                                <div className="post-info">
-                                    <h4>
-                                        <Link to="/blog-details">Why You Should Use  Non-Toxic Nail Polish?</Link>
-                                    </h4>
-                                    <p>3 Dec 2020</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="post-thumb">
-                                    <Link to="/blog-details">
-                                        <img className="img-fluid" src={BlogThumb3} alt="" />
-                                    </Link>
-                                </div>
-                                <div className="post-info">
-                                    <h4>
-                                        <Link to="/blog-details">25 Easy Nail Art Ideas</Link>
-                                    </h4>
-                                    <p>3 Dec 2020</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="post-thumb">
-                                    <Link to="/blog-details">
-                                        <img className="img-fluid" src={BlogThumb4} alt="" />
-                                    </Link>
-                                </div>
-                                <div className="post-info">
-                                    <h4>
-                                        <Link to="/blog-details">What’s the Future of Nail Art?</Link>
-                                    </h4>
-                                    <p>2 Dec 2020</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="post-thumb">
-                                    <Link to="/blog-details">
-                                        <img className="img-fluid" src={BlogThumb5} alt="" />
-                                    </Link>
-                                </div>
-                                <div className="post-info">
-                                    <h4>
-                                        <Link to="/blog-details">The Top-Selling Nail Polish colors</Link>
-                                    </h4>
-                                    <p>1 Dec 2020</p>
-                                </div>
-                            </li>
+                            {
+                                this.state.blogs.slice(0, 5).map(blog =>
+                                    <li>
+                                        <div className="post-thumb">
+                                            <Link to="/blog-details">
+                                                <img 
+                                                    className="img-fluid" 
+                                                    src={blog.img} 
+                                                    alt="Post Image" 
+                                                />
+                                            </Link>
+                                        </div>
+                                        <div className="post-info">
+                                            <h4>
+                                                <Link 
+                                                    to={{
+                                                        'pathname': '/blog-details',
+                                                        'state': { 'blog': blog }
+                                                    }}
+                                                >
+                                                        {blog.title}
+                                                </Link>
+                                            </h4>
+                                            <p>{blog.date}</p>
+                                        </div>
+                                    </li>
+                                )
+                            }
                         </ul>
                     </div>
                 </div>

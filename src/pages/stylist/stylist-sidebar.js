@@ -68,13 +68,6 @@ class StylistSidebar extends React.Component {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/chat-stylist">
-                                        <FontAwesomeIcon icon={faComments} />
-                                        <span>Trò chuyện</span>
-                                        <small className="unread-msg">23</small>
-                                    </Link>
-                                </li>
-                                <li>
                                     <Link to="/stylist-profile-settings">
                                         <FontAwesomeIcon icon={faUserCog} />
                                         <span>Cài đặt cấu hình</span>
