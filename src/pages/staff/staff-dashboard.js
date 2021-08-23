@@ -157,17 +157,12 @@ class StaffDashboard extends React.Component {
 											</Tabs>
 										</div>
 									</div>
-									
 								</div>
-							
 							</div>
-							
 						</div>
-
 					</div>
 				</div>		
 				{/* Page Content */}
-
 			</div>
         )
     }
