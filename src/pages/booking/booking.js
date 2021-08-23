@@ -64,11 +64,10 @@ class Booking extends React.Component {
             month += (this.state.startDate.getMonth()+1).toString()
         }
 
-        var res = this.state.startDate.getFullYear().toString() + '-' + month + '-' + day
+        var result = this.state.startDate.getFullYear().toString() + '-' + month + '-' + day
         + "@" + time 
-        console.log(res)
         const data = {
-            chosen_date: res,
+            chosen_date: result,
             id_appoint: localStorage.getItem("id_app")
         }
 
@@ -76,6 +75,7 @@ class Booking extends React.Component {
         .then(res => {
             console.log(res.data)
             this.setState({redirect:true})
+            localStorage.setItem("date_booking",result)
         })
         .catch(err => {
             console.log(err);

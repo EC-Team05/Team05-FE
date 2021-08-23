@@ -11,6 +11,7 @@ import GalleryImg4 from '../../assets/img/features/feature-04.jpg';
 // Import Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInfoCircle, faMapMarkerAlt, faMoneyBillAlt, faStar, faThumbsUp, faComments } from '@fortawesome/fontawesome-free-solid';
+import axios from 'axios';
 
 class BookingStylist extends React.Component {
     constructor(props) {
@@ -18,19 +19,16 @@ class BookingStylist extends React.Component {
         this.state = {
             error: null,
             isLoaded: false,
-            employees: []
+            employees: [],
+            date : localStorage.getItem("date_booking")
         };
     }
 
     componentDidMount() {
-        fetch("http://localhost:3000/booking-stylist")
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    this.setState({
-                        isLoaded: true,
-                        employees: result.employee
-                    });
+        axios.get('http://localhost:3000/booking/booking-stylist')
+            .then((res) => {
+                    this.setState({employees:res.data})
+                    console.log(this.state.employees)
                 },
                 (error) => {
                     this.setState({
@@ -40,6 +38,8 @@ class BookingStylist extends React.Component {
                 }
             )
     }
+
+    
     render() {
         return (
             <div>
