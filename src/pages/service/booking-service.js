@@ -39,8 +39,6 @@ class BookingService extends React.Component {
 			)
 
 	}
-
-	
 	handleChange(event) {
 		let isChecked = event.target.checked;
 		const newServiceOrder=this.state.serviceOrder;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import StylistImg from '../../assets/img/stylists/stylist-thumb-02.jpg';
 import DateRangePicker from 'react-bootstrap-daterangepicker';
@@ -15,7 +15,8 @@ class Booking extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            startDate: new Date()
+            startDate: new Date(),
+            redirect: false
         };
         this.handleChange = this.handleChange.bind(this);
         this.onFormSubmit = this.onFormSubmit.bind(this);
@@ -61,20 +62,29 @@ class Booking extends React.Component {
             + "@" + time
         console.log(res)
         const data = {
-            chosen_date: res
+            chosen_date: res,
+            id_appoint: localStorage.getItem("id_app")
         }
 
-        axios.post('http://localhost:3000/booking', data)
-            .then(() => console.log('Ok'))
-            .catch(err => {
-                console.log(err);
-            })
+        axios.post('http://localhost:3000/booking',data)
+        .then(res => {
+            console.log(res.data)
+            this.setState({redirect:true})
+        })
+        .catch(err => {
+            console.log(err);
+        })
         // $.getJSON('/nailsalon/booking-service/info?date='+res, function(data){
         //     console.log(data)
         // })
     }
     render() {
-        return (
+        const { redirect } = this.state;
+		console.log(redirect)
+     	if (redirect) {
+       		return <Redirect to='/booking-stylist'/>;
+     	}
+        return(
             <div>
                 {/* Breadcrumb */}
                 <div className="breadcrumb-bar">
