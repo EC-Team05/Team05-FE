@@ -72,7 +72,6 @@ class BookingService extends React.Component {
 	}
 	render() {
 		const { redirect } = this.state;
-		console.log(redirect)
      	if (redirect) {
        		return <Redirect to='/booking'/>;
      	}
