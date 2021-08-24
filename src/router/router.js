@@ -41,7 +41,12 @@ import {
     StaffChangePassword,
     EditService,
     AddService,
-    EditEditService
+    EditEditService,
+    DeleteService,
+    EditStylist,
+    DeleteStylist,
+    EditEditStylist,
+    AddStylist
 } from '../pages';
 
 import { Header, Footer } from '../_components';
@@ -109,6 +114,11 @@ class RouterComponent extends React.Component {
                         <Route path="/edit-service" component={EditService} />
                         <Route path="/add-service" component={AddService} />
                         <Route path="/edit-edit-service" component={EditEditService} />
+                        <Route path="/delete-service" component={DeleteService} />
+                        <Route path="/edit-stylist" component={EditStylist} />
+                        <Route path="/delete-stylist" component={DeleteStylist} />
+                        <Route path="/edit-edit-stylist" component={EditEditStylist} />
+                        <Route path="/add-stylist" component={AddStylist} />
                     </Switch>
                     <Route render={(props) => <Footer {...props} />} />
                 </div>                    

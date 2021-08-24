@@ -57,6 +57,7 @@ class BestService extends React.Component {
 
 
 	render() {
+
 		var settings = {
 			dots: false,
 			infinite: true,

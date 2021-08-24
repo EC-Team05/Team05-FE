@@ -10,3 +10,6 @@
 - Đang làm hồ sơ nhà tạo mẫu 11/7/2020 done
 - Mỗi nhân viên có profile hiện lên cho khách hàng xem để thể hiện sự minh mạch và 
 - Dashboard nhà tạo mẫu 11/7/2020 -> bỏ Loại, bỏ địa chỉ của khách hàng (thay đổi kịch thước cover .appointment-list .profile-info-widget .booking-doc-img img), khách hàng của tôi (bỏ địa chỉ của khách hàng, đặt)
+
+
+- UI delete stylist có vấn đề

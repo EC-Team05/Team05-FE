@@ -3,3 +3,7 @@ export * from './staff-change-password';
 export * from './edit-service';
 export * from './add-service';
 export * from './edit-edit-service';
+export * from './delete-service';
+export * from './edit-stylist';
+export * from './edit-edit-stylist';
+export * from './add-stylist';

@@ -118,7 +118,7 @@ class TopStylist extends React.Component {
 						</Slider>
 
 						<div className="row justify-content-center">
-							<Link to="search.html" className="btn-pink">Tất cả nhân viên Nail</Link>
+							<Link to="booking-stylist" className="btn-pink">Tất cả nhân viên Nail</Link>
 						</div>
 					</div>
 				</section>

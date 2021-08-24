@@ -42,7 +42,7 @@ class EditService extends React.Component {
 			)
 	}
 	handleButtonClick(value) {
-		localStorage.setItem("sv_id",value)	
+		localStorage.setItem("sv_id", value)
 	}
 	render() {
 		return (
@@ -97,17 +97,20 @@ class EditService extends React.Component {
 													</div>
 												</div>
 												<div className="appointment-action">
-													<button onClick={() => this.handleButtonClick(service.idservice)}><Link to="/edit-edit-service" className="btn btn-sm bg-success-light">
-														<FontAwesomeIcon icon={faEdit} /> Sửa
-													</Link></button>
-													<Link to="#" className="btn btn-sm bg-danger-light">
-														<FontAwesomeIcon icon={faMinus} /> Xóa
-													</Link>
+													<button onClick={() => this.handleButtonClick(service.idservice)}>
+														<Link to="/edit-edit-service" className="btn btn-sm bg-success-light">
+															<FontAwesomeIcon icon={faEdit} /> Sửa
+														</Link>
+													</button>
+													<button>
+														<Link to="/delete-service" className="btn btn-sm bg-danger-light">
+															<FontAwesomeIcon icon={faMinus} /> Xóa
+														</Link>
+													</button>
 												</div>
 											</div>
 										))
 									}
-
 									{/* Service */}
 								</div>
 							</div>

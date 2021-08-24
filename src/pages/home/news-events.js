@@ -54,12 +54,36 @@ class NewsandEvents extends React.Component {
 
                                         <div className="blog grid-blog">
                                             <div className="blog-image">
-                                                <Link to="/blog-details"><img className="img-fluid" src={blog.img} alt="Post Image" /></Link>
+                                                <Link to="/blog-details">
+                                                    <img
+                                                        className="img-fluid"
+                                                        src={blog.img}
+                                                        alt="Post Image" />
+                                                </Link>
                                             </div>
                                             <div className="blog-content">
-                                                <h3 className="blog-title"><Link to="/blog-details">{blog.title}</Link></h3>
+                                                <h3 className="blog-title">
+                                                    <Link
+                                                        to={{
+                                                            'pathname': '/blog-details',
+                                                            'state': { 'blog': blog }
+                                                        }}
+                                                    >
+                                                        {blog.title}
+                                                    </Link>
+                                                </h3>
                                                 <p className="mb-0">{blog.brief}</p>
-                                                <Link to="/blog-details" className="btn btn-pink">Đọc thêm</Link>
+                                                <Link
+                                                    // to="/blog-details"
+                                                    // className="btn btn-pink"
+                                                    to={{
+                                                        'pathname': '/blog-details',
+                                                        'state': { 'blog': blog }
+                                                    }}
+                                                    className="read-more"
+                                                >
+                                                    Đọc thêm
+                                                </Link>
                                             </div>
                                         </div>
 
