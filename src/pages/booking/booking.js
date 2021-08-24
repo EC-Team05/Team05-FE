@@ -59,7 +59,8 @@ class Booking extends React.Component {
         }
 
         var result = this.state.startDate.getFullYear().toString() + '-' + month + '-' + day
-        + "@" + time 
+        + "@" + time
+        localStorage.setItem("date_booking",result)
         const data = {
             chosen_date: result,
             id_appoint: localStorage.getItem("id_app")
@@ -69,7 +70,6 @@ class Booking extends React.Component {
         .then(res => {
             console.log(res.data)
             this.setState({redirect:true})
-            localStorage.setItem("date_booking",result)
         })
         .catch(err => {
             console.log(err);
@@ -118,7 +118,7 @@ class Booking extends React.Component {
                                                 </span>
                                             </div>
                                             <div className="col-12 col-sm-8 col-md-6 text-sm-right">
-                                                <form onSubmit={this.onFormSubmit}>
+                                                <form action="" method="POST" onSubmit={this.onFormSubmit}>
                                                     <div className="form-group">
                                                         <DatePicker
                                                             selected={this.state.startDate}
@@ -131,7 +131,7 @@ class Booking extends React.Component {
                                                             timeCaption="time"
                                                             dateFormat="MMMM d, yyyy h:mm aa"
                                                         />
-                                                        <button className="btn btn-primary">Đặt lịch</button>
+                                                        <button type="submit"className="btn btn-primary">Đặt lịch</button>
                                                     </div>
                                                 </form>
                                             </div>

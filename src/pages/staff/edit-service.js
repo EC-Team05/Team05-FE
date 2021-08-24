@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+
 // Import Sidebar
 import { StaffSidebar } from './staff-sidebar';
 
@@ -19,6 +20,7 @@ class EditService extends React.Component {
 			isLoaded: false,
 			services: []
 		}
+		this.handleButtonClick = this.handleButtonClick.bind(this);
 	}
 
 	componentDidMount() {
@@ -39,7 +41,9 @@ class EditService extends React.Component {
 				}
 			)
 	}
-
+	handleButtonClick(value) {
+		localStorage.setItem("sv_id",value)	
+	}
 	render() {
 		return (
 			<div>
@@ -93,9 +97,9 @@ class EditService extends React.Component {
 													</div>
 												</div>
 												<div className="appointment-action">
-													<Link to="/edit-edit-service" className="btn btn-sm bg-success-light">
+													<button onClick={() => this.handleButtonClick(service.idservice)}><Link to="/edit-edit-service" className="btn btn-sm bg-success-light">
 														<FontAwesomeIcon icon={faEdit} /> Sửa
-													</Link>
+													</Link></button>
 													<Link to="#" className="btn btn-sm bg-danger-light">
 														<FontAwesomeIcon icon={faMinus} /> Xóa
 													</Link>

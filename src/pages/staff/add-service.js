@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link ,Redirect} from 'react-router-dom'
+import axios from 'axios'
 
 import { StaffSidebar } from './staff-sidebar';
 
@@ -11,8 +12,35 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUpload } from '@fortawesome/fontawesome-free-solid';
 
 class AddService extends React.Component {
-
+    constructor(props) {
+        super(props);
+        this.state = {
+            data :[]
+        };
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    handleChange(e) {
+        const newData = {...this.state.data};
+        newData[e.target.name]=e.target.value;
+        this.setState({data:newData})
+    }
+    handleSubmit(event) {
+		event.preventDefault();
+		//console.log(this.state)
+		axios.post('http://localhost:3000/admin/service/add',this.state.data)
+			.then(res => {
+                if(res.data.save)
+				    {this.setState({redirect:true})}
+			})
+			.catch(error => {
+				console.log(error)
+			})
+	}
     render() {
+        const { redirect } = this.state;
+     	if (redirect) {
+       		return <Redirect to='/edit-service'/>;
+     	}
         return (
             <div>
                 {/* Breadcrumb */}
@@ -48,7 +76,7 @@ class AddService extends React.Component {
                                     <div className="card-body">
 
                                         {/* add service Form */}
-                                        <form>
+                                        <form action="" method="POST" onSubmit={this.handleSubmit}>
                                             <div className="row form-row">
                                                 <div className="col-12 col-md-12">
                                                     <div className="form-group">
@@ -59,7 +87,7 @@ class AddService extends React.Component {
                                                             <div className="upload-img">
                                                                 <div className="change-photo-btn">
                                                                     <span><FontAwesomeIcon icon={faUpload} /> Tải ảnh lên</span>
-                                                                    <input type="file" className="upload" />
+                                                                    <input onChange={(e)=>this.handleChange(e)} type="file" className="upload" name="img"/>
                                                                 </div>
                                                                 <small className="form-text text-muted">Cho phép JPG, GIF hoặc PNG. Kích thước tối đa 2MB</small>
                                                             </div>
@@ -68,24 +96,30 @@ class AddService extends React.Component {
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
+                                                        <label>Mã dịch vụ</label>
+                                                        <input onChange={(e)=>this.handleChange(e)} type="text" className="form-control" name ="id"/>
+                                                    </div>
+                                                </div>
+                                                <div className="col-12">
+                                                    <div className="form-group">
                                                         <label>Tên dịch vụ</label>
-                                                        <input type="text" className="form-control"/>
+                                                        <input onChange={(e)=>this.handleChange(e)} type="text" className="form-control" name ="name"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                         <label>Giá (Ví dụ: 30.000 VND)</label>
-                                                        <input type="text" className="form-control" />
+                                                        <input onChange={(e)=>this.handleChange(e)} type="text" className="form-control" name="price" />
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                         <label>Thời gian thực hiện (Ví dụ: 50 phút)</label>
-                                                        <input type="text" className="form-control"/>
+                                                        <input onChange={(e)=>this.handleChange(e)} type="text" className="form-control" name ="duration"/>
                                                     </div>
                                                 </div>
                                                 <div className="submit-section">
-                                                    <button type="submit" className="btn btn-primary submit-btn">Lưu thay đổi</button>
+                                                    <button type="submit" className="btn btn-primary submit-btn">Thêm dịch vụ</button>
                                                 </div>
                                                 {/* add service Form */}
 

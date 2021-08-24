@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link,Redirect } from 'react-router-dom'
 
 
 // Import Images
@@ -22,10 +22,11 @@ class BookingStylist extends React.Component {
             isLoaded: false,
             employees: [],
         };
+        this.handleButtonClick = this.handleButtonClick.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
-    handleClick(e){
-        let isClicked = e.onClick;
-        console.log(isClicked)
+    handleButtonClick(value) {
+		localStorage.setItem("emp_id",value)	
     }
     componentDidMount() {
         axios.get('http://localhost:3000/booking/booking-stylist')
@@ -41,9 +42,30 @@ class BookingStylist extends React.Component {
                 }
             )
     }
-
+    handleSubmit(event) {
+		event.preventDefault();
+		//console.log(this.state)
+        const data = {
+            id_emp:localStorage.getItem("emp_id"),
+            id_app:localStorage.getItem("id_app")
+        }
+		axios.post('http://localhost:3000/booking/save-stylist',data)
+			.then(res => {
+				console.log(res.data)
+				if(res.data.save)
+				    {this.setState({redirect:true})}
+			})
+			.catch(error => {
+				console.log(error)
+			})
+	}
 
     render() {
+        const { redirect } = this.state;
+		console.log(redirect)
+     	if (redirect) {
+       		return <Redirect to='/checkout'/>;
+     	}
         let temp = localStorage.getItem("date_booking")
         let date = temp.slice(0,temp.indexOf("@"))
         let time = parseInt(temp.slice(temp.indexOf("@")+1,temp.length));
@@ -64,7 +86,7 @@ class BookingStylist extends React.Component {
         console.log(rs)
         return (
             <div>
-                <form>
+                <form action="/booking-stylist" method="POST" onSubmit={this.handleSubmit}>
                     {/* Breadcrumb */}
                     <div className="breadcrumb-bar">
                         <div className="container-fluid">
@@ -123,7 +145,7 @@ class BookingStylist extends React.Component {
                                                             <div className="doc-info-right">
                                                                 <div className="clinic-booking">
                                                                     <Link to="/stylist-profile" className="view-pro-btn">Xem hồ sơ</Link>
-                                                                    <button type="submit" value={emp.ide} onClick={ e=>this.handleClick(e) }><Link to="/checkout" className="apt-btn">Đặt lịch hẹn</Link></button>
+                                                                    <button type="submit" onClick={() => this.handleButtonClick(emp.ide)}className="apt-btn">Đặt lịch hẹn</button>
                                                                 </div>
                                                             </div>
                                                         </div>
