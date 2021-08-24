@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
 import { Link } from 'react-router-dom'
 
 // Import Image
@@ -9,9 +10,37 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarkerAlt, faStar } from '@fortawesome/fontawesome-free-solid';
 
 function Checkout() {
+
 	const [paymentMethodURL, setPaymentMethodURL] = useState("/booking-success");
 	const [isMomoChecked, setIsMomoChecked] = useState(false);
 	const [isPaymentChecked, setIsPaymentChecked] = useState(true);
+	const [username, setUsername] = useState({name:""});
+	const [useremail, setemail] = useState({email:""});
+	const [userphone, setphone] = useState({phone:""});
+	
+  useEffect(() => {
+    const fetchData = {
+        method: 'POST',
+        headers: {
+			'Content-Type': 'application/json'
+        },
+		body: JSON.stringify({
+			token: localStorage.getItem("Accesstoken")
+		})
+	};
+
+	fetch("http://localhost:3000/user/profile", fetchData)
+	.then(res=>res.text())
+	.then(res=>{
+		const user_object=JSON.parse(res);
+		username.name=user_object.name
+		useremail.email=user_object.email
+		userphone.phone=user_object.phone
+		console.log(user_object.name)
+		console.log(user_object.email)
+		console.log(user_object.phone)
+	})
+  },[]);
 	return (
 		<div>
 			{/* Breadcrumb */}
@@ -46,29 +75,26 @@ function Checkout() {
 										{/* Personal Information */}
 										<div className="info-widget">
 											<h4 className="card-title">Thông tin cá nhân</h4>
+								
 											<div className="row">
-												<div className="col-md-6 col-sm-12">
+												<div className="col-md-12 col-sm-12">
 													<div className="form-group card-label">
-														<label>Họ và tên đệm</label>
-														<input className="form-control" type="text" />
+														<label>Họ và tên</label>
+														<input className="form-control" type="text" value={username.name}/>
 													</div>
 												</div>
-												<div className="col-md-6 col-sm-12">
-													<div className="form-group card-label">
-														<label>Tên</label>
-														<input className="form-control" type="text" />
-													</div>
-												</div>
-												<div className="col-md-6 col-sm-12">
+												<div className="col-md-12 col-sm-12">
 													<div className="form-group card-label">
 														<label>Email</label>
-														<input className="form-control" type="email" />
+														<input className="form-control" type="email" value={useremail.email} />
+													
 													</div>
 												</div>
-												<div className="col-md-6 col-sm-12">
+												<div className="col-md-12 col-sm-12">
 													<div className="form-group card-label">
 														<label>Số diện thoại</label>
-														<input className="form-control" type="text" />
+														<input className="form-control" type="text" value={userphone.phone}/>
+													
 													</div>
 												</div>
 												<div className="col-md-12 col-sm-12">
@@ -80,6 +106,7 @@ function Checkout() {
 											</div>
 											<div className="exist-customer">Khách hàng hiện tại? <Link to="#">Click tại đây để đăng nhập</Link></div>
 										</div>
+								
 										{/* Personal Information */}
 
 										<div className="payment-widget">

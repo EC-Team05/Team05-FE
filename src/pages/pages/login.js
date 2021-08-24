@@ -16,7 +16,8 @@ class Login extends React.Component {
 		super(props);
 		this.state = {
 			username: '',
-			password: ''
+			password: '',
+			submitted:false
 		};
 	
 		this.handleChangeUsername = this.handleChangeUsername.bind(this);
@@ -35,6 +36,7 @@ class Login extends React.Component {
 	
 	handleSubmit(event) {
 		event.preventDefault();
+		this.setState({ submitted: true });
 		console.log(this.state)
 		fetch(
 				"http://localhost:3000/user/login",
@@ -53,11 +55,34 @@ class Login extends React.Component {
 					console.log(res);
 					localStorage.setItem("Accesstoken",res)
 				}
-				,<Redirect to="http://localhost:3002/nailsalon" />
+				,<Redirect push to="http://localhost:3002/nailsalon" />
 			).catch(
 				res => { console.log(res) }
 			)
 	}
+	// handleSubmit(event) {
+	// 	const { email, password } = this.state;
+	// 	axios
+	// 	  .post(
+	// 		"http://localhost:3000/user/profile",
+	// 		{
+	// 		  user: {
+	// 			email: email,
+	// 			password: password
+	// 		  }
+	// 		},
+	// 		{ withCredentials: true }
+	// 	  )
+	// 	  .then(response => {
+	// 		if (response.data.logged_in) {
+	// 		  this.props.handleSuccessfulAuth(response.data);
+	// 		}
+	// 	  })
+	// 	  .catch(error => {
+	// 		console.log("login error", error);
+	// 	  });
+	// 	event.preventDefault();
+	//   }
 	/*handleSubmit(event) {
 		event.preventDefault();
 		console.log(this.state)
@@ -111,7 +136,8 @@ class Login extends React.Component {
 													<div className="text-right">
 														<Link to="/forgot-password" className="forgot-link">Quên mật khẩu ?</Link>
 													</div>
-													<button className="btn btn-primary btn-block btn-lg login-btn" type="submit">Đăng nhập</button>
+													<button className="btn btn-primary btn-block btn-lg login-btn" type="submit"onClick={this.login}>Đăng nhập</button>
+
 													<div className="login-or">
 														<span className="or-line"></span>
 														<span className="span-or">hoặc</span>
