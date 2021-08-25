@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 // Import Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAddressCard, faColumns, faComments, faFileAlt, faHourglassStart, faLock, faShareAlt, faSignOutAlt, faStar, faUser, faUserCog , faShoppingCart } from '@fortawesome/fontawesome-free-solid';
+import { faAddressCard, faColumns, faBoxOpen, faLock, faSignOutAlt, faShoppingCart } from '@fortawesome/fontawesome-free-solid';
 
 class StaffSidebar extends React.Component {
     render() {
@@ -37,6 +37,12 @@ class StaffSidebar extends React.Component {
                                     <Link to="/edit-stylist">
                                         <FontAwesomeIcon icon={faAddressCard} />
                                         <span>Nhân viên</span>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/edit-product">
+                                        <FontAwesomeIcon icon={faBoxOpen} />
+                                        <span>Sản phẩm</span>
                                     </Link>
                                 </li>
                                 <li>
