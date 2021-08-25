@@ -55,7 +55,7 @@ class Login extends React.Component {
 					console.log(res);
 					localStorage.setItem("Accesstoken",res)
 				}
-				,<Redirect push to="http://localhost:3002/nailsalon" />
+				// ,<Redirect push to="http://localhost:3002/nailsalon" />
 			).catch(
 				res => { console.log(res) }
 			)

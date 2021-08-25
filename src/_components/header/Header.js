@@ -117,6 +117,9 @@ class Header extends React.Component {
 							<li className={pathname === ('/booking-service') ? 'active' : ''}>
 								<Link to = "/booking-service">Dịch vụ</Link>
 							</li>
+							<li className={pathname === ('/purchase-product') ? 'active' : ''}>
+								<Link to = "/purchase-product">Sản phẩm</Link>
+							</li>
 							
 							{(pathname === ('/') || pathname === ('login') ? 
 							(
@@ -171,6 +174,9 @@ class Header extends React.Component {
 									<Dropdown.Item href="">English</Dropdown.Item>
 								</Dropdown.Menu>
 							</Dropdown>
+						</li>
+						<li>
+							<Link to="/checkout" className="add-cart"><FontAwesomeIcon icon={faShoppingCart} /></Link>
 						</li>
 					</ul>
 				</nav>

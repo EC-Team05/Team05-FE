@@ -13,3 +13,4 @@
 
 
 - UI delete stylist có vấn đề
+- fetch rate của booking stylist

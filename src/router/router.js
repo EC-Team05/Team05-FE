@@ -46,7 +46,8 @@ import {
     EditStylist,
     DeleteStylist,
     EditEditStylist,
-    AddStylist
+    AddStylist,
+    PurchaseProduct
 } from '../pages';
 
 import { Header, Footer } from '../_components';
@@ -119,6 +120,7 @@ class RouterComponent extends React.Component {
                         <Route path="/delete-stylist" component={DeleteStylist} />
                         <Route path="/edit-edit-stylist" component={EditEditStylist} />
                         <Route path="/add-stylist" component={AddStylist} />
+                        <Route path="/purchase-product" component={PurchaseProduct} />
                     </Switch>
                     <Route render={(props) => <Footer {...props} />} />
                 </div>                    

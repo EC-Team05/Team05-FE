@@ -104,7 +104,7 @@ class Footer extends React.Component {
 													<Link to="#" target="_blank"><FontAwesomeIcon icon={faTwitter} /> </Link>
 												</li>
 												<li>
-													<Link href="https://www.youtube.com/channel/UCQM6BH9ZEZmNUl4zpYfMs-Q" target="_blank"><FontAwesomeIcon icon={faYoutube} /> </Link>
+													<a href="https://www.youtube.com/channel/UCQM6BH9ZEZmNUl4zpYfMs-Q" target="_blank"><FontAwesomeIcon icon={faYoutube} /> </a>
 												</li>
 												<li>
 													<Link to="#" target="_blank"><FontAwesomeIcon icon={faInstagram} /></Link>
