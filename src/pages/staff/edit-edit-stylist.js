@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link,Redirect } from 'react-router-dom'
 import $ from "jquery";
 import { DropzoneArea } from 'material-ui-dropzone';
-
+import axios from 'axios';
 // Import Sidebar
 import { StaffSidebar } from './staff-sidebar';
 
@@ -22,7 +22,8 @@ class EditEditStylist extends React.Component {
 			isLoaded: false,
 			emp: [],
             data:[],
-            redirect:false
+            redirect:false,
+			selectValue:""
 		}
         this.handleSubmit = this.handleSubmit.bind(this);
 	}
@@ -44,7 +45,29 @@ class EditEditStylist extends React.Component {
 				}
 			)
 	}
-	handleSubmit(){}
+	handleChange_sl(e) {
+		this.setState({
+			selectValue:e.target.value
+		})
+		console.log(this.state.selectValue)
+	}
+	handleChange(e) {
+        const newData = {...this.state.data};
+        newData["ide"] = localStorage.getItem("emp_id")
+        newData[e.target.name]=e.target.value;
+        this.setState({data:newData})
+    }
+	handleSubmit(event){
+		event.preventDefault();
+		axios.post('http://localhost:3000/admin/emp/update',{"data":this.state.data,"gender":this.state.selectValue})
+		.then(res => {
+			if(res.data.save)
+				{this.setState({redirect:true})}
+		})
+		.catch(error => {
+			console.log(error)
+		})
+	}
 	/*componentDidMount() {
 		// Pricing Options Show
 		$('#pricing_select input[name="rating_option"]').on('click', function() {
@@ -236,11 +259,14 @@ class EditEditStylist extends React.Component {
 	}
 	*/
     render() {
+		const { redirect } = this.state;
+     	if (redirect) {
+       		return <Redirect to='/edit-stylist'/>;
+     	}
 		let {emp}= this.state;
 		const emp_up = emp.filter(item=>{
 			return item.ide == localStorage.getItem("emp_id")
 		})
-		console.log(emp_up)
         return (
 			<div>
 				{/* Breadcrumb */}
@@ -264,12 +290,12 @@ class EditEditStylist extends React.Component {
 				{/* Page Content */}
 				<div className="content">
 					<div className="container">
-
+					<form action="" method="POST" onSubmit={this.handleSubmit}>
 						<div className="row">
 							<div className="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
 								<StaffSidebar />
 							</div>
-
+							{emp_up.map(item =>
 							<div className="col-md-7 col-lg-8 col-xl-9">
 
 								{/* Basic Information */}
@@ -286,7 +312,7 @@ class EditEditStylist extends React.Component {
 														<div className="upload-img">
 															<div className="change-photo-btn">
 																<span><FontAwesomeIcon icon="upload" /> Tải ảnh lên</span>
-																<input type="file" className="upload" />
+																<input type="file" className="upload" name="img" defaultValue={item.img} onChange={(e)=>this.handleChange(e)}/>
 															</div>
 															<small className="form-text text-muted">Được phép JPG, GIF hoặc PNG. Kích thước tối đa 2MB</small>
 														</div>
@@ -296,41 +322,41 @@ class EditEditStylist extends React.Component {
 											<div className="col-md-6">
 												<div className="form-group">
 													<label>Email <span className="text-danger">*</span></label>
-													<input type="email" className="form-control" readOnly />
+													<input type="email" className="form-control"name="email" defaultValue={item.email} onChange={(e)=>this.handleChange(e)} />
 												</div>
 											</div>
 											<div className="col-md-6">
 												<div className="form-group">
 													<label>Số điện thoại <span className="text-danger">*</span></label>
-													<input type="text" className="form-control" />
+													<input type="text" className="form-control" name="phone" defaultValue={item.phone} onChange={(e)=>this.handleChange(e)}/>
 												</div>
 											</div>
 											<div className="col-md-6">
 												<div className="form-group">
 													<label>Họ và tên lót <span className="text-danger">*</span></label>
-													<input type="text" className="form-control" />
+													<input type="text" className="form-control" name="lastname" defaultValue={item.lastname} onChange={(e)=>this.handleChange(e)}/>
 												</div>
 											</div>
 											<div className="col-md-6">
 												<div className="form-group">
 													<label>Tên <span className="text-danger">*</span></label>
-													<input type="text" className="form-control" />
+													<input type="text" className="form-control" name="firstname" defaultValue={item.firstname} onChange={(e)=>this.handleChange(e)} />
 												</div>
 											</div>
 											<div className="col-md-6">
 												<div className="form-group mb-0">
 													<label>Ngày sinh</label>
-													<input type="text" className="form-control" />
+													<input type="text" className="form-control" name="dob" defaultValue={item.dob} onChange={(e)=>this.handleChange(e)}/>
 												</div>
 											</div>
 											<div className="col-md-6">
 												<div className="form-group">
 													<label>Giới tính</label>
-													<select className="form-control select">
+													<select className="form-control select" value={this.state.selectValue} onChange={(e)=>this.handleChange_sl(e)}>
 														<option>Chọn lựa</option>
-														<option>Nam</option>
-														<option>Nữ</option>
-														<option>Giới tính khác</option>
+														<option value="Nam">Nam</option>
+														<option value="Nữ">Nữ</option>
+														<option value="khác">Giới tính khác</option>
 													</select>
 												</div>
 											</div>
@@ -345,7 +371,7 @@ class EditEditStylist extends React.Component {
 										<h4 className="card-title">Về tôi</h4>
 										<div className="form-group mb-0">
 											<label>Tiểu sử <span className="text-danger">*</span></label>
-											<textarea className="form-control" rows="5"></textarea>
+											<textarea className="form-control" rows="5" name="biography" defaultValue={item.biography} onChange={(e)=>this.handleChange(e)}></textarea>
 										</div>
 									</div>
 								</div>
@@ -359,7 +385,7 @@ class EditEditStylist extends React.Component {
 											<div className="col-md-6">
 												<div className="form-group">
 													<label>Địa chỉ <span className="text-danger">*</span></label>
-													<input type="text" className="form-control" />
+													<input type="text" className="form-control" name="address" defaultValue={item.address} onChange={(e)=>this.handleChange(e)} />
 												</div>
 											</div>
 										</div>
@@ -375,26 +401,26 @@ class EditEditStylist extends React.Component {
 											<div className="col-md-6">
 												<div className="form-group">
 													<label>Facebook URL</label>
-													<input type="text" className="form-control" />
+													<input type="text" className="form-control" name="fburl" defaultValue={item.fburl} onChange={(e)=>this.handleChange(e)} />
 												</div>
 											</div>
 											<div className="col-md-6">
 												<div className="form-group">
 													<label className="control-label">Twitter URL</label>
-													<input type="text" className="form-control" />
+													<input type="text" className="form-control" name="twitterurl" defaultValue={item.twitterurl} onChange={(e)=>this.handleChange(e)}/>
 												</div>
 											</div>
 											<div className="col-md-6">
 												<div className="form-group">
 													<label className="control-label">Instagram URL</label>
-													<input type="text" className="form-control" />
+													<input type="text" className="form-control" name="igurl" defaultValue={item.igurl} onChange={(e)=>this.handleChange(e)}/>
 												</div>
 											</div>
 
 											<div className="col-md-6">
 												<div className="form-group">
 													<label className="control-label">Pinterest URL</label>
-													<input type="text" className="form-control" />
+													<input type="text" className="form-control"name="pinteresturl" defaultValue={item.pinteresturl} onChange={(e)=>this.handleChange(e)}/>
 												</div>
 											</div>
 										</div>
@@ -407,11 +433,10 @@ class EditEditStylist extends React.Component {
 								</div>
 							
 							</div>
-
-							
+							)}
 						</div>
-
-					</div>
+						</form>
+					</div>				
 				</div>		
 				{/* Page Content */}
 
