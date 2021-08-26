@@ -19,8 +19,11 @@ class EditProduct extends React.Component {
             isLoaded: false,
             products: []
         };
+        this.handleButtonClick = this.handleButtonClick.bind(this);
     }
-
+    handleButtonClick(value) {
+		localStorage.setItem("pro_id", value)
+    }
     componentDidMount() {
         fetch("http://localhost:3000/product")
             .then(res => res.json())
@@ -94,12 +97,12 @@ class EditProduct extends React.Component {
                                                     </div>
                                                 </div>
                                                 <div className="appointment-action">
-                                                    <button >
+                                                    <button onClick={() => this.handleButtonClick(product.idproduct)}>
                                                         <Link to="/edit-edit-product" className="btn btn-sm bg-success-light">
                                                             <FontAwesomeIcon icon={faEdit} /> Sửa
                                                         </Link>
                                                     </button>
-                                                    <button>
+                                                    <button onClick={() => this.handleButtonClick(product.idproduct)}>
                                                         <Link to="/delete-product" className="btn btn-sm bg-danger-light">
                                                             <FontAwesomeIcon icon={faMinus} /> Xóa
                                                         </Link>

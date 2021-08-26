@@ -12,9 +12,37 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUpload } from '@fortawesome/fontawesome-free-solid';
 
 class AddProduct extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            data :[],
+            redirect:false
+        };
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    handleChange(e) {
+        const newData = {...this.state.data};
+        newData[e.target.name]=e.target.value;
+        this.setState({data:newData})
+    }
+    handleSubmit(event) {
+		event.preventDefault();
+		console.log(this.state)
+		axios.post('http://localhost:3000/admin/product/add',this.state.data)
+			.then(res => {
+                if(res.data.save)
+				    {this.setState({redirect:true})}
+			})
+			.catch(error => {
+				console.log(error)
+			})
+	}
     
     render() {
-        
+        const { redirect } = this.state;
+        if (redirect) {
+              return <Redirect to='/edit-product'/>;
+        }
         return (
             <div>
                 {/* Breadcrumb */}
@@ -50,7 +78,7 @@ class AddProduct extends React.Component {
                                     <div className="card-body">
 
                                         {/* add service Form */}
-                                        
+                                        <form action="" method="POST" onSubmit={this.handleSubmit}>
                                             <div className="row form-row">
                                                 <div className="col-12 col-md-12">
                                                     <div className="form-group">
@@ -61,7 +89,7 @@ class AddProduct extends React.Component {
                                                             <div className="upload-img">
                                                                 <div className="change-photo-btn">
                                                                     <span><FontAwesomeIcon icon={faUpload} /> Tải ảnh lên</span>
-                                                                    <input type="file" className="upload" name="img"/>
+                                                                    <input onChange={(e)=>this.handleChange(e)} type="file" className="upload" name="img"/>
                                                                 </div>
                                                                 <small className="form-text text-muted">Cho phép JPG, GIF hoặc PNG. Kích thước tối đa 2MB</small>
                                                             </div>
@@ -70,34 +98,40 @@ class AddProduct extends React.Component {
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
+                                                        <label>Mã sản phẩm</label>
+                                                        <input onChange={(e)=>this.handleChange(e)} type="text" className="form-control" name ="idproduct"/>
+                                                    </div>
+                                                </div>
+                                                <div className="col-12">
+                                                    <div className="form-group">
                                                         <label>Tên sản phẩm</label>
-                                                        <input type="text" className="form-control" name ="id"/>
+                                                        <input onChange={(e)=>this.handleChange(e)} type="text" className="form-control" name ="name"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                         <label>Giá sản phẩm (Ví dụ: 30.000 VND)</label>
-                                                        <input type="text" className="form-control" name ="name"/>
+                                                        <input onChange={(e)=>this.handleChange(e)} type="text" className="form-control" name ="price"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                         <label>Thương hiệu</label>
-                                                        <input onChange={(e)=>this.handleChange(e)} type="text" className="form-control" name="price" />
+                                                        <input onChange={(e)=>this.handleChange(e)} type="text" className="form-control" name="brand" />
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                         <label>Số lượng tồn</label>
-                                                        <input onChange={(e)=>this.handleChange(e)} type="text" className="form-control" name ="duration"/>
+                                                        <input onChange={(e)=>this.handleChange(e)} type="text" className="form-control" name ="amount"/>
                                                     </div>
                                                 </div>
                                                 <div className="submit-section">
                                                     <button type="submit" className="btn btn-primary submit-btn">Thêm sản phẩm</button>
                                                 </div>
                                                 {/* add product Form */}
-
                                             </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>

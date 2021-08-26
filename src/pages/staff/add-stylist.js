@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link,Redirect } from 'react-router-dom'
 import $ from "jquery";
+import axios from 'axios'
 
 // Import Sidebar
 import { StaffSidebar } from './staff-sidebar';
@@ -14,6 +15,38 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class AddStylist extends React.Component {
 
+	constructor(props) {
+        super(props);
+        this.state = {
+            data :[],
+            redirect:false,
+			selectValue:""
+        };
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    handleChange(e) {
+        const newData = {...this.state.data};
+        newData[e.target.name]=e.target.value;
+        this.setState({data:newData})
+		console.log(this.state.data)
+	}
+	handleChange_sl(e) {
+		this.setState({
+			selectValue:e.target.value
+		})
+		console.log(this.state.selectValue)
+	}
+	handleSubmit(event){
+		event.preventDefault();
+		axios.post('http://localhost:3000/admin/emp/add',{"data":this.state.data,"gender":this.state.selectValue})
+		.then(res => {
+			if(res.data.save)
+				{this.setState({redirect:true})}
+		})
+		.catch(error => {
+			console.log(error)
+		})
+	}
 	componentDidMount() {
 		// Pricing Options Show
 		$('#pricing_select input[name="rating_option"]').on('click', function() {
@@ -205,6 +238,10 @@ class AddStylist extends React.Component {
 	}
 	
     render() {
+		const { redirect } = this.state;
+        if (redirect) {
+              return <Redirect to='/edit-stylist'/>;
+        }
         return (
 			<div>
 				{/* Breadcrumb */}
@@ -228,7 +265,7 @@ class AddStylist extends React.Component {
 				{/* Page Content */}
 				<div className="content">
 					<div className="container">
-
+					<form action="" method="POST" onSubmit={this.handleSubmit}>
 						<div className="row">
 							<div className="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
 								<StaffSidebar />
@@ -250,7 +287,7 @@ class AddStylist extends React.Component {
 														<div className="upload-img">
 															<div className="change-photo-btn">
 																<span><FontAwesomeIcon icon="upload" /> Tải ảnh lên</span>
-																<input type="file" className="upload" />
+																<input onChange={(e)=>this.handleChange(e)} type="file" className="upload" name="img"/>
 															</div>
 															<small className="form-text text-muted">Được phép JPG, GIF hoặc PNG. Kích thước tối đa 2MB</small>
 														</div>
@@ -260,41 +297,41 @@ class AddStylist extends React.Component {
 											<div className="col-md-6">
 												<div className="form-group">
 													<label>Email <span className="text-danger">*</span></label>
-													<input type="email" className="form-control" readOnly />
+													<input onChange={(e)=>this.handleChange(e)} type="email" name="email" className="form-control" />
 												</div>
 											</div>
 											<div className="col-md-6">
 												<div className="form-group">
 													<label>Số điện thoại <span className="text-danger">*</span></label>
-													<input type="text" className="form-control" />
+													<input onChange={(e)=>this.handleChange(e)} type="text" name="phone" className="form-control" />
 												</div>
 											</div>
 											<div className="col-md-6">
 												<div className="form-group">
 													<label>Họ và tên lót <span className="text-danger">*</span></label>
-													<input type="text" className="form-control" />
+													<input onChange={(e)=>this.handleChange(e)} type="text" name="lastname" className="form-control" />
 												</div>
 											</div>
 											<div className="col-md-6">
 												<div className="form-group">
 													<label>Tên <span className="text-danger">*</span></label>
-													<input type="text" className="form-control" />
+													<input onChange={(e)=>this.handleChange(e)} type="text" name="firstname" className="form-control" />
 												</div>
 											</div>
 											<div className="col-md-6">
 												<div className="form-group mb-0">
 													<label>Ngày sinh</label>
-													<input type="text" className="form-control" />
+													<input onChange={(e)=>this.handleChange(e)} type="text" name="dob" className="form-control" />
 												</div>
 											</div>
 											<div className="col-md-6">
 												<div className="form-group">
 													<label>Giới tính</label>
-													<select className="form-control select">
+													<select className="form-control select" name="gender" value={this.state.selectValue} onChange={(e)=>this.handleChange_sl(e)}>
 														<option>Chọn lựa</option>
-														<option>Nam</option>
-														<option>Nữ</option>
-														<option>Giới tính khác</option>
+														<option value="nam">Nam</option>
+														<option value="nữ">Nữ</option>
+														<option value="khác">Giới tính khác</option>
 													</select>
 												</div>
 											</div>
@@ -309,7 +346,7 @@ class AddStylist extends React.Component {
 										<h4 className="card-title">Về tôi</h4>
 										<div className="form-group mb-0">
 											<label>Tiểu sử <span className="text-danger">*</span></label>
-											<textarea className="form-control" rows="5"></textarea>
+											<textarea onChange={(e)=>this.handleChange(e)} name="biography" className="form-control" rows="5"></textarea>
 										</div>
 									</div>
 								</div>
@@ -323,31 +360,31 @@ class AddStylist extends React.Component {
 											<div className="col-md-6">
 												<div className="form-group">
 													<label>Số nhà và tên đường <span className="text-danger">*</span></label>
-													<input type="text" className="form-control" />
+													<input onChange={(e)=>this.handleChange(e)} name="street" type="text" className="form-control" />
 												</div>
 											</div>
 											<div className="col-md-6">
 												<div className="form-group">
 													<label>Tên phường <span className="text-danger">*</span></label>
-													<input type="text" className="form-control" />
+													<input onChange={(e)=>this.handleChange(e)} name="ward" type="text" className="form-control" />
 												</div>
 											</div>
 											<div className="col-md-6">
 												<div className="form-group">
 													<label>Tên quận <span className="text-danger">*</span></label>
-													<input type="text" className="form-control" />
+													<input onChange={(e)=>this.handleChange(e)} name="dist" type="text" className="form-control" />
 												</div>
 											</div>
 											<div className="col-md-6">
 												<div className="form-group">
 													<label>Thành phố <span className="text-danger">*</span></label>
-													<input type="text" className="form-control" />
+													<input onChange={(e)=>this.handleChange(e)} name="city" type="text" className="form-control" />
 												</div>
 											</div>
 											<div className="col-md-6">
 												<div className="form-group">
 													<label>Quốc gia <span className="text-danger">*</span></label>
-													<input type="text" className="form-control" />
+													<input onChange={(e)=>this.handleChange(e)} name="nation" type="text" className="form-control" />
 												</div>
 											</div>
 										</div>
@@ -363,26 +400,26 @@ class AddStylist extends React.Component {
 											<div className="col-md-6">
 												<div className="form-group">
 													<label>Facebook URL</label>
-													<input type="text" className="form-control" />
+													<input onChange={(e)=>this.handleChange(e)} name="fburl" type="text" className="form-control" />
 												</div>
 											</div>
 											<div className="col-md-6">
 												<div className="form-group">
 													<label className="control-label">Twitter URL</label>
-													<input type="text" className="form-control" />
+													<input onChange={(e)=>this.handleChange(e)} name="twitterurl" type="text" className="form-control" />
 												</div>
 											</div>
 											<div className="col-md-6">
 												<div className="form-group">
 													<label className="control-label">Instagram URL</label>
-													<input type="text" className="form-control" />
+													<input onChange={(e)=>this.handleChange(e)} name="igurl" type="text" className="form-control" />
 												</div>
 											</div>
 
 											<div className="col-md-6">
 												<div className="form-group">
 													<label className="control-label">Pinterest URL</label>
-													<input type="text" className="form-control" />
+													<input onChange={(e)=>this.handleChange(e)} name="pinteresturl" type="text" className="form-control" />
 												</div>
 											</div>
 										</div>
@@ -398,7 +435,7 @@ class AddStylist extends React.Component {
 
 							
 						</div>
-
+					</form>
 					</div>
 				</div>		
 				{/* Page Content */}

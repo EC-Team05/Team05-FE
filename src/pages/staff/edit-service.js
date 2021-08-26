@@ -102,7 +102,7 @@ class EditService extends React.Component {
 															<FontAwesomeIcon icon={faEdit} /> Sửa
 														</Link>
 													</button>
-													<button>
+													<button onClick={() => this.handleButtonClick(service.idservice)}>
 														<Link to="/delete-service" className="btn btn-sm bg-danger-light">
 															<FontAwesomeIcon icon={faMinus} /> Xóa
 														</Link>

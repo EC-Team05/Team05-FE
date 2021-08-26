@@ -7,15 +7,45 @@ import { DropzoneArea } from 'material-ui-dropzone';
 import { StaffSidebar } from './staff-sidebar';
 
 // Import Images
-import UserImg from '../../assets/img/stylists/stylist-thumb-02.jpg';
-import formImg from '../../assets/img/features/feature-01.jpg';
+import {UserImg} from '../../assets/img/stylists/stylist-thumb-02.jpg';
+import {formImg} from '../../assets/img/features/feature-01.jpg';
 
 // Import Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class EditEditStylist extends React.Component {
 
+	constructor(props) {
+		super(props);
+		this.state = {
+			error: null,
+			isLoaded: false,
+			emp: [],
+            data:[],
+            redirect:false
+		}
+        this.handleSubmit = this.handleSubmit.bind(this);
+	}
 	componentDidMount() {
+		fetch("http://localhost:3000/booking-stylist")
+			.then(res => res.json())
+			.then(
+				(result) => {
+					this.setState({
+						isLoaded: true,
+						emp: result.employee
+					});
+				},
+				(error) => {
+					this.setState({
+						isLoaded: true,
+						error
+					});
+				}
+			)
+	}
+	handleSubmit(){}
+	/*componentDidMount() {
 		// Pricing Options Show
 		$('#pricing_select input[name="rating_option"]').on('click', function() {
 			if ($(this).val() == 'price_free') {
@@ -204,8 +234,13 @@ class EditEditStylist extends React.Component {
 
 
 	}
-	
+	*/
     render() {
+		let {emp}= this.state;
+		const emp_up = emp.filter(item=>{
+			return item.ide == localStorage.getItem("emp_id")
+		})
+		console.log(emp_up)
         return (
 			<div>
 				{/* Breadcrumb */}
@@ -323,31 +358,7 @@ class EditEditStylist extends React.Component {
 										<div className="row form-row">
 											<div className="col-md-6">
 												<div className="form-group">
-													<label>Số nhà và tên đường <span className="text-danger">*</span></label>
-													<input type="text" className="form-control" />
-												</div>
-											</div>
-											<div className="col-md-6">
-												<div className="form-group">
-													<label>Tên phường <span className="text-danger">*</span></label>
-													<input type="text" className="form-control" />
-												</div>
-											</div>
-											<div className="col-md-6">
-												<div className="form-group">
-													<label>Tên quận <span className="text-danger">*</span></label>
-													<input type="text" className="form-control" />
-												</div>
-											</div>
-											<div className="col-md-6">
-												<div className="form-group">
-													<label>Thành phố <span className="text-danger">*</span></label>
-													<input type="text" className="form-control" />
-												</div>
-											</div>
-											<div className="col-md-6">
-												<div className="form-group">
-													<label>Quốc gia <span className="text-danger">*</span></label>
+													<label>Địa chỉ <span className="text-danger">*</span></label>
 													<input type="text" className="form-control" />
 												</div>
 											</div>

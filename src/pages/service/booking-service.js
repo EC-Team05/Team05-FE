@@ -16,7 +16,11 @@ class BookingService extends React.Component {
 			isLoaded: false,
 			services: [],
 			serviceOrder:[],
-			redirect: false
+			sv_cate:[],
+			redirect: false,
+			searchValue:"",
+			filter_sv:"",
+			sort_sv:""
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
@@ -27,7 +31,7 @@ class BookingService extends React.Component {
 				(result) => {
 					this.setState({
 						isLoaded: true,
-						services: result.service
+						services: result.service,
 					});
 				},
 				(error) => {
@@ -37,8 +41,8 @@ class BookingService extends React.Component {
 					});
 				}
 			)
-
 	}
+
 	handleChange(event) {
 		let isChecked = event.target.checked;
 		const newServiceOrder=this.state.serviceOrder;
@@ -55,14 +59,14 @@ class BookingService extends React.Component {
 			...this.state,
 			serviceOrder: newServiceOrder
 		})
-		console.log( this.state.serviceOrder)
+		//console.log( this.state.serviceOrder)
 	}
 	handleSubmit(event) {
 		event.preventDefault();
 		//console.log(this.state)
 		axios.post('http://localhost:3000/booking-service',this.state.serviceOrder)
 			.then(res => {
-				console.log(res.data)
+				//console.log(res.data)
 				this.setState({redirect:true})
 				localStorage.setItem("id_app",res.data.id_apppoint)
 			})
@@ -70,15 +74,60 @@ class BookingService extends React.Component {
 				console.log(error)
 			})
 	}
+	handleChange2(event) {
+		let isChecked = event.target.checked;
+		const temp_val = event.target.value;
+		if(isChecked){
+		this.setState({
+			filter_sv: temp_val
+		})}
+		else{this.setState({
+			filter_sv:""
+		})}
+		console.log(this.state.filter_sv)
+	}
+	handleChange_pr(event){
+		let isChecked = event.target.checked;
+		const temp_val = event.target.value;
+		if(isChecked){
+		this.setState({
+			sort_sv: temp_val
+		})}
+		else{this.setState({
+			sort_sv:""
+		})}
+		console.log(this.state.filter_sv)
+	}
+	handleChangeInput(){
+		return (event) => {
+			const inputValue = event.target.value;
+			this.setState({
+				searchValue:inputValue
+			})
+		}
+	}
 	render() {
 		const { redirect } = this.state;
      	if (redirect) {
        		return <Redirect to='/booking'/>;
      	}
-		let {serviceOrder,services}=this.state
-		console.log(serviceOrder)
+		let {serviceOrder,services,searchValue}=this.state
+		//console.log(serviceOrder)
 		let  sum =0 ;
 		let serviceObj;
+		const sv_sort = services.sort((a,b)=>{
+			if(this.state.sort_sv=="incr")
+				{return Number(a.price)-Number(b.price)}
+			else if(this.state.sort_sv=="decr")
+					{return Number(b.price)-Number(a.price)}
+					else return services;
+		})
+		const sv = sv_sort.filter(item=>{
+			if(this.state.filter_sv != "")
+				{return item.idcategory == this.state.filter_sv}
+			else
+				return item
+		})
 		return (
 			<div>
 				{/* Breadcrumb */}
@@ -104,9 +153,8 @@ class BookingService extends React.Component {
 						<div className="card-body">
 							<form className="search-form">
 								<div className="input-group">
-									<input type="text" placeholder="Tìm kiếm..." className="form-control" />
+									<input type="text" placeholder="Tìm kiếm..." className="form-control" onChange={this.handleChangeInput()}/>
 									<div className="input-group-append">
-										<button type="submit" className="btn btn-primary"><FontAwesomeIcon icon={faSearch} /></button>
 									</div>
 								</div>
 							</form>
@@ -124,33 +172,29 @@ class BookingService extends React.Component {
 												<h4>Loại dịch vụ</h4>
 												<div>
 													<label className="custom_check">
-														<input type="checkbox" name="gender_type"/>
+														<input type="checkbox" value="1" onChange={(event)=>this.handleChange2(event)}name="gender_type"/>
 														<span className="checkmark"></span> Dịch vụ chăm sóc móng
 													</label>
 												</div>
 												<div>
 													<label className="custom_check">
-														<input type="checkbox" name="gender_type" />
+														<input type="checkbox" value="2"onChange={(event)=>this.handleChange2(event)} name="gender_type" />
 														<span className="checkmark"></span> Dịch vụ chăm sóc
 													</label>
 												</div>
 												<h4>Sắp xếp</h4>
 												<div>
 													<label className="custom_check">
-														<input type="checkbox" name="gender_type"/>
+														<input type="checkbox" value ="incr" onChange={(event)=>this.handleChange_pr(event)}name="gender_type"/>
 														<span className="checkmark"></span> Giá từ thấp đến cao
 													</label>
 												</div>
 												<div>
 													<label className="custom_check">
-														<input type="checkbox" name="gender_type" />
+														<input type="checkbox" value="decr" onChange={(event)=>this.handleChange_pr(event)} name="gender_type" />
 														<span className="checkmark"></span> Giá từ cao đến thấp
 													</label>
 												</div>
-											</div>
-
-											<div className="btn-search">
-												<button type="button" className="btn btn-block">Tìm kiếm</button>
 											</div>
 										</div>
 									</div>
@@ -183,7 +227,13 @@ class BookingService extends React.Component {
 									{/* Choose service */}
 									<ul>
 											{
-												this.state.services.map(service =>
+												sv.filter((item)=>{
+													if(searchValue == ""){
+														return item
+													}else if(item.name.toLowerCase().includes(searchValue.toLowerCase())){
+														return item
+													}
+												}).map(service =>
 													<div className="row">
 														<div className="card col-10">
 															<div className="card-body">

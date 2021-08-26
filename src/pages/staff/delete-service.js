@@ -12,59 +12,36 @@ import { faQuestion } from '@fortawesome/fontawesome-free-solid';
 
 class DeleteService extends React.Component {
 
-    // constructor(props) {
-    // 	super(props);
-    // 	this.state = {
-    // 		error: null,
-    // 		isLoaded: false,
-    // 		services: [],
-    //         data:[],
-    //         redirect:false
-    // 	}
-    //     this.handleSubmit = this.handleSubmit.bind(this);
-    // }
-    // componentDidMount() {
-    // 	fetch("http://localhost:3000/booking-service")
-    // 		.then(res => res.json())
-    // 		.then(
-    // 			(result) => {
-    // 				this.setState({
-    // 					isLoaded: true,
-    // 					services: result.service
-    // 				});
-    // 			},
-    // 			(error) => {
-    // 				this.setState({
-    // 					isLoaded: true,
-    // 					error
-    // 				});
-    // 			}
-    // 		)
-    // }
-    // handleChange(e) {
-    //     const newData = {...this.state.data};
-    //     newData["idservice"] = localStorage.getItem("sv_id")
-    //     newData[e.target.name]=e.target.value;
-    //     this.setState({data:newData})
-    // }
-    // handleSubmit(event) {
-    // 	event.preventDefault();
-    // 	//console.log(this.state)
-    // 	axios.put('http://localhost:3000/admin/service/update',this.state.data)
-    // 		.then(res => {
-    // 			console.log(res.data)
-    // 			if(res.data.save)
-    // 			    {this.setState({redirect:true})}
-    // 		})
-    // 		.catch(error => {
-    // 			console.log(error)
-    // 		})
-    // }
+     constructor(props) {
+     	super(props);
+     	this.state = {
+     		error: null,
+     		isLoaded: false,
+     		services: [],
+             data:"",
+             redirect:false
+     	}
+         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    
+     handleSubmit(event) {
+     	event.preventDefault();
+     	//console.log(this.state)
+     	axios.post('http://localhost:3000/admin/service/del',localStorage.getItem("sv_id").toString())
+     		.then(res => {
+     			console.log(res.data)
+     			if(res.data.save)
+     			    {this.setState({redirect:true})}
+     		})
+     		.catch(error => {
+     			console.log(error)
+     		})
+     }
     render() {
-        // const { redirect } = this.state;
-        // if (redirect) {
-        // 	return <Redirect to='/edit-service'/>;
-        // }
+        const { redirect } = this.state;
+        if (redirect) {
+         	return <Redirect to='/edit-service'/>;
+        }
         // let {services} = this.state;
         // const sv=services.filter(item=>{
         //     return item.idservice == localStorage.getItem("sv_id")
@@ -91,42 +68,44 @@ class DeleteService extends React.Component {
                 {/* Breadcrumb */}
 
                 {/* Page Content */}
-                <div className="content">
-                    <div className="container">
-                        <div className="row">
-                            {/* Profile Sidebar */}
-                            <div className="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
-                                <StaffSidebar />
-                            </div>
-                            {/* Profile Sidebar */}
+                <form action="" method="POST" onSubmit={this.handleSubmit}>
+                    <div className="content">
+                        <div className="container">
+                            <div className="row">
+                                {/* Profile Sidebar */}
+                                <div className="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
+                                    <StaffSidebar />
+                                </div>
+                                {/* Profile Sidebar */}
 
-                            <div className="col-md-7 col-lg-8 col-xl-9">
-                                <div className="card">
-                                    <div className="card-body">
-                                        {/* add service Form */}
-                                        <div className="row form-row">
-                                            {/* Success Card */}
-                                            <div className="card success-card">
-                                                <div className="card-body">
-                                                    <div className="success-cont">
-                                                        <FontAwesomeIcon icon={faQuestion} />
-                                                        <h3>Bạn chắc chắn xóa dịch vụ này không?</h3>
-                                                        <p>Nếu bạn nhấn "Xác nhận" thì dịch vụ này được xóa, nếu bạn muốn thêm lại dịch vụ thì vào phần "Chỉnh sửa dịch vụ" để thêm dịch vụ mới.</p>
+                                <div className="col-md-7 col-lg-8 col-xl-9">
+                                    <div className="card">
+                                        <div className="card-body">
+                                            {/* add service Form */}
+                                            <div className="row form-row">
+                                                {/* Success Card */}
+                                                <div className="card success-card">
+                                                    <div className="card-body">
+                                                        <div className="success-cont">
+                                                            <FontAwesomeIcon icon={faQuestion} />
+                                                            <h3>Bạn chắc chắn xóa dịch vụ này không?</h3>
+                                                            <p>Nếu bạn nhấn "Xác nhận" thì dịch vụ này được xóa, nếu bạn muốn thêm lại dịch vụ thì vào phần "Chỉnh sửa dịch vụ" để thêm dịch vụ mới.</p>
+                                                        </div>
                                                     </div>
                                                 </div>
+                                                {/* Success Card */}
+                                                <div className="submit-section">
+                                                    <button type="submit" className="btn btn-primary submit-btn">Xác nhận</button>
+                                                </div>
+                                                {/* add service Form */}
                                             </div>
-                                            {/* Success Card */}
-                                            <div className="submit-section">
-                                                <button type="submit" className="btn btn-primary submit-btn">Xác nhận</button>
-                                            </div>
-                                            {/* add service Form */}
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div >
+                    </div >
+                </form>
                 {/* Page Content */}
             </div >
         )

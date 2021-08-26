@@ -15,7 +15,8 @@ class AddService extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            data :[]
+            data :[],
+            redirect:false
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }

@@ -19,8 +19,11 @@ class EditStylist extends React.Component {
             isLoaded: false,
             employees: []
         };
+        this.handleButtonClick = this.handleButtonClick.bind(this);
     }
-
+    handleButtonClick(value) {
+		localStorage.setItem("emp_id",value)
+    }
     componentDidMount() {
         fetch("http://localhost:3000/")
             .then(res => res.json())
@@ -102,12 +105,12 @@ class EditStylist extends React.Component {
                                                     </div>
                                                 </div>
                                                 <div className="appointment-action">
-                                                    <button >
+                                                    <button onClick={() => this.handleButtonClick(employee.ide)}>
                                                         <Link to="/edit-edit-stylist" className="btn btn-sm bg-success-light">
                                                             <FontAwesomeIcon icon={faEdit} /> Sửa
                                                         </Link>
                                                     </button>
-                                                    <button>
+                                                    <button onClick={() => this.handleButtonClick(employee.ide)}>
                                                         <Link to="/delete-stylist" className="btn btn-sm bg-danger-light">
                                                             <FontAwesomeIcon icon={faMinus} /> Xóa
                                                         </Link>
