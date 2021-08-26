@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import { Link } from 'react-router-dom'
 
@@ -9,6 +9,9 @@ import UserImg from '../../assets/img/stylists/stylist-thumb-02.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarkerAlt, faStar } from '@fortawesome/fontawesome-free-solid';
 
+import "./Paypal.css";
+import { Alert } from 'bootstrap';
+
 function Checkout() {
 
 	const [paymentMethodURL, setPaymentMethodURL] = useState("/booking-success");
@@ -17,8 +20,46 @@ function Checkout() {
 	const [username, setUsername] = useState({name:""});
 	const [useremail, setemail] = useState({email:""});
 	const [userphone, setphone] = useState({phone:""});
+
+	// Code lay list service book cua appointment de tinh total_money va end_time
+
+	const paypal = useRef();
+
+	useEffect(() => {
+        window.paypal
+        .Buttons({
+            createOrder: (data, actions, err) => {
+            return actions.order.create({
+                intent: "CAPTURE",
+                purchase_units: [
+                {
+                    //description: "Total money",
+                    amount: {
+                    currency_code: "USD",
+                    value: 100.0, //Pass total money here
+                    },
+                },
+                ],
+            });
+            },
+            onApprove: async (data, actions) => {
+            const order = await actions.order.capture();
+            console.log(order);
+			// Code luu total_money, hinh thuc thanh toan, status: Chua xac nhan, end_time vao db.
+			// Redirect sang trang booking-success.
+            },
+            onError: (err) => {
+			console.log('Error');
+            console.log(err);
+			// Code luu total_money, hinh thuc thanh toan, status: Huy, end_time vao db.
+			// Redirect sang trang booking-fail.
+            },
+        })
+        .render(paypal.current);
+    }, []);
+
 	
-  useEffect(() => {
+	useEffect(() => {
     const fetchData = {
         method: 'POST',
         headers: {
@@ -40,7 +81,7 @@ function Checkout() {
 		console.log(user_object.email)
 		console.log(user_object.phone)
 	})
-  },[]);
+	},[]);
 	return (
 		<div>
 			{/* Breadcrumb */}
@@ -146,6 +187,13 @@ function Checkout() {
 													<span className="checkmark"></span>
 													Thanh toán tại cửa hàng
 												</label>
+											</div>
+											{/*Payment */}
+
+											{/*Payment */}
+											<div id="Paypal">
+												{/* <PayPal /> */}
+												<div ref={paypal}></div>
 											</div>
 											{/*Payment */}
 
