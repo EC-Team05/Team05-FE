@@ -25,16 +25,12 @@ class StaffDashboard extends React.Component {
 			status: "",
 			redirect: false
 		};
-		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 	handleButtonClick(value) {
-		this.setState({
-			status: value.toString()
-		})
-		console.log(this.state.status)
+		localStorage.setItem("status",value)
 	}
 	componentDidMount() {
-		fetch("http://localhost:3000/invoice")
+		fetch("http://localhost:3000/employee/dashboard")
 			.then(res => res.json())
 			.then(
 				(result) => {
@@ -50,18 +46,6 @@ class StaffDashboard extends React.Component {
 					});
 				}
 			)
-	}
-	handleSubmit(event) {
-		event.preventDefault();
-		//console.log(this.state)
-		axios.post('http://localhost:3000/invoice/update', { data: this.state.status })
-			.then(res => {
-				console.log(res.data)
-				if (res.data.save) { this.setState({ redirect: true }) }
-			})
-			.catch(error => {
-				console.log(error)
-			})
 	}
 	render() {
 		return (
@@ -85,7 +69,7 @@ class StaffDashboard extends React.Component {
 				{/* Breadcrumb */}
 
 				{/* Page Content */}
-				<form action="" method="POST" onSubmit={this.handleSubmit}>
+	
 					<div className="content">
 						<div className="container">
 							<div className="row">
@@ -109,6 +93,7 @@ class StaffDashboard extends React.Component {
 																				<th>Tên khách hàng</th>
 																				<th>Ngày hẹn</th>
 																				<th className="text-center">Số tiền thanh toán(VNĐ)</th>
+																				<th className="text-center">Trạng thái</th>
 																				<th></th>
 																			</tr>
 																		</thead>
@@ -124,17 +109,22 @@ class StaffDashboard extends React.Component {
 																						</td>
 																						<td>{item.date_reserved} <span className="d-block text-info">{item.start_time + ':00'}</span></td>
 																						<td className="text-center">{item.price}</td>
+																						<td className="text-center">{item.status}</td>
 																						<td className="text-right">
 																							<div className="table-action">
 																								<Link to="/view-invoice" className="btn btn-sm bg-info-light mr-1">
 																									<FontAwesomeIcon icon={faEye} /> Xem
 																								</Link>
-																								<Link to="/accept" className="btn btn-sm bg-success-light mr-1">
-																									<FontAwesomeIcon icon={faCheck} /> Chấp nhận
-																								</Link>
-																								<Link to="/cancel" className="btn btn-sm bg-danger-light">
-																									<FontAwesomeIcon icon={faTimes} /> Hủy
-																								</Link>
+																								<button onClick={() => this.handleButtonClick(item.ida+" Xác nhận")}>
+																									<Link to="/accept" className="btn btn-sm bg-success-light mr-1">
+																										<FontAwesomeIcon icon={faCheck} /> Chấp nhận
+																									</Link>
+																								</button>
+																								<button onClick={() => this.handleButtonClick(item.ida+" Hủy")}>
+																									<Link to="/cancel" className="btn btn-sm bg-danger-light">
+																										<FontAwesomeIcon icon={faTimes} /> Hủy
+																									</Link>
+																								</button>
 																							</div>
 																						</td>
 																					</tr>
@@ -153,7 +143,6 @@ class StaffDashboard extends React.Component {
 							</div>
 						</div>
 					</div>
-				</form>
 				{/* Page Content */}
 			</div>
 		)

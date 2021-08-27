@@ -23,7 +23,37 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faEye, faPrint, faTimes } from '@fortawesome/fontawesome-free-solid';
 
 class CustomerDashboard extends React.Component {
-	
+	constructor(props) {
+		super(props);
+		this.state = {
+			error: null,
+			isLoaded: false,
+			appointment: [],
+			status: "",
+			redirect: false
+		};
+	}
+	handleButtonClick(value) {
+		localStorage.setItem("status",value)
+	}
+	componentDidMount() {
+		fetch("http://localhost:3000/invoice")
+			.then(res => res.json())
+			.then(
+				(result) => {
+					this.setState({
+						isLoaded: true,
+						appointment: result.appoint
+					});
+				},
+				(error) => {
+					this.setState({
+						isLoaded: true,
+						error
+					});
+				}
+			)
+	}
     render() {
         return (
 			<div>
@@ -48,14 +78,12 @@ class CustomerDashboard extends React.Component {
 				{/* Page Content */}
 				<div className="content">
 					<div className="container">
-						
 						<div className="row">
 							{/* Profile Sidebar */}
 							<div className="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
 								<CustomerSidebar />
 							</div>
 							{/* Profile Sidebar */}
-
 							<div className="col-md-7 col-lg-8 col-xl-9">
 								<div className="card database-tbl">
 									<div className="card-body">
@@ -75,6 +103,7 @@ class CustomerDashboard extends React.Component {
 																		<th></th>
 																	</tr>
 																</thead>
+																{this.state.appointment.map(item=>
 																<tbody>
 																	<tr>
 																		<td>
@@ -82,77 +111,35 @@ class CustomerDashboard extends React.Component {
 																				<Link to="/stylist-profile" className="avatar avatar-sm mr-2">
 																					<img className="avatar-img rounded-circle" src={UserAvatar2} alt="User Image" />
 																				</Link>
-																				<Link to="/stylist-profile">Cela Spence <span>Nail Art</span></Link>
+																				<Link to="/stylist-profile">{item.emp[0].lastname+' '+item.emp[0].firstname} <span>Nail Art</span></Link>
 																			</h2>
 																		</td>
-																		<td>11 Nov 2019 <span className="d-block text-info">11.00 AM</span></td>
-																		<td>10 Nov 2019</td>
-																		<td>$400</td>
-																		<td><span className="badge badge-pill bg-danger-light">Đã hủy</span></td>
+																		<td>{item.date_created} <span className="d-block text-info">{item.start_time+':00'}</span></td>
+																		<td>{item.date_reserved}</td>
+																		<td>{item.price}</td>
+																		<td><span className="badge badge-pill bg-danger-light">{item.status}</span></td>
 																		<td className="text-right">
 																			<div className="table-action">
-																				<Link to="/invoice-view" className="btn btn-sm bg-info-light mr-1">
-																					<FontAwesomeIcon icon={faEye} /> Xem
-																				</Link>
-																				<Link to="/cancel-booking" className="btn btn-sm bg-danger-light">
-																					<FontAwesomeIcon icon={faTimes} /> Hủy
-																				</Link>
-																			</div>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td>
-																			<h2 className="table-avatar">
-																				<Link to="/stylist-profile" className="avatar avatar-sm mr-2">
-																					<img className="avatar-img rounded-circle" src={UserAvatar3} alt="User Image" />
-																				</Link>
-																				<Link to="/stylist-profile">Litia Green <span>Paraffin Hands</span></Link>
-																			</h2>
-																		</td>
-																		<td>10 Nov 2019 <span className="d-block text-info">3.00 PM</span></td>
-																		<td>10 Nov 2019</td>
-																		<td>$350</td>
-																		<td><span className="badge badge-pill bg-warning-light">Đang xử lí</span></td>
-																		<td className="text-right">
-																			<div className="table-action">
-																				<Link to="/invoice-view" className="btn btn-sm bg-info-light mr-1">
-																					<FontAwesomeIcon icon={faEye} /> Xem
-																				</Link>
-																				<Link to="/cancel-booking" className="btn btn-sm bg-danger-light">
-																					<FontAwesomeIcon icon={faTimes} /> Hủy
-																				</Link>
-																			</div>
-																		</td>
-																	</tr>
-																	<tr>
-																		<td>
-																			<h2 className="table-avatar">
-																				<Link to="/stylist-profile" className="avatar avatar-sm mr-2">
-																					<img className="avatar-img rounded-circle" src={UserAvatar6} alt="User Image" />
-																				</Link>
-																				<Link to="/stylist-profile">Jonalyn Graff <span>Paraffin Hands	</span></Link>
-																			</h2>
-																		</td>
-																		<td>8 Nov 2019 <span className="d-block text-info">6.00 PM</span></td>
-																		<td>6 Nov 2019</td>
-																		<td>$450</td>
-																		<td><span className="badge badge-pill bg-success-light">Xác nhận</span></td>
-																		<td className="text-right">
-																			<div className="table-action">
-																				<Link to="/invoice-view" className="btn btn-sm bg-info-light mr-1">
-																					<FontAwesomeIcon icon={faEye} /> Xem
-																				</Link>
-																				<Link to="/cancel-booking" className="btn btn-sm bg-danger-light">
-																					<FontAwesomeIcon icon={faTimes} /> Hủy
-																				</Link>
+																				<button>
+																					<Link to="/invoice-view" className="btn btn-sm bg-info-light mr-1">
+																						<FontAwesomeIcon icon={faEye} /> Xem
+																					</Link>
+																				</button>
+																				<button onClick={() => this.handleButtonClick(item.ida+" Hủy")}>
+																					<Link to="/cancel-booking" className="btn btn-sm bg-danger-light">
+																						<FontAwesomeIcon icon={faTimes} /> Hủy
+																					</Link>
+																				</button>
 																			</div>
 																		</td>
 																	</tr>
 																</tbody>
+																)}
 															</table>		
 														</div>
 													</div>
 												</div>
+				
 											</Tab>
 											<Tab eventKey="customer-history" title="Lịch sử của khách hàng">
 												<div className="card card-table mb-0">

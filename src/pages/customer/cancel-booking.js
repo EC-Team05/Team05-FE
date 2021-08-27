@@ -11,8 +11,37 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faQuestion } from '@fortawesome/fontawesome-free-solid';
 
 class CancelBooking extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            error: null,
+            isLoaded: false,
+            status:"",
+            redirect:false
+        }
+        this.handleSubmit = this.handleSubmit.bind(this);
+   }
+   
+    handleSubmit(event) {
+        event.preventDefault();
+        //console.log(this.state)
+        axios.post('http://localhost:3000/invoice/update',{status:localStorage.getItem("status")})
+            .then(res => {
+                console.log(res.data)
+                if(res.data.save)
+                    {this.setState({redirect:true})}
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+
 
     render() {
+        const { redirect } = this.state;
+        if (redirect) {
+         	return <Redirect to='/customer-dashboard'/>;
+        }
         return (
             <div>
                 {/* Breadcrumb */}
