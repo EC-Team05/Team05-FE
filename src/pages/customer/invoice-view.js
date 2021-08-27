@@ -5,8 +5,72 @@ import { Link } from 'react-router-dom'
 import Logo from '../../assets/img/logo.png';
 
 class InvoiceView extends React.Component {
-	
+	constructor(props) {
+        super(props);
+
+        this.state = {
+            orderid: "",
+			name:"",
+			date_cre:"",
+			service:[],
+			total: 0
+        };
+    }
+
+    componentDidMount() {
+        // Simple POST request with a JSON body using fetch
+        // const requestOptions = {
+        //     method: 'POST',
+        //     headers: { 'Content-Type': 'application/json' },
+        //     body: JSON.stringify({ 
+		// 		id
+		// 	 })
+        // };
+        fetch('http://localhost:3000/invoice/6129005e1a6cea3240c5d535')
+            .then(response => response.json())
+            .then(data => 
+				{
+				
+					//adding none zero value 
+					let total = 0 ;
+					for(let i = 0 ; i < data.sv.length ; i++)
+					{
+						total += +data.sv[i].price//+ => convert string to int
+					}
+					
+					// adding zero value to total
+					let money =  data.sv[0].price; 
+					let count = 1;
+					for(let i = money.length - 1 ; i >= 0 ; i--)
+					{
+						if(money[i] !== '.')
+						{
+							count *= 10;
+						}
+						else
+						{
+							break;
+						}
+					}
+
+					total = total*count;
+					total = new Intl.NumberFormat({ style: 'currency', currency: 'JPY' }).format(total)
+
+					this.setState(
+						{
+						oderid: data.invoice.ida, 
+						name: data.cus[0].name,
+						date_cre: data.invoice.date_created,
+						service:data.sv,
+						total: total
+						})	
+				
+				
+			});
+    }
+
     render() {
+	
         return (
 			<div>
 				{/* Breadcrumb */}
@@ -49,13 +113,12 @@ class InvoiceView extends React.Component {
 											<div className="col-md-12">
 												<div className="invoice-info">
 													<strong className="customer-text">Phương thức thanh toán</strong>
-													<p className="invoice-details invoice-details-two">
-														Thanh toán tại cửa hàng <br />
-														Order: #00124 <br />
-														Issued: 20/07/2020 <br />
-														Invoice From: Nàng Beauty <br />
-														Invoice To: Quỳnh Như <br />
-													</p>
+													<p className="invoice-details invoice-details-two">Thanh toán tại cửa hàng </p>
+													<p className="invoice-details invoice-details-two">	Order: {this.state.oderid}</p> 
+													<p className="invoice-details invoice-details-two">	Issued: {this.state.date_cre} </p>
+													<p className="invoice-details invoice-details-two">	Invoice From: Nàng Beauty </p>
+													<p className="invoice-details invoice-details-two">	Invoice To: {this.state.name} </p>
+													
 												</div>
 											</div>
 										</div>
@@ -71,24 +134,30 @@ class InvoiceView extends React.Component {
 														<thead>
 															<tr>
 																<th>Dịch vụ</th>
-																<th className="text-center">Số lượng</th>
+																
 																<th className="text-center">VAT</th>
 																<th className="text-right">Tổng</th>
 															</tr>
 														</thead>
 														<tbody>
-															<tr>
-																<td>Sơn gel</td>
-																<td className="text-center">1</td>
-																<td className="text-center">0</td>
-																<td className="text-right">80.000</td>
-															</tr>
-															<tr>
-																<td>Vẽ gel</td>
-																<td className="text-center">1</td>
-																<td className="text-center">0</td>
-																<td className="text-right">20.000</td>
-															</tr>
+															{
+																this.state.service.map(service=>
+																	<tr>
+
+																	<td>
+																		<span>
+																			{service.name}
+																		</span>
+																	</td>
+																	
+																	<td className="text-center">0</td>
+																	<td className="text-right">{service.price}</td>
+																</tr>
+																)
+																
+															}
+														
+															
 														</tbody>
 													</table>
 												</div>
@@ -99,16 +168,9 @@ class InvoiceView extends React.Component {
 														<tbody>
 														<tr>
 															<th>Tổng tạm tính:</th>
-															<td><span>100.000 VND</span></td>
+															<td><span>{this.state.total}</span></td>
 														</tr>
-														<tr>
-															<th>Giảm giá:</th>
-															<td><span>-10%</span></td>
-														</tr>
-														<tr>
-															<th>Tổng số tiền:</th>
-															<td><span>90.000 VND</span></td>
-														</tr>
+													
 														</tbody>
 													</table>
 												</div>

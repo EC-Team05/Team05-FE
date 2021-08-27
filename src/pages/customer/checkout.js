@@ -77,9 +77,7 @@ function Checkout() {
 		username.name=user_object.name
 		useremail.email=user_object.email
 		userphone.phone=user_object.phone
-		console.log(user_object.name)
-		console.log(user_object.email)
-		console.log(user_object.phone)
+		
 	})
 	},[]);
 	return (
