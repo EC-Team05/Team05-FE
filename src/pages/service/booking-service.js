@@ -64,7 +64,7 @@ class BookingService extends React.Component {
 	handleSubmit(event) {
 		event.preventDefault();
 		//console.log(this.state)
-		axios.post('http://localhost:3000/booking-service',this.state.serviceOrder)
+		axios.post('http://localhost:3000/booking-service',{id:this.state.serviceOrder,token: localStorage.getItem("Accesstoken")})
 			.then(res => {
 				//console.log(res.data)
 				this.setState({redirect:true})

@@ -50,11 +50,11 @@ class Login extends React.Component {
 						password: this.state.password
 					})
 				}
-			).then(res => res.text()).then(
+			).then(res => res.json().then(
 				res => { 
 					console.log(res);
-					localStorage.setItem("Accesstoken",res)
-				}
+					localStorage.setItem("Accesstoken",res.token)
+				})
 				// ,<Redirect push to="http://localhost:3002/nailsalon" />
 			).catch(
 				res => { console.log(res) }
