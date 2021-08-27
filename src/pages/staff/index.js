@@ -7,6 +7,7 @@ export * from './delete-service';
 export * from './edit-stylist';
 export * from './edit-edit-stylist';
 export * from './add-stylist';
+export * from './delete-stylist';
 export * from './edit-product';
 export * from './add-product';
 export * from './edit-edit-product';
