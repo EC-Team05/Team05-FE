@@ -53,6 +53,10 @@ class Header extends React.Component {
 	
 		});
 	}
+
+	// function logOut(params) {
+		
+	// }
     
     render() {
 		const exclusionArray = []
@@ -63,6 +67,9 @@ class Header extends React.Component {
 		const pathname = this.props.location.pathname;
 
 		console.log(pathname, "Pathnames")
+
+		let user = JSON.parse(localStorage.getItem('user-info'));
+
         return (
 			<header className={`header ${(pathname === ('/') ? 'min-header' : '')}`}>
 				<nav className="navbar navbar-expand-lg header-nav">
@@ -154,7 +161,7 @@ class Header extends React.Component {
 											<Dropdown.Item href="/stylist-profile-settings">
 												Cài đặt cấu hình
 											</Dropdown.Item>
-											<Dropdown.Item href="/">
+											<Dropdown.Item title={user && user.name}>
 												Đăng xuất
 											</Dropdown.Item>
 										</Dropdown.Menu>

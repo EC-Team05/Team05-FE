@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link,Redirect } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 
 // Import Images
@@ -26,14 +26,14 @@ class BookingStylist extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     handleButtonClick(value) {
-		localStorage.setItem("emp_id",value)	
+        localStorage.setItem("emp_id", value)
     }
     componentDidMount() {
         axios.get('http://localhost:3000/booking/booking-stylist')
             .then((res) => {
-                    this.setState({employees:res.data.detail_shift})
-                    //console.log(this.state.employees)
-                },
+                this.setState({ employees: res.data.detail_shift })
+                //console.log(this.state.employees)
+            },
                 (error) => {
                     this.setState({
                         isLoaded: true,
@@ -43,44 +43,43 @@ class BookingStylist extends React.Component {
             )
     }
     handleSubmit(event) {
-		event.preventDefault();
-		//console.log(this.state)
+        event.preventDefault();
+        //console.log(this.state)
         const data = {
-            id_emp:localStorage.getItem("emp_id"),
-            id_app:localStorage.getItem("id_app")
+            id_emp: localStorage.getItem("emp_id"),
+            id_app: localStorage.getItem("id_app")
         }
-		axios.post('http://localhost:3000/booking/save-stylist',data)
-			.then(res => {
-				console.log(res.data)
-				if(res.data.save)
-				    {this.setState({redirect:true})}
-			})
-			.catch(error => {
-				console.log(error)
-			})
-	}
+        axios.post('http://localhost:3000/booking/save-stylist', data)
+            .then(res => {
+                console.log(res.data)
+                if (res.data.save) { this.setState({ redirect: true }) }
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
 
     render() {
         const { redirect } = this.state;
-		console.log(redirect)
-     	if (redirect) {
-       		return <Redirect to='/checkout'/>;
-     	}
+        console.log(redirect)
+        if (redirect) {
+            return <Redirect to='/checkout' />;
+        }
         let temp = localStorage.getItem("date_booking")
-        let date = temp.slice(0,temp.indexOf("@"))
-        let time = parseInt(temp.slice(temp.indexOf("@")+1,temp.length));
-        const rs = this.state.employees.filter(item =>{
+        let date = temp.slice(0, temp.indexOf("@"))
+        let time = parseInt(temp.slice(temp.indexOf("@") + 1, temp.length));
+        const rs = this.state.employees.filter(item => {
             return item.date == date
-                &&item.detail[0].hour_start <= time
-                &&item.detail[0].hour_end >= time
-                /*&&item.employee_appoint.every(apt=>{
-                    return apt.date_reserved != date
-                    || !(
-                        apt.date_reserved == date
-                        && apt.start_time <= time
-                        && apt.end_time >= time 
-                    )
-                })*/
+                && item.detail[0].hour_start <= time
+                && item.detail[0].hour_end >= time
+            /*&&item.employee_appoint.every(apt=>{
+                return apt.date_reserved != date
+                || !(
+                    apt.date_reserved == date
+                    && apt.start_time <= time
+                    && apt.end_time >= time 
+                )
+            })*/
         })
 
         console.log(rs)
@@ -95,10 +94,10 @@ class BookingStylist extends React.Component {
                                     <nav aria-label="breadcrumb" className="page-breadcrumb">
                                         <ol className="breadcrumb">
                                             <li className="breadcrumb-item"><Link to="/">Trang chủ</Link></li>
-                                            <li className="breadcrumb-item active" aria-current="page">Booking Stylist</li>
+                                            <li className="breadcrumb-item active" aria-current="page">Đặt nhà tạo mẫu</li>
                                         </ol>
                                     </nav>
-                                    <h2 className="breadcrumb-title">Booking Stylist</h2>
+                                    <h2 className="breadcrumb-title">Đặt nhà tạo mẫu</h2>
                                 </div>
                             </div>
                         </div>
@@ -119,8 +118,8 @@ class BookingStylist extends React.Component {
                                                             <div className="doc-info-left">
                                                                 <div className="stylist-img">
                                                                     <Link to="/stylist-profile">
-                                                                        <img 
-                                                                            className="img-fluid" 
+                                                                        <img
+                                                                            className="img-fluid"
                                                                             alt="User Image"
                                                                             src={emp.img}
                                                                         />
@@ -129,10 +128,13 @@ class BookingStylist extends React.Component {
                                                                 <div className="doc-info-cont">
                                                                     <h4 className="doc-name"><Link to="/stylist-profile">{emp.lastname} {emp.firstname}</Link></h4>
                                                                     <div className="rating">
-                                                                        <FontAwesomeIcon icon={faStar} className="filled" />
-                                                                        <FontAwesomeIcon icon={faStar} className="filled" />
-                                                                        <FontAwesomeIcon icon={faStar} className="filled" />
-                                                                        <FontAwesomeIcon icon={faStar} className="filled" />
+                                                                        {
+                                                                            [...Array(emp.rate | 0).fill(1), ...Array(5 - (emp.rate | 0)).fill(0)].map(i => {
+                                                                                return i ?
+                                                                                    (<FontAwesomeIcon icon={faStar} className='filled' />) :
+                                                                                    (<FontAwesomeIcon icon={faStar} />)
+                                                                            })
+                                                                        }
                                                                         <FontAwesomeIcon icon={faStar} />
                                                                         <div className="clini-infos">
                                                                             <ul>
@@ -145,7 +147,7 @@ class BookingStylist extends React.Component {
                                                             <div className="doc-info-right">
                                                                 <div className="clinic-booking">
                                                                     <Link to="/stylist-profile" className="view-pro-btn">Xem hồ sơ</Link>
-                                                                    <button type="submit" onClick={() => this.handleButtonClick(emp.ide)}className="apt-btn">Đặt lịch hẹn</button>
+                                                                    <button type="submit" onClick={() => this.handleButtonClick(emp.ide)} className="apt-btn">Đặt lịch hẹn</button>
                                                                 </div>
                                                             </div>
                                                         </div>

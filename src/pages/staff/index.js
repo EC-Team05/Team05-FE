@@ -12,3 +12,5 @@ export * from './edit-product';
 export * from './add-product';
 export * from './edit-edit-product';
 export * from './delete-product';
+export * from './accept';
+export * from './cancel';
