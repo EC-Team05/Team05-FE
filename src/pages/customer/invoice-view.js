@@ -18,15 +18,7 @@ class InvoiceView extends React.Component {
     }
 
     componentDidMount() {
-        // Simple POST request with a JSON body using fetch
-        // const requestOptions = {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify({ 
-		// 		id
-		// 	 })
-        // };
-        fetch('http://localhost:3000/invoice/6129005e1a6cea3240c5d535')
+        fetch(`http://localhost:3000/invoice/${localStorage.getItem("id_app")}`)
             .then(response => response.json())
             .then(data => 
 				{
