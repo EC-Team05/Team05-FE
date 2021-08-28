@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Dropdown, NavDropdown, Nav } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronDown, faShoppingCart, faTimes, faUser } from '@fortawesome/fontawesome-free-solid';
 
 class PurchaseProduct extends React.Component {
 
@@ -8,7 +11,8 @@ class PurchaseProduct extends React.Component {
         this.state = {
             error: null,
             isLoaded: false,
-            products: []
+            products: [],
+            order: []
         }
     }
 
@@ -31,8 +35,15 @@ class PurchaseProduct extends React.Component {
             )
     }
 
-    render() {
+    handleOrder(event) {
+        this.setState((state, props) => {
+            return { order: [...state.order, event] };
+        });
+        // console.log(event);
+    }
 
+    render() {
+        // console.log(this.state.order);
         return (
             <div>
                 <form action="/booking-stylist" method="POST" onSubmit={this.handleSubmit}>
@@ -50,8 +61,33 @@ class PurchaseProduct extends React.Component {
                                     <h2 className="breadcrumb-title">Danh sách sản phẩm</h2>
                                 </div>
                             </div>
+                            <Dropdown>
+                                <Dropdown.Toggle variant="light" id="dropdown-basic2">
+                                    <span>Giỏ hàng <FontAwesomeIcon icon={faShoppingCart} /></span>
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu>
+                                    {
+                                        this.state.order.map(i => (
+                                            <Dropdown.Item href="">
+                                                {i.name} - {i.price} VND
+                                            </Dropdown.Item>
+                                        ))
+                                    }
+                                    <Dropdown.Item>
+                                        Tổng tiền: {this.state.order.reduce((sum, i) => sum + parseInt(i.price.replace(".", "")), 0)} VND
+                                    </Dropdown.Item>
+                                    <Dropdown.Item>
+                                        <Link to="./checkout">TIẾN HÀNH THANH TOÁN</Link>
+                                    </Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
                         </div>
                     </div>
+                    {/* <ul className="nav header-navbar-rht menu-select">
+                        <li>
+                            
+                        </li>
+                    </ul> */}
                     {/* Breadcrumb */}
                     {/* Page Content */}
                     <div className="content">
@@ -87,7 +123,7 @@ class PurchaseProduct extends React.Component {
                                                     </div>
                                                     <div className="doc-info-right">
                                                         <div className="clinic-booking">
-                                                            <button onClick={() => this.addToCart(product)}>
+                                                            <button onClick={() => this.handleOrder(product)}>
                                                                 <Link to="#" className="view-pro-btn">Thêm vào giỏ hàng</Link>
                                                             </button>
                                                         </div>
