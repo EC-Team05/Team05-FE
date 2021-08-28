@@ -1,14 +1,6 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom'
 
-
-// Import Images
-import StylistThumb3 from '../../assets/img/stylists/stylist-thumb-04.jpg';
-import GalleryImg1 from '../../assets/img/features/feature-01.jpg';
-import GalleryImg2 from '../../assets/img/features/feature-02.jpg';
-import GalleryImg3 from '../../assets/img/features/feature-03.jpg';
-import GalleryImg4 from '../../assets/img/features/feature-04.jpg';
-
 // Import Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInfoCircle, faMapMarkerAlt, faMoneyBillAlt, faStar, faThumbsUp, faComments } from '@fortawesome/fontawesome-free-solid';

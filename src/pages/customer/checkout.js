@@ -180,13 +180,6 @@ function Checkout() {
 													<div className="form-group card-label">
 														<label>Số diện thoại</label>
 														<input className="form-control" type="text" value={userphone.phone}/>
-													
-													</div>
-												</div>
-												<div className="col-md-12 col-sm-12">
-													<div className="form-group card-label">
-														<label>Thông tin khác</label>
-														<input className="form-control" type="text" />
 													</div>
 												</div>
 											</div>
