@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-
+import axios from 'axios'
 // Import Images
 import CustomerImg from '../../assets/img/customers/customer.jpg';
 
@@ -17,17 +17,18 @@ class CustomerSidebar extends React.Component {
             data:[]
 		};
 	}
-
+    handleButtonClick(value) {
+		localStorage.setItem("id_cus",value)
+    }
 	componentDidMount() {
-		fetch("http://localhost:3000/user/profile")
+		fetch(`http://localhost:3000/user/profile/${localStorage.getItem("Accesstoken")}`)
 			.then(res => res.json())
 			.then(
-				(result) => {
+				(data) => {
 					this.setState({
 						isLoaded: true,
-						data: result.info
+						data: data.info
 					});
-                    console.log(this.state.data)
 				},
 				(error) => {
 					this.setState({
@@ -38,6 +39,7 @@ class CustomerSidebar extends React.Component {
 			)
 	}
     render() {
+        let {data}=this.state;
         return(
             <div>
                 {/* Profile Sidebar */}
@@ -45,13 +47,13 @@ class CustomerSidebar extends React.Component {
                     <div className="widget-profile pro-widget-content">
                         <div className="profile-info-widget">
                             <Link to="#" className="booking-doc-img">
-                                <img src={CustomerImg} alt="User Image" />
+                                <img src={data.img} alt="User Image" />
                             </Link>
                             <div className="profile-det-info">
-                                <h3>Gordan Whelan</h3>
+                                <h3>{data.name}</h3>
                                 <div className="customer-details">
-                                    <h5><FontAwesomeIcon icon={faBirthdayCake} /> 24 Jul 1983, 38 years</h5>
-                                    <h5 className="mb-0"><FontAwesomeIcon icon={faMapMarkerAlt} /> Newyork, USA</h5>
+                                    <h5><FontAwesomeIcon icon={faBirthdayCake} />{data.dob}</h5>
+                                    <h5 className="mb-0"><FontAwesomeIcon icon={faMapMarkerAlt} />{data.address}</h5>
                                 </div>
                             </div>
                         </div>
@@ -67,19 +69,13 @@ class CustomerSidebar extends React.Component {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/favourites">
-                                        <FontAwesomeIcon icon={faBookmark} />
-                                        <span>Yêu thích</span>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to="/profile-settings">
+                                    <Link to="/profile-settings" onClick={() => this.handleButtonClick(data.idc)}>
                                         <FontAwesomeIcon icon={faUserCog} />
                                         <span>Cài đặt cấu hình</span>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/change-password">
+                                    <Link to="/change-password" onClick={() => this.handleButtonClick(data.idc)} >
                                         <FontAwesomeIcon icon={faLock} />
                                         <span>Thay đổi mật khẩu</span>
                                     </Link>

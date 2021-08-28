@@ -171,6 +171,9 @@ class InvoiceView extends React.Component {
 									</div>
 									{/* Invoice Item */}
 									
+									{/* Invoice Information */}
+									{/* Invoice Information */}
+									
 								</div>
 							</div>
 						</div>

@@ -30,6 +30,7 @@ class CustomerDashboard extends React.Component {
 			isLoaded: false,
 			appointment: [],
 			status: "",
+			info:[],
 			redirect: false
 		};
 	}
@@ -37,13 +38,14 @@ class CustomerDashboard extends React.Component {
 		localStorage.setItem("status",value)
 	}
 	componentDidMount() {
-		fetch("http://localhost:3000/invoice")
+		fetch(`http://localhost:3000/user/profile/${localStorage.getItem("Accesstoken")}`)
 			.then(res => res.json())
 			.then(
 				(result) => {
 					this.setState({
 						isLoaded: true,
-						appointment: result.appoint
+						appointment: result.appoint,
+						info: result.info
 					});
 				},
 				(error) => {
