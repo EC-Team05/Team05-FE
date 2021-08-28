@@ -16,7 +16,8 @@ class Booking extends React.Component {
         super(props)
         this.state = {
             startDate: new Date(),
-            redirect: false
+            redirect: false,
+            check1: false,
         };
         this.handleChange = this.handleChange.bind(this);
         this.onFormSubmit = this.onFormSubmit.bind(this);
@@ -74,14 +75,37 @@ class Booking extends React.Component {
         .catch(err => {
             console.log(err);
         })
-        // $.getJSON('/nailsalon/booking-service/info?date='+res, function(data){
-        //     console.log(data)
-        // })
+
+        axios.post('http://localhost:3000/checkout',data)
+        .then(res => {
+            var end_time = 0;
+            var sum = 0;
+            console.log('OK');
+            console.log(data.id_appoint);
+            console.log(res.data.detail_app);
+            console.log(localStorage.getItem("id_app"));
+            for (let i = 0; i < res.data["detail_app"].length; i++){
+                sum += parseFloat(res.data["detail_app"][i]["price"]);
+                end_time += parseFloat(res.data["detail_app"][i]["duration"].slice(0,res.data["detail_app"][i]["duration"].indexOf("phút")-1));
+            }
+            end_time /= 60;
+            end_time += res.data["detail_app"][0].Appointment[0]["start_time"];
+            var to_USD = sum *0.04388;
+            localStorage.setItem("total",sum);
+            localStorage.setItem("end_time",end_time);
+            localStorage.setItem("to_USD", to_USD)
+            this.setState({check1:true});
+
+        })
+        .catch(err => {
+            console.log(err);
+        });
     }
     render() {
         const { redirect } = this.state;
+        const { check1 } = this.state;
 		console.log(redirect)
-     	if (redirect) {
+     	if (redirect == true && check1 == true) {
        		return <Redirect to='/booking-stylist'/>;
      	}
         return(

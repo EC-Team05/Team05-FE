@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 import { Link } from 'react-router-dom'
-
 // Import Image
 import UserImg from '../../assets/img/stylists/stylist-thumb-02.jpg';
 
@@ -10,10 +9,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarkerAlt, faStar } from '@fortawesome/fontawesome-free-solid';
 
 import "./Paypal.css";
+import axios from 'axios';
 import { Alert } from 'bootstrap';
 
 function Checkout() {
-
 	const [paymentMethodURL, setPaymentMethodURL] = useState("/booking-success");
 	const [isMomoChecked, setIsMomoChecked] = useState(false);
 	const [isPaymentChecked, setIsPaymentChecked] = useState(true);
@@ -21,7 +20,15 @@ function Checkout() {
 	const [useremail, setemail] = useState({email:""});
 	const [userphone, setphone] = useState({phone:""});
 
-	// Code lay list service book cua appointment de tinh total_money va end_time
+	const id_app = {id: localStorage.getItem("id_app")};
+	//console.log("id " + id_app.id);
+	// console.log('Sum');
+	// console.log(localStorage.total);
+	// console.log(id_app.id);
+	// console.log((localStorage.to_USD));
+
+	// console.log("end time");
+	// console.log(localStorage.end_time);
 
 	const paypal = useRef();
 
@@ -36,22 +43,46 @@ function Checkout() {
                     //description: "Total money",
                     amount: {
                     currency_code: "USD",
-                    value: 100.0, //Pass total money here
+                    value: parseFloat(localStorage.to_USD).toFixed(1), //Pass total money here
                     },
                 },
                 ],
             });
             },
             onApprove: async (data, actions) => {
-            const order = await actions.order.capture();
-            console.log(order);
-			// Code luu total_money, hinh thuc thanh toan, status: Chua xac nhan, end_time vao db.
+				const order = await actions.order.capture();
+				const data1 = {
+					ida: localStorage.getItem("id_app"),
+					status: "Chờ xác nhận",
+					end_time: String(parseFloat(localStorage.end_time).toFixed(1)),
+					total: localStorage.total+'.000',
+					payment: "PayPal"
+				}
+				axios.post('http://localhost:3000/checkout/save-checkout',data1)
+				.then(res => {
+					console.log("Payment Success");
+				})
+				.catch(err => {
+					console.log("Not ok");
+					console.log(err);
+				});
 			// Redirect sang trang booking-success.
             },
             onError: (err) => {
-			console.log('Error');
-            console.log(err);
-			// Code luu total_money, hinh thuc thanh toan, status: Huy, end_time vao db.
+				const data2 = {
+					ida: localStorage.getItem("id_app"),
+					status: "Hủy",
+					end_time: String(parseFloat(localStorage.end_time).toFixed(1)),
+					total: localStorage.total+'.000',
+					payment: "PayPal"
+				}
+				axios.post('http://localhost:3000/checkout/save-checkout',data2)
+				.then(res => {
+					console.log("Payment fail");
+				})
+				.catch(err => {
+					console.log(err);
+				});
 			// Redirect sang trang booking-fail.
             },
         })
@@ -77,9 +108,12 @@ function Checkout() {
 		username.name=user_object.name
 		useremail.email=user_object.email
 		userphone.phone=user_object.phone
-		
+		// console.log(user_object.name)
+		// console.log(user_object.email)
+		// console.log(user_object.phone)
 	})
 	},[]);
+
 	return (
 		<div>
 			{/* Breadcrumb */}
