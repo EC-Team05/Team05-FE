@@ -8,8 +8,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
-// const publicPath = '/';
-const publicPath = '/nailsalon/';
+const publicPath = '/';
+// const publicPath = '/nailsalon/';
 
 module.exports = {
  mode: "development",
@@ -23,6 +23,9 @@ module.exports = {
  },
  devtool: 'inline-source-map',
  devServer: {
+    headers: {
+        "Access-Control-Allow-Origin": "*",
+    },
    contentBase: path.join(__dirname, './'), // where dev server will look for static files, not compiled
   //  publicPath: '/', //relative path to output path where  devserver will look for compiled files
    host: '0.0.0.0',
