@@ -23,6 +23,7 @@ function Checkout() {
 	const [price,setPrice]=useState({price:""})
 	const [date,setDate]=useState({date:""})
 	const [time,setTime]=useState({time:""})
+	const [rate,setRate]=useState({rate:""})
 
 	const id_app = {id: localStorage.getItem("id_app")};
 	//console.log("id " + id_app.id);
@@ -93,11 +94,12 @@ function Checkout() {
         .render(paypal.current);
     }, []);
 	useEffect(() => {
-		fetch(`http://localhost:3000/invoice/${localStorage.getItem("id_app")}`)
+		fetch(`http://localhost:3000/employee/dashboard/${localStorage.getItem("id_app")}`)
 		.then(res=>res.json())
 		.then(data=>{
 			console.log(data)
-			Name.name=data.cus[0].name
+			Name.name=data.emp[0].lastname+' '+data.emp[0].firstname
+			rate.rate=data.emp[0].rate
 			price.price=data.invoice.price
 			date.date=data.invoice.date_reserved
 			time.time=data.invoice.start_time
@@ -286,7 +288,7 @@ function Checkout() {
 												<FontAwesomeIcon icon={faStar} className="filled" />
 												<FontAwesomeIcon icon={faStar} className="filled" />
 												<FontAwesomeIcon icon={faStar} />
-												<span className="d-inline-block average-rating">35</span>
+												<span className="d-inline-block average-rating">{rate.rate}</span>
 											</div>
 										</div>
 									</div>

@@ -81,7 +81,6 @@ class BookingStylist extends React.Component {
                 )
             })*/
         })
-
         console.log(rs)
         return (
             <div>
