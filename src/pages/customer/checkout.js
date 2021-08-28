@@ -19,6 +19,10 @@ function Checkout() {
 	const [username, setUsername] = useState({name:""});
 	const [useremail, setemail] = useState({email:""});
 	const [userphone, setphone] = useState({phone:""});
+	const [Name,setName] = useState({name:""})
+	const [price,setPrice]=useState({price:""})
+	const [date,setDate]=useState({date:""})
+	const [time,setTime]=useState({time:""})
 
 	const id_app = {id: localStorage.getItem("id_app")};
 	//console.log("id " + id_app.id);
@@ -88,8 +92,17 @@ function Checkout() {
         })
         .render(paypal.current);
     }, []);
-
-	
+	useEffect(() => {
+		fetch(`http://localhost:3000/invoice/${localStorage.getItem("id_app")}`)
+		.then(res=>res.json())
+		.then(data=>{
+			console.log(data)
+			Name.name=data.cus[0].name
+			price.price=data.invoice.price
+			date.date=data.invoice.date_reserved
+			time.time=data.invoice.start_time
+		})
+		},[]);	
 	useEffect(() => {
     const fetchData = {
         method: 'POST',
@@ -100,7 +113,6 @@ function Checkout() {
 			token: localStorage.getItem("Accesstoken")
 		})
 	};
-
 	fetch("http://localhost:3000/user/profile", fetchData)
 	.then(res=>res.text())
 	.then(res=>{
@@ -113,7 +125,6 @@ function Checkout() {
 		// console.log(user_object.phone)
 	})
 	},[]);
-
 	return (
 		<div>
 			{/* Breadcrumb */}
@@ -268,7 +279,7 @@ function Checkout() {
 											<img src={UserImg} alt="User Image" />
 										</Link>
 										<div className="booking-info">
-											<h4><Link to="/stylist-profile">Urban Mauldin</Link></h4>
+											<h4><Link to="/stylist-profile">{Name.name}</Link></h4>
 											<div className="rating">
 												<FontAwesomeIcon icon={faStar} className="filled" />
 												<FontAwesomeIcon icon={faStar} className="filled" />
@@ -284,18 +295,17 @@ function Checkout() {
 									<div className="booking-summary">
 										<div className="booking-item-wrap">
 											<ul className="booking-date">
-												<li>Ngày <span>16 Nov 2019</span></li>
-												<li>Giờ <span>10:00 AM</span></li>
+												<li>Ngày <span>{date.date}</span></li>
+												<li>Giờ <span>{time.time+':00'}</span></li>
 											</ul>
 											<ul className="booking-fee">
-												<li>Phí dịch vụ <span>$100</span></li>
-												<li>Phí đặt lịch <span>$10</span></li>
+												<li>Phí dịch vụ <span>{price.price}</span></li>
 											</ul>
 											<div className="booking-total">
 												<ul className="booking-total-list">
 													<li>
 														<span>Tổng</span>
-														<span className="total-cost">$160</span>
+														<span className="total-cost">{price.price}</span>
 													</li>
 												</ul>
 											</div>

@@ -9,6 +9,34 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBirthdayCake, faBookmark, faColumns, faComments, faLock, faMapMarkerAlt, faSignOutAlt, faUserCog } from '@fortawesome/fontawesome-free-solid';
 
 class CustomerSidebar extends React.Component {
+    constructor(props) {
+		super(props);
+		this.state = {
+			error: null,
+			isLoaded: false,
+            data:[]
+		};
+	}
+
+	componentDidMount() {
+		fetch("http://localhost:3000/user/profile")
+			.then(res => res.json())
+			.then(
+				(result) => {
+					this.setState({
+						isLoaded: true,
+						data: result.info
+					});
+                    console.log(this.state.data)
+				},
+				(error) => {
+					this.setState({
+						isLoaded: true,
+						error
+					});
+				}
+			)
+	}
     render() {
         return(
             <div>
