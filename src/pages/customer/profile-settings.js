@@ -23,7 +23,7 @@ class ProfileSettings extends React.Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 	componentDidMount() {
-		fetch(`http://localhost:3000/user/profile/${localStorage.getItem("Accesstoken")}`)
+		fetch(`http://localhost:3000/user/profile/${localStorage.getItem("AccessToken")}`)
 			.then(res => res.json())
 			.then(
 				(data) => {

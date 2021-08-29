@@ -59,7 +59,7 @@ class Header extends React.Component {
 	}
 	
     handleLogout(){
-		localStorage.removeItem("AccessToken");
+		localStorage.clear();
 		localStorage.removeItem("token");
 	}
 

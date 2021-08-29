@@ -21,6 +21,7 @@ import UserAvatar9 from '../../assets/img/stylists/stylist-thumb-10.jpg';
 // Import Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faEye, faPrint, faTimes } from '@fortawesome/fontawesome-free-solid';
+import { ThreeSixtySharp } from '@material-ui/icons';
 
 class CustomerDashboard extends React.Component {
 	constructor(props) {
@@ -38,7 +39,7 @@ class CustomerDashboard extends React.Component {
 		localStorage.setItem("status",value)
 	}
 	componentDidMount() {
-		fetch(`http://localhost:3000/user/profile/${localStorage.getItem("Accesstoken")}`)
+		fetch(`http://localhost:3000/user/profile/${localStorage.getItem("AccessToken")}`)
 			.then(res => res.json())
 			.then(
 				(result) => {
@@ -57,6 +58,10 @@ class CustomerDashboard extends React.Component {
 			)
 	}
     render() {
+		let {appointment}=this.state;
+		let temp=appointment.filter(item=>{
+			return item.customer == this.state.info.idc;
+		})
         return (
 			<div>
 				{/* Breadcrumb */}
@@ -105,7 +110,7 @@ class CustomerDashboard extends React.Component {
 																		<th></th>
 																	</tr>
 																</thead>
-																{this.state.appointment.map(item=>
+																{temp.map(item=>
 																<tbody>
 																	<tr>
 																		<td>

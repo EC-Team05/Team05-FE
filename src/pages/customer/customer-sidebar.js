@@ -21,7 +21,7 @@ class CustomerSidebar extends React.Component {
 		localStorage.setItem("id_cus",value)
     }
 	componentDidMount() {
-		fetch(`http://localhost:3000/user/profile/${localStorage.getItem("Accesstoken")}`)
+		fetch(`http://localhost:3000/user/profile/${localStorage.getItem("AccessToken")}`)
 			.then(res => res.json())
 			.then(
 				(data) => {

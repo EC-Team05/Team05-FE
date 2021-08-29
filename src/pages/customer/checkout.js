@@ -45,7 +45,7 @@ function Checkout() {
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify({
-				token: localStorage.getItem("Accesstoken")
+				token: localStorage.getItem("AccessToken")
 			})
 		};
 		fetch("http://localhost:3000/user/profile", fetchData)
