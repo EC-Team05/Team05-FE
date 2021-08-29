@@ -28,7 +28,7 @@ function Checkout() {
 	const [rate,setRate]=useState({rate:""})
 
 	const id_app = {id: localStorage.getItem("id_app")};
-	//console.log("id " + id_app.id);
+	// console.log("id " + id_app.id);
 	// console.log('Sum');
 	// console.log(localStorage.total);
 	// console.log(id_app.id);
@@ -82,8 +82,8 @@ function Checkout() {
 				const order = await actions.order.capture();
 				const data1 = {
 					ida: localStorage.getItem("id_app"),
-					status: "Chờ xác nhận",
-					end_time: String(parseFloat(localStorage.end_time).toFixed(1)),
+					status: "Chưa xác nhận",
+					end_time: Math.round(localStorage.end_time),
 					total: localStorage.total+'.000',
 					payment: "PayPal"
 				}
@@ -106,7 +106,7 @@ function Checkout() {
 				const data2 = {
 					ida: localStorage.getItem("id_app"),
 					status: "Hủy",
-					end_time: String(parseFloat(localStorage.end_time).toFixed(1)),
+					end_time: Math.round(localStorage.end_time),
 					total: localStorage.total+'.000',
 					payment: "PayPal"
 				}
